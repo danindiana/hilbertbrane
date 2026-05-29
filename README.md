@@ -1,6 +1,16 @@
+<p align="center">
+  <img src="docs/logo.png" alt="Hilbertbrane Logo" width="400">
+</p>
+
 # Hilbertbrane: A Generative Biological Mesh Architecture 🧠
 
-Welcome to **Hilbertbrane**, an advanced computational modeling suite that procedurally generates biologically plausible 3D brain surfaces (gyri and sulci) using discrete mathematical fractals.
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
+  <a href="https://docs.pyvista.org/"><img src="https://img.shields.io/badge/Rendered_with-PyVista-green.svg" alt="PyVista"></a>
+  <a href="https://github.com/danindiana/hilbertbrane/stargazers"><img src="https://img.shields.io/github/stars/danindiana/hilbertbrane?style=social" alt="Stars"></a>
+</p>
+
 
 This repository takes the continuous, space-filling properties of the **3D Hilbert Curve** and wraps them through a volumetric mapping pipeline to synthesize cortical folding patterns that parallel biological neurogenesis.
 
