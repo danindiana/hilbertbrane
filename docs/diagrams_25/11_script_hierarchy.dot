@@ -1,0 +1,2 @@
+digraph G { label="Script Dependency Hierarchy"; 
+        "run.sh" -> "Python Generators"; "Python Generators" -> "numpy / pyvista / noise"; }

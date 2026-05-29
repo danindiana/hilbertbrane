@@ -1,0 +1,2 @@
+digraph G { label="Directory Structure Map"; 
+        "Root" -> "docs/"; "Root" -> "src/"; "Root" -> "output/"; "docs/" -> "diagrams"; }

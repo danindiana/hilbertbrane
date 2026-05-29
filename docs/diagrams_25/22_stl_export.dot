@@ -1,0 +1,2 @@
+digraph G { label="STL Export Pipeline"; 
+        "Triangulate Faces" -> "Check Watertightness" -> "Write Binary STL Header" -> "Save File"; }

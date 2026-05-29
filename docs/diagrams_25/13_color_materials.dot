@@ -1,0 +1,2 @@
+digraph G { label="PBR Material Pipeline"; 
+        "PolyData" -> "Apply Color (lightblue)" -> "Specular Highlight" -> "Metallic roughness"; }

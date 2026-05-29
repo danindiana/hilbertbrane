@@ -1,0 +1,2 @@
+digraph G { label="Ventricle Thinning Mask"; 
+        "Z-Axis Relative Height" -> "Threshold Mask" -> "Scale Radius Down (Thinning)"; }

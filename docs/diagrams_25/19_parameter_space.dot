@@ -1,0 +1,2 @@
+digraph G { label="Tuning Parameter Space"; 
+        "Radius" -> "Self-Intersection Risk"; "Order" -> "Computation Time"; "Pinch" -> "Biological Realism"; }

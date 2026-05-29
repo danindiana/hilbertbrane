@@ -1,0 +1,2 @@
+digraph G { label="Offline Rendering (Screenshot)"; 
+        "Xvfb / Offscreen Plotter" -> "Add Mesh" -> "Set Iso Camera" -> "Export PNG"; }

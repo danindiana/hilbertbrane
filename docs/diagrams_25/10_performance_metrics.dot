@@ -1,0 +1,2 @@
+digraph G { label="Performance & Memory Mapping"; 
+        "Order 4 (4096 nodes)" -> "Spline (8000 pts)" -> "Tube (300k Polys)" -> "GPU VRAM"; }

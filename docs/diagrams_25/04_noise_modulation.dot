@@ -1,0 +1,2 @@
+digraph G { label="Noise Modulation (Sulci/Gyri)"; 
+        "Normalized Arclength t" -> "Low Frequency Harmonics" -> "Perlin Noise" -> "Radius Scaling"; }

@@ -1,0 +1,2 @@
+digraph G { label="Tube Surface Normals"; 
+        "Centerline Tangent" -> "Orthogonal Vectors" -> "Extrude Circle" -> "Generate Faces"; }

@@ -1,0 +1,2 @@
+digraph G { label="MNE-RSA Brain Integration"; 
+        "Evoked Data" -> "Searchlight" -> "RSA Computation" -> "Brain Mapping"; }

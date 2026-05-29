@@ -1,0 +1,2 @@
+digraph G { label="MNE-RSA Data Flow"; 
+        "MEG/EEG Epochs" -> "Source Estimate" -> "RDM Matrix" -> "Brain Plot"; }

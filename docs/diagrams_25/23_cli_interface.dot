@@ -1,0 +1,2 @@
+digraph G { label="CLI Parameter Prompting"; 
+        "Wait for Input" -> "Validate Float/Int" -> "Return Config Dict" -> "Run Generator"; }

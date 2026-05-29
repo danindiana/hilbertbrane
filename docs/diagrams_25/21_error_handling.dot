@@ -1,0 +1,2 @@
+digraph G { label="Error Handling & Fallbacks"; 
+        "Try vary_radius API" -> "Catch Exception" -> "Fallback to Legacy VTK Tube API"; }

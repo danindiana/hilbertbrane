@@ -1,0 +1,2 @@
+digraph G { label="Interactive Tuner Flow"; 
+        "User Adjusts Slider" -> "Callback Triggered" -> "Recompute Spline & Radii" -> "Update Actor"; }

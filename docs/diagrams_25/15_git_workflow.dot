@@ -1,0 +1,2 @@
+digraph G { label="Git Version Control"; 
+        "Working Directory" -> "Staging (add)" -> "Local Repo (commit)" -> "Remote Repo (push)"; }

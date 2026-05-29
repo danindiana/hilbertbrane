@@ -1,0 +1,2 @@
+digraph G { label="Future Extensions"; 
+        "Hilbert Curves" -> "L-Systems / Reaction-Diffusion" -> "Temporal Brain Evolution"; }

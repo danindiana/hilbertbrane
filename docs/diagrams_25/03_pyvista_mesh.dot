@@ -1,0 +1,2 @@
+digraph G { label="PyVista Mesh Generation"; 
+        "Centerline Points" -> "Spline Interpolation" -> "Varying Radius Tube" -> "Triangulation"; }

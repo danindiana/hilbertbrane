@@ -1,0 +1,2 @@
+digraph G { label="Hardware Acceleration"; 
+        "VTK Pipeline" -> "OpenGL" -> "GPU Shaders" -> "Display Monitor"; }

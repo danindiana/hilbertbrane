@@ -1,0 +1,2 @@
+digraph G { label="Differential Growth Buckle"; 
+        "Mesh Surface" -> "Identify Outer Mask" -> "Displace Along Normals" -> "Simulate Cortical Expansion"; }

@@ -1,0 +1,2 @@
+digraph G { label="Mesh Decimation & Smoothing"; 
+        "Raw Tube (High Poly)" -> "Decimate (Reduction factor)" -> "Taubin Smoothing" -> "Recalculate Normals"; }
