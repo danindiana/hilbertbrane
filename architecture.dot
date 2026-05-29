@@ -1,0 +1,78 @@
+digraph HilbertbraneArchitecture {
+    fontname="Helvetica,Arial,sans-serif"
+    node [fontname="Helvetica,Arial,sans-serif", style=filled, color="#333333", fillcolor="#f9f9f9", shape=box, rounded=true]
+    edge [fontname="Helvetica,Arial,sans-serif", color="#666666"]
+
+    graph [
+        rankdir="TB"
+        bgcolor="#ffffff"
+        splines=ortho
+        nodesep=0.8
+        ranksep=0.8
+    ]
+
+    subgraph cluster_dependencies {
+        label = "Core Dependencies"
+        style = "rounded,dashed"
+        color = "#aaaaaa"
+        numpy [label="NumPy\n(Math / Arrays)"]
+        pyvista [label="PyVista\n(VTK wrapper)"]
+        noise [label="Noise\n(Perlin/Simplex)"]
+    }
+
+    subgraph cluster_scripts {
+        label = "Generator Scripts"
+        style = "rounded,filled"
+        fillcolor = "#eef4f9"
+        color = "#4a90e2"
+        hilbertbrane [label="Hilbertbrane.py\n(Interactive CLI)"]
+        gyri1 [label="HilbertGyri.py\n(Base Generator)"]
+        gyri2 [label="HilbertGyri2.py\n(Detailed Generator)"]
+        gyri3 [label="HilbertGyri3.py\n(Biological Presets)"]
+        interactive [label="interactive_tuner.py\n(GUI Tuner)"]
+    }
+
+    subgraph cluster_outputs {
+        label = "3D Output Assets"
+        style = "rounded,dashed"
+        color = "#f39c12"
+        fillcolor = "#fdfaf0"
+        stl_gyri [label="HilbertGyri.stl\n(Watertight Mesh)", shape=cylinder, fillcolor="#fde3a7"]
+        stl_brain [label="HilbertBrain.stl\n(Watertight Mesh)", shape=cylinder, fillcolor="#fde3a7"]
+    }
+
+    subgraph cluster_utilities {
+        label = "Utilities"
+        style = "rounded"
+        color = "#27ae60"
+        view_stls [label="view_stls.py\n(3D Renderer)", fillcolor="#e8f8f5"]
+        screenshot [label="screenshot.py\n(Off-screen Capture)", fillcolor="#e8f8f5"]
+        run_sh [label="run.sh\n(Batch Runner)", fillcolor="#e8f8f5"]
+    }
+
+    // Dependencies to Scripts
+    numpy -> gyri1
+    pyvista -> gyri1
+    noise -> gyri3
+
+    // Workflow
+    gyri1 -> stl_gyri [label=" Exports"]
+    gyri2 -> stl_gyri [label=" Exports"]
+    gyri3 -> stl_brain [label=" Exports"]
+    hilbertbrane -> stl_gyri [label=" Exports"]
+
+    // Tuner
+    interactive -> gyri3 [label=" Tuned parameters", style=dashed]
+
+    // Automation
+    run_sh -> gyri1 [label=" Triggers"]
+    run_sh -> gyri2 [label=" Triggers"]
+    run_sh -> gyri3 [label=" Triggers"]
+
+    // Viewers
+    stl_gyri -> view_stls [label=" Loads"]
+    stl_brain -> view_stls [label=" Loads"]
+    
+    stl_brain -> screenshot [label=" Reads"]
+    stl_gyri -> screenshot [label=" Reads"]
+}

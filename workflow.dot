@@ -1,0 +1,37 @@
+digraph HilbertbraneWorkflow {
+    fontname="Helvetica,Arial,sans-serif"
+    node [fontname="Helvetica,Arial,sans-serif", style=filled, shape=rect, rounded=true, fillcolor="#e8f4f8", color="#2980b9"]
+    edge [fontname="Helvetica,Arial,sans-serif", color="#34495e", penwidth=1.5]
+
+    graph [
+        rankdir="LR"
+        bgcolor="#ffffff"
+        nodesep=0.6
+        ranksep=0.8
+    ]
+
+    start [shape=ellipse, fillcolor="#2ecc71", color="#27ae60", label="Start"]
+    
+    gen_path [label="1. Generate 3D\nHilbert Curve Path\n(Compact Indexer)"]
+    scale_ellipsoid [label="2. Map Path to\nEllipsoid Bounding Box\n(Brain Shape)"]
+    spline [label="3. Fit Smooth\nSpline Centerline\n(PyVista)"]
+    arclength [label="4. Calculate\nNormalized Arclength"]
+    pinch [label="5. Apply Pinch Field\n(Low-freq Wobble + Harmonics)"]
+    radius [label="6. Map Pinch to\nAbsolute Radius\n(Sulci / Gyri limits)"]
+    tube [label="7. Extrude Tube\nAlong Centerline\n(vary_radius_by_scalar)"]
+    decimate [label="8. Decimate & Smooth\n(Reduce poly count)"]
+    export [shape=cylinder, fillcolor="#f1c40f", color="#f39c12", label="9. Export STL"]
+    
+    end [shape=ellipse, fillcolor="#e74c3c", color="#c0392b", fontcolor="white", label="End (3D Print / Render)"]
+
+    start -> gen_path
+    gen_path -> scale_ellipsoid
+    scale_ellipsoid -> spline
+    spline -> arclength
+    arclength -> pinch
+    pinch -> radius
+    radius -> tube
+    tube -> decimate
+    decimate -> export
+    export -> end
+}
