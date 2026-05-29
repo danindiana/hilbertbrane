@@ -11,98 +11,196 @@
   <a href="https://github.com/danindiana/hilbertbrane/stargazers"><img src="https://img.shields.io/github/stars/danindiana/hilbertbrane?style=social" alt="Stars"></a>
 </p>
 
-
-This repository takes the continuous, space-filling properties of the **3D Hilbert Curve** and wraps them through a volumetric mapping pipeline to synthesize cortical folding patterns that parallel biological neurogenesis.
+Hilbertbrane maps the continuous, space-filling properties of the **3D Hilbert Curve** through a volumetric pipeline to synthesize cortical folding patterns that parallel biological neurogenesis — producing watertight STL meshes ready for 3D printing, physics simulation, or WebGL visualization.
 
 ---
 
 ## 🔬 Theoretical Background
-The human cortex maximizes surface area within the constrained volume of the skull through complex folding (gyrification). Hilbert curves—a continuous fractal space-filling curve first described by David Hilbert in 1891—exhibit similar mathematical properties: they maximize path density within a bounded Euclidean space without self-intersection.
 
-By generating a 3D Hilbert curve and subjecting it to harmonic frequency modulation and Perlin noise, **Hilbertbrane** simulates the mechanical buckling and tension of cortical white matter, extruding it into a 3D watertight STL mesh ready for visualization, physics simulation, or 3D printing.
+The human cortex maximizes surface area within the constrained volume of the skull through complex folding (gyrification). Hilbert curves — a continuous fractal space-filling curve first described by David Hilbert in 1891 — exhibit a mathematically analogous property: they maximize path density within a bounded Euclidean space without self-intersection.
+
+<p align="center">
+  <img src="docs/diagrams_25/01_hilbert_theory.png" alt="Hilbert Curve Theory" width="600">
+</p>
+
+By generating a 3D Hilbert curve and subjecting it to harmonic frequency modulation and Perlin noise, **Hilbertbrane** simulates the mechanical buckling and tension of cortical white matter — extruding it into a 3D watertight mesh.
+
+---
+
+## ⚙️ How It Works
+
+### Step 1 — Integer Index to 3D Coordinate
+
+Each point on the Hilbert path is decoded from an integer index via a compact bitwise Gray code transform. Every voxel in the N³ grid is visited exactly once.
+
+<p align="center">
+  <img src="docs/diagrams_25/02_math_pipeline.png" alt="Mathematical Pipeline" width="680">
+</p>
+
+### Step 2 — Sulcal Pinch Field
+
+A superposition of two harmonics (plus a low-frequency wobble term) creates the arclength-varying pinch field P(t) that drives sulcus/gyrus alternation along the spline:
+
+```
+P(t) = w1 × (1 - cos(2π·k1·t + φ1)) / 2
+     + w2 × (1 - cos(2π·k2·t + φ2)) / 2
+     + wobble term
+```
+
+The per-point tube radius is then `R × (1 − SulcusScale × P(t))`, clipped to a safe range.
+
+<p align="center">
+  <img src="docs/diagrams_25/04_noise_modulation.png" alt="Sulcal Pinch Field" width="620">
+</p>
+
+### Step 3 — PyVista Mesh Generation
+
+The decoded path is smoothed into a continuous spline, which is then extruded into a varying-radius tube, triangulated, decimated, and Taubin-smoothed into a production-ready mesh.
+
+<p align="center">
+  <img src="docs/diagrams_25/03_pyvista_mesh.png" alt="PyVista Mesh Pipeline" width="560">
+</p>
+
+### Step 4 — Differential Cortical Growth
+
+The outer surface (Z > mean Z) is identified and displaced along its vertex normals by a growth factor (1.08–1.25), simulating the biomechanical expansion that causes cortical buckling during development.
+
+<p align="center">
+  <img src="docs/diagrams_25/09_biological_growth.png" alt="Biological Growth Simulation" width="560">
+</p>
 
 ---
 
 ## 🚀 Core Features & Generators
 
-### 1. The Generators (`HilbertGyri*.py`)
-- **`HilbertGyri.py`**: The base generator. Sets up the foundational bitwise Gray code indexing to generate the raw spatial coordinate path.
-- **`HilbertGyri2.py`**: The detailed generator. Bumps the fractal recursion depth to create a dense, highly folded structure, mapping the coordinates to an unconstrained grid.
-- **`HilbertGyri3.py`**: The biological preset. Normalizes the unit cube and maps it across an ellipsoid bounding box `[A-P: 2.0, L-R: 1.3, S-I: 1.0]` with a Z-axis ventricle mask for realistic brain topology.
+### Generator Scripts (`HilbertGyri*.py`)
 
-### 2. Live Parameter Tuning (`interactive_tuner.py`)
-Because calculating spatial non-intersection in volumetric meshes is non-trivial, blindly entering variables often results in merged geometric blobs. The `interactive_tuner.py` script opens a live **PyVista OpenGL GUI** allowing users to physically scrub through:
-- **Overall Brain Scale**: The bounding volume mapping.
-- **Gyri Radius**: The thickness of the extruded spline tube.
-- **Sulcus Depth**: The amplitude of the harmonic pinch field simulating sulci.
+| Script | Order | Spline pts | Key feature |
+|--------|-------|-----------|-------------|
+| `HilbertGyri.py` | 3 | 2 000 | Base generator — fast, minimal |
+| `HilbertGyri2.py` | 4 | 3 500 | Dense, highly-folded, no Perlin noise |
+| `HilbertGyri3.py` | 4 | 8 000 | Ellipsoid bounding box `[A-P: 2.0, L-R: 1.3, S-I: 1.0]` + ventricle mask + Perlin noise |
+| `Hilbertbrane.py` | configurable | configurable | Interactive CLI — prompts for all parameters |
 
-### 3. MNE-RSA Architecture Diagram (`brain_box.py`)
-A supplementary utility for visualizing complex systems architectures. Generates a dark-neon, cyber-aesthetic node map describing MNE-Python integration for Representational Similarity Analysis (RSA) of MEG/EEG data.
+### Live Parameter Tuning (`interactive_tuner.py`)
+
+Because volumetric self-intersection is non-trivial to predict analytically, the interactive tuner opens a **PyVista OpenGL GUI** with three real-time sliders:
+
+- **Brain Scale** `[20 – 200]` — overall bounding volume
+- **Gyri Radius** `[0.5 – 15]` — tube extrusion thickness
+- **Sulcus Depth** `[0 – 0.95]` — harmonic pinch amplitude
+
+<p align="center">
+  <img src="docs/diagrams_25/06_user_interaction.png" alt="Interactive Tuner Flow" width="500">
+</p>
+
+### MNE-RSA Architecture (`brain_box.py`)
+
+Generates a dark-neon node map describing MNE-Python integration for Representational Similarity Analysis (RSA) of MEG/EEG data. See the [full MNE-RSA data flow](#).
 
 ---
 
 ## 🛠 Installation & Quickstart
 
-**1. Clone the repository and navigate to the directory:**
 ```bash
+# 1. Clone
 git clone https://github.com/danindiana/hilbertbrane.git
 cd hilbertbrane
-```
 
-**2. Initialize the Python Environment:**
-This project relies heavily on `pyvista` and `vtk` which require strict dependency management.
-```bash
+# 2. Virtual environment
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
 
-**3. Execute the full pipeline:**
-The included shell script will execute all generators and architecture renderers sequentially.
-```bash
+# 3. Run the full pipeline
 chmod +x run.sh
 ./run.sh
 ```
 
----
+Or run a single generator interactively:
 
-## 📂 Documentation & 25 Component Diagrams
-
-The `docs/` folder contains comprehensive Graphviz-generated flowcharts detailing every sub-process in the mathematical and programmatic pipeline. We have generated **25 distinct diagrams** to cover the architecture.
-
-Inside `docs/diagrams_25/`, you will find both `.png` (raster) and `.svg` (vector) diagrams of the following sub-systems:
-
-1. **`01_hilbert_theory`**: 1D to 3D fractal recursion models.
-2. **`02_math_pipeline`**: Bitwise Gray Code to XYZ coordinate mapping.
-3. **`03_pyvista_mesh`**: Spline interpolation and Triangulation pipeline.
-4. **`04_noise_modulation`**: Arclength parameters tied to Perlin noise.
-5. **`05_mne_rsa_integration`**: Searchlight to Brain mapping.
-6. **`06_user_interaction`**: Interactive Tuner callback flows.
-7. **`07_file_structure`**: Root vs Docs directory structure mapping.
-8. **`08_decimation_process`**: Taubin smoothing and Poly reduction.
-9. **`09_biological_growth`**: Differential growth and buckling logic.
-10. **`10_performance_metrics`**: Spline generation to VRAM mapping.
-11. **`11_script_hierarchy`**: Shell to Python to VTK dependency execution.
-12. **`12_ellipsoid_mapping`**: Unit cube to A-P/L-R/S-I shape mapping.
-13. **`13_color_materials`**: PBR material lighting pipeline.
-14. **`14_offline_rendering`**: Headless Xvfb screenshot generation.
-15. **`15_git_workflow`**: Version control staging map.
-16. **`16_data_flow_mne`**: Epoch to RDM visualization flow.
-17. **`17_ventricle_mask`**: Z-axis height thresholding logic.
-18. **`18_tube_normals`**: Centerline tangent extrusion math.
-19. **`19_parameter_space`**: Radius vs Intersection vs Realism tuning map.
-20. **`20_deployment`**: Local setup to WebGL/Print map.
-21. **`21_error_handling`**: `vary_radius` API to Legacy VTK fallback logic.
-22. **`22_stl_export`**: PolyData watertight mesh export checks.
-23. **`23_cli_interface`**: Synchronous interactive parameter prompts.
-24. **`24_hardware_accel`**: GPU OpenGL acceleration stack.
-25. **`25_future_work`**: Extension into Reaction-Diffusion mapping.
+```bash
+python Hilbertbrane.py
+```
 
 ---
 
 ## 🎨 Visualization
-To render your generated `.stl` files in a high-fidelity 3D environment locally, simply run:
+
+View generated `.stl` files in a high-fidelity PBR 3D environment:
+
 ```bash
 python view_stls.py
 ```
-This will open a linked-view Plotter instance rendering your structural mesh outputs using Physically Based Rendering (PBR) shading.
+
+Render a headless screenshot (no display required):
+
+```bash
+python screenshot.py
+```
+
+---
+
+## 📊 Performance Scaling
+
+| Order | Voxels | ~Poly count | ~RAM | ~Time |
+|-------|--------|-------------|------|-------|
+| 3 | 512 | 50k | 5 MB | < 5 s |
+| 4 | 4 096 | 300k | 150 MB | 30–60 s |
+| 5 | 32 768 | > 1M | > 1 GB | minutes |
+
+Decimation (0.30–0.45 reduction factor) brings the final STL to a printable size before export.
+
+---
+
+## 📂 25 Component Diagrams
+
+All diagrams live in `docs/diagrams_25/` as `.png`, `.svg`, and `.dot` source files. A selection is shown inline above; the complete set covers:
+
+| # | Diagram | Category |
+|---|---------|----------|
+| 01 | Hilbert Curve Fractal Theory | Math/Theory |
+| 02 | Mathematical Pipeline (Gray Code) | Math/Theory |
+| 03 | PyVista Mesh Generation | Mesh/Processing |
+| 04 | Sulcal Pinch Field (Harmonic + Perlin) | Neuroscience |
+| 05 | MNE-RSA Integration Pipeline | Neuroscience |
+| 06 | Interactive Tuner GUI Flow | UI/Interaction |
+| 07 | Project Directory Structure | Infrastructure |
+| 08 | Mesh Decimation & Smoothing | Mesh/Processing |
+| 09 | Differential Cortical Growth | Neuroscience |
+| 10 | Performance & Memory Scaling | Performance |
+| 11 | Script Dependency Hierarchy | Infrastructure |
+| 12 | Ellipsoid Bounding Box Mapping | Math/Theory |
+| 13 | PBR Material & Lighting Pipeline | Materials |
+| 14 | Headless/Offline Screenshot Pipeline | Infrastructure |
+| 15 | Git Version Control Workflow | Infrastructure |
+| 16 | MNE-RSA Complete Data Flow | Neuroscience |
+| 17 | Ventricle Thinning Mask | Neuroscience |
+| 18 | Tube Surface Normals & Geometry | Mesh/Processing |
+| 19 | Parameter Interaction & Trade-offs | Math/Theory |
+| 20 | User Deployment Workflow | Infrastructure |
+| 21 | vary_radius API Fallback Logic | Infrastructure |
+| 22 | STL Export Pipeline | Mesh/Processing |
+| 23 | CLI Parameter Prompting Interface | UI/Interaction |
+| 24 | Hardware Acceleration Stack | Infrastructure |
+| 25 | Future Extensions & Research Directions | Future |
+
+Regenerate all diagrams at any time:
+
+```bash
+python generate_25_diagrams.py
+```
+
+### Future Directions
+
+<p align="center">
+  <img src="docs/diagrams_25/25_future_work.png" alt="Future Extensions" width="700">
+</p>
+
+Planned extensions include L-systems, reaction-diffusion Turing patterns, temporal developmental animations, multi-subject cortical atlases, and a browser-hosted WebGL viewer.
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE) for details.
