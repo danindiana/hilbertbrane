@@ -1,2 +1,60 @@
-digraph G { label="Performance & Memory Mapping"; 
-        "Order 4 (4096 nodes)" -> "Spline (8000 pts)" -> "Tube (300k Polys)" -> "GPU VRAM"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Performance and Memory Scaling by Hilbert Order" rankdir="TB"]
+
+    subgraph cluster_o3 {
+        label="Order 3"
+        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        p3a [label="512 voxels\n(2³ × 2³ × 2³)" fillcolor="#F1948A" color="#C0392B"]
+        p3b [label="~2000 spline pts" fillcolor="#F1948A" color="#C0392B"]
+        p3c [label="~50k polys\n(~5 MB RAM)" fillcolor="#F1948A" color="#C0392B"]
+        p3d [label="< 5 seconds" fillcolor="#F1948A" color="#C0392B"]
+        p3a -> p3b -> p3c -> p3d
+    }
+
+    subgraph cluster_o4 {
+        label="Order 4  (default for HilbertBrain)"
+        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        p4a [label="4096 voxels\n(4³ × 4³ × 4³)" fillcolor="#F1948A" color="#C0392B"]
+        p4b [label="~8000 spline pts" fillcolor="#F1948A" color="#C0392B"]
+        p4c [label="~300k polys\n(~150 MB RAM)" fillcolor="#F1948A" color="#C0392B"]
+        p4d [label="~30–60 seconds" fillcolor="#F1948A" color="#C0392B"]
+        p4a -> p4b -> p4c -> p4d
+    }
+
+    subgraph cluster_o5 {
+        label="Order 5"
+        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        p5a [label="32768 voxels\n(5³ × 5³ × 5³)" fillcolor="#F1948A" color="#C0392B"]
+        p5b [label="~50k+ spline pts" fillcolor="#F1948A" color="#C0392B"]
+        p5c [label=">1M polys\n(>1 GB RAM)" fillcolor="#F1948A" color="#C0392B"]
+        p5d [label="several minutes" fillcolor="#F1948A" color="#C0392B"]
+        p5a -> p5b -> p5c -> p5d
+    }
+
+    gpu [label="GPU VRAM\n(VTK OpenGL buffer)" shape=cylinder fillcolor="#F1948A" color="#C0392B"]
+    note1 [label="Decimation reduces\npoly count 30–45%\nbefore STL export" shape=note fillcolor="#FDFEFE" color="#C0392B"]
+
+    p3d -> gpu
+    p4d -> gpu
+    p5d -> gpu
+    gpu -> note1 [style=dashed]
+}

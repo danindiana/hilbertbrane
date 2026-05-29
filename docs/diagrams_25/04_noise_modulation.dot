@@ -1,2 +1,67 @@
-digraph G { label="Noise Modulation (Sulci/Gyri)"; 
-        "Normalized Arclength t" -> "Low Frequency Harmonics" -> "Perlin Noise" -> "Radius Scaling"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Sulcal Pinch Field: Harmonic + Perlin Modulation" rankdir="TB"]
+
+    subgraph cluster_harm {
+        label="Harmonic Components"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        h1 [label="Primary Harmonic\nw1×(1-cos(2π·k1·t+φ1))/2\n(k1=7..9, w1=1.0)" fillcolor="#FAD7A0" color="#E67E22"]
+        h2 [label="Secondary Harmonic\nw2×(1-cos(2π·k2·t+φ2))/2\n(k2=13..17, w2=0.35)" fillcolor="#FAD7A0" color="#E67E22"]
+        h3 [label="Low-freq Wobble\nwobble×(1-cos(2π·1.2·t+0.7))/2" fillcolor="#FAD7A0" color="#E67E22"]
+        hsum [label="Sum → P(t) raw" fillcolor="#FAD7A0" color="#E67E22"]
+        h1 -> hsum
+        h2 -> hsum
+        h3 -> hsum
+    }
+
+    subgraph cluster_norm {
+        label="Normalization"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        n1 [label="P -= P.min(); P /= P.max()" fillcolor="#FAD7A0" color="#E67E22"]
+        n2 [label="P(t) normalized ∈ [0,1]" fillcolor="#FAD7A0" color="#E67E22"]
+        n1 -> n2
+    }
+
+    subgraph cluster_perlin {
+        label="Perlin Noise Overlay (HilbertGyri3)"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        pn1 [label="noise.pnoise1(t × freq)\n→ per-point offset" fillcolor="#FAD7A0" color="#E67E22"]
+        pn2 [label="Add to centerline XYZ\n(organic folding)" shape=ellipse fillcolor="#FAD7A0" color="#E67E22"]
+        pn1 -> pn2
+    }
+
+    subgraph cluster_out {
+        label="Radius Output"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        ro1 [label="radius_abs = R×(1 - SulcusScale×P)" fillcolor="#FAD7A0" color="#E67E22"]
+        ro2 [label="np.clip(radius_abs, R×0.25, R×1.15)" fillcolor="#FAD7A0" color="#E67E22"]
+        ro3 [label="per-point radius array" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        ro1 -> ro2 -> ro3
+    }
+
+    phases [label="Random phases φ1, φ2\nrng.uniform(0, 2π)" shape=note fillcolor="#FDEBD0" color="#E67E22"]
+    hsum -> n1
+    n2 -> ro1
+    phases -> h1 [style=dashed]
+    phases -> h2 [style=dashed]
+}

@@ -1,2 +1,60 @@
-digraph G { label="STL Export Pipeline"; 
-        "Triangulate Faces" -> "Check Watertightness" -> "Write Binary STL Header" -> "Save File"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="STL Export Pipeline" rankdir="TB"]
+
+    subgraph cluster_check {
+        label="Pre-Export Checks"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        c1 [label="mesh.triangulate()\n(ensure all-triangle faces)" fillcolor="#A9DFBF" color="#27AE60"]
+        c2 [label="Is watertight?\n(no open edges)" shape=diamond fillcolor="#A9DFBF" color="#27AE60"]
+        c3 [label="Proceed to export" fillcolor="#A9DFBF" color="#27AE60"]
+        c4 [label="mesh.fill_holes()\nor re-triangulate" style=dashed fillcolor="#D5F5E3" color="#27AE60"]
+        c1 -> c2
+        c2 -> c3 [label="YES"]
+        c2 -> c4 [label="NO"]
+        c4 -> c2 [label="retry" style=dashed]
+    }
+
+    subgraph cluster_fmt {
+        label="STL Binary Format"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        f1 [label="80-byte ASCII header" fillcolor="#A9DFBF" color="#27AE60"]
+        f2 [label="uint32: triangle count" fillcolor="#A9DFBF" color="#27AE60"]
+        f3 [label="Per-face loop:\n  float32×3: normal\n  float32×9: 3 vertices\n  uint16: attrib byte" fillcolor="#A9DFBF" color="#27AE60"]
+        f4 [label="Binary STL file" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        f1 -> f2 -> f3 -> f4
+    }
+
+    subgraph cluster_pv {
+        label="PyVista Export"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        pv1 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#A9DFBF" color="#27AE60"]
+        pv2 [label="VTK STL writer\n(binary by default)" fillcolor="#A9DFBF" color="#27AE60"]
+        pv3 [label="File written" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        pv1 -> pv2 -> pv3
+    }
+
+    sizes [label="HilbertBrain.stl: ~24 MB\nHilbertGyri.stl: ~15 MB\nhil.stl: ~1.2 MB" shape=note fillcolor="#FDFEFE" color="#27AE60"]
+
+    c3 -> pv1 [label="validate"]
+    pv3 -> sizes [style=dashed]
+    f4 -> pv3 [style=invis]
+}

@@ -1,2 +1,79 @@
-digraph G { label="MNE-RSA Data Flow"; 
-        "MEG/EEG Epochs" -> "Source Estimate" -> "RDM Matrix" -> "Brain Plot"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="MNE-RSA Complete Data Flow" rankdir="TB"]
+
+    subgraph cluster_raw {
+        label="Raw Data"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        rw1 [label="MEG raw file\n(.fif / .ds)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        rw2 [label="EEG raw file\n(.edf / .bdf)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        rw3 [label="mne.read_epochs()\nor events-based" fillcolor="#FAD7A0" color="#E67E22"]
+        rw1 -> rw3
+        rw2 -> rw3
+    }
+
+    subgraph cluster_prep {
+        label="Preprocessing"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        pr1 [label="Band-pass filter\n(1–40 Hz)" fillcolor="#FAD7A0" color="#E67E22"]
+        pr2 [label="ICA artifact removal" fillcolor="#FAD7A0" color="#E67E22"]
+        pr3 [label="Baseline correction" fillcolor="#FAD7A0" color="#E67E22"]
+        pr4 [label="mne.Epochs object" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        pr1 -> pr2 -> pr3 -> pr4
+    }
+
+    subgraph cluster_src {
+        label="Source Space"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        sr1 [label="Freesurfer cortical surface\n(pial / inflated)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        sr2 [label="Forward solution\n(BEM / sphere model)" fillcolor="#FAD7A0" color="#E67E22"]
+        sr3 [label="make_inverse_operator()" fillcolor="#FAD7A0" color="#E67E22"]
+        sr4 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        sr1 -> sr2 -> sr3 -> sr4
+    }
+
+    subgraph cluster_rsa {
+        label="RSA"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        rs1 [label="Pairwise dissimilarity\n(1 - correlation)" fillcolor="#FAD7A0" color="#E67E22"]
+        rs2 [label="RDM: N×N matrix" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        rs3 [label="Compare to model RDM\n(Spearman r)" fillcolor="#FAD7A0" color="#E67E22"]
+        rs4 [label="RSA score per vertex" fillcolor="#FAD7A0" color="#E67E22"]
+        rs1 -> rs2 -> rs3 -> rs4
+    }
+
+    subgraph cluster_out {
+        label="Output"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        ov [label="mne.viz.plot_source_estimates()" fillcolor="#FAD7A0" color="#E67E22"]
+        op [label="brain_map.png" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        ov -> op
+    }
+
+    rw3 -> pr1
+    pr4 -> sr2
+    sr4 -> rs1
+    rs4 -> ov
+}

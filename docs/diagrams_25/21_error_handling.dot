@@ -1,2 +1,60 @@
-digraph G { label="Error Handling & Fallbacks"; 
-        "Try vary_radius API" -> "Catch Exception" -> "Fallback to Legacy VTK Tube API"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="vary_radius API Compatibility and Error Fallbacks" rankdir="TB"]
+
+    subgraph cluster_detect {
+        label="API Detection"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        ad1 [label="inspect.signature(\n  PolyDataFilters.tube\n)" fillcolor="#A2D9CE" color="#17A589"]
+        ad2 [label="'vary_radius' in\nsig.parameters?" shape=diamond fillcolor="#A2D9CE" color="#17A589"]
+        ad1 -> ad2
+    }
+
+    subgraph cluster_modern {
+        label="Modern PyVista Path (YES)"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        mp1 [label="centerline.tube(\n  vary_radius=\n  'vary_radius_by_scalar'\n)" fillcolor="#A2D9CE" color="#17A589"]
+        mp2 [label="Success: modern API" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
+        mp1 -> mp2
+    }
+
+    subgraph cluster_legacy {
+        label="Legacy Fallback Path (NO)"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        lp1 [label="Try: radius=None,\nscalars='radius_profile'" fillcolor="#A2D9CE" color="#17A589"]
+        lp2 [label="VTK interprets scalars\nas absolute radii?" shape=diamond fillcolor="#A2D9CE" color="#17A589"]
+        lp3 [label="Success: absolute mode" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
+        lp4 [label="Normalize scalars:\nrel = radius_abs / base" fillcolor="#A2D9CE" color="#17A589"]
+        lp5 [label="centerline.tube(\n  radius=base,\n  scalars='rel'\n)" fillcolor="#A2D9CE" color="#17A589"]
+        lp6 [label="Success: relative mode" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
+        lp1 -> lp2
+        lp2 -> lp3 [label="YES"]
+        lp2 -> lp4 [label="NO"]
+        lp4 -> lp5 -> lp6
+    }
+
+    compat [label="Supports PyVista 0.38+\nand legacy VTK" shape=note fillcolor="#FDFEFE" color="#17A589"]
+
+    ad2 -> mp1 [label="YES"]
+    ad2 -> lp1 [label="NO"]
+    lp6 -> compat [style=dashed]
+    mp2 -> compat [style=dashed]
+}

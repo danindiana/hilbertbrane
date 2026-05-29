@@ -1,2 +1,74 @@
-digraph G { label="Tuning Parameter Space"; 
-        "Radius" -> "Self-Intersection Risk"; "Order" -> "Computation Time"; "Pinch" -> "Biological Realism"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Parameter Interaction and Trade-off Space" rankdir="LR"]
+
+    subgraph cluster_geom {
+        label="Geometric Parameters"
+        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        g1 [label="order (2–5)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        g1e [label="Computation time\nO(8^order)" fillcolor="#F1948A" color="#C0392B"]
+        g2 [label="ridge_radius (0.5–5.0 mm)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        g2e [label="Self-intersection risk\nif > cell_spacing/2" shape=diamond fillcolor="#F1948A" color="#C0392B"]
+        g3 [label="spline_samples (1000–8000)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        g3e [label="Smoothness vs\nMemory / speed" fillcolor="#AED6F1" color="#2980B9"]
+        g1 -> g1e
+        g2 -> g2e
+        g3 -> g3e
+    }
+
+    subgraph cluster_sulcal {
+        label="Sulcal Field Parameters"
+        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        s1 [label="SulcusScale (0–0.8)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        s1e [label="Sulcus depth\n→ biological realism" fillcolor="#AED6F1" color="#2980B9"]
+        s2 [label="k1, k2 (frequencies 4–17)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        s2e [label="Gyri count\nper lobe" fillcolor="#AED6F1" color="#2980B9"]
+        s3 [label="w1, w2 (harmonic weights)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        s3e [label="Primary vs secondary\ngyrification" fillcolor="#AED6F1" color="#2980B9"]
+        s1 -> s1e
+        s2 -> s2e
+        s3 -> s3e
+    }
+
+    subgraph cluster_noise {
+        label="Noise Parameters"
+        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        n1 [label="wobble (0–0.5)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        n1e [label="Low-freq asymmetry\n→ naturalism" fillcolor="#AED6F1" color="#2980B9"]
+        n2 [label="NOISE_AMP (0–0.45)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        n2e [label="Perlin centerline\nrandom folding" fillcolor="#AED6F1" color="#2980B9"]
+        n1 -> n1e
+        n2 -> n2e
+    }
+
+    subgraph cluster_post {
+        label="Post-Processing"
+        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        p1 [label="decimation (0.1–0.9)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        p1e [label="File size\n→ printability" fillcolor="#AED6F1" color="#2980B9"]
+        p2 [label="growth_factor (1.0–2.0)" shape=tab fillcolor="#AED6F1" color="#2980B9"]
+        p2e [label="Outer expansion\n→ sulcal depth" fillcolor="#AED6F1" color="#2980B9"]
+        p1 -> p1e
+        p2 -> p2e
+    }
+}

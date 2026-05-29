@@ -1,2 +1,68 @@
-digraph G { label="Mesh Decimation & Smoothing"; 
-        "Raw Tube (High Poly)" -> "Decimate (Reduction factor)" -> "Taubin Smoothing" -> "Recalculate Normals"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Mesh Decimation and Smoothing Pipeline" rankdir="TB"]
+
+    subgraph cluster_raw {
+        label="Raw Tube Input"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        r1 [label="tube.triangulate()\n(ensure all-triangle faces)" fillcolor="#A9DFBF" color="#27AE60"]
+        r2 [label="~300k–600k cells\n(pre-decimation)" shape=note fillcolor="#D5F5E3" color="#27AE60"]
+    }
+
+    subgraph cluster_dec {
+        label="Decimation"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        d1 [label="mesh.decimate(0.30–0.45)\n→ reduce cell count" fillcolor="#A9DFBF" color="#27AE60"]
+        d2 [label="Decimated mesh\n~100k–200k cells" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        d1 -> d2
+    }
+
+    subgraph cluster_nrm {
+        label="Normal Computation"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        n1 [label="compute_normals(\n  cell_normals=False,\n  auto_orient=True\n)" fillcolor="#A9DFBF" color="#27AE60"]
+    }
+
+    subgraph cluster_smooth {
+        label="Smoothing"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        s1 [label="mesh.smooth(\n  n_iter=30–90,\n  relaxation_factor=0.5\n)" fillcolor="#A9DFBF" color="#27AE60"]
+        s2 [label="OR Taubin smooth\n(HilbertGyri3 path)" style=dashed fillcolor="#D5F5E3" color="#27AE60"]
+    }
+
+    subgraph cluster_out {
+        label="Output"
+        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        o1 [label="Final mesh\n(watertight, smooth)" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        o2 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#A9DFBF" color="#27AE60"]
+        o1 -> o2
+    }
+
+    r1 -> d1 [label="feed"]
+    d2 -> n1 [label="recompute"]
+    n1 -> s1
+    s1 -> o1
+    s2 -> o1 [style=dashed]
+}

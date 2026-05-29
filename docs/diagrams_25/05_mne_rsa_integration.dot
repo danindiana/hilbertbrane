@@ -1,2 +1,65 @@
-digraph G { label="MNE-RSA Brain Integration"; 
-        "Evoked Data" -> "Searchlight" -> "RSA Computation" -> "Brain Mapping"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="MNE-RSA Neuroscience Integration Pipeline" rankdir="TB"]
+
+    subgraph cluster_acq {
+        label="Data Acquisition"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        a1 [label="MEG/EEG Recording" shape=parallelogram fillcolor="#FAD7A0" color="#E67E22"]
+        a2 [label="mne.Epochs\n(time-locked segments)" fillcolor="#FAD7A0" color="#E67E22"]
+        a3 [label="Preprocessing\n(filter, ICA, baseline)" fillcolor="#FAD7A0" color="#E67E22"]
+        a1 -> a2 -> a3
+    }
+
+    subgraph cluster_src {
+        label="Source Estimation"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        s1 [label="Forward Model\n(BEM / sphere)" fillcolor="#FAD7A0" color="#E67E22"]
+        s2 [label="Inverse Operator\n(MNE / dSPM / sLORETA)" fillcolor="#FAD7A0" color="#E67E22"]
+        s3 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        s1 -> s2 -> s3
+    }
+
+    subgraph cluster_rsa {
+        label="RSA Computation"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        r1 [label="RDM: pairwise dissimilarity\n(1 - correlation)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        r2 [label="Searchlight Analysis\n(per-vertex sphere)" fillcolor="#FAD7A0" color="#E67E22"]
+        r3 [label="Spearman / Pearson r\nvs model RDM" fillcolor="#FAD7A0" color="#E67E22"]
+        r4 [label="RSA Score Map\n(vertex-level)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        r1 -> r2 -> r3 -> r4
+    }
+
+    subgraph cluster_viz {
+        label="Brain Visualization"
+        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        v1 [label="brain_box.py\nmne_rsa_dark_neon.png" shape=note fillcolor="#FAD7A0" color="#E67E22"]
+        v2 [label="mne.viz /\npyvista brain plot" fillcolor="#FAD7A0" color="#E67E22"]
+        v3 [label="Surface Plot\n(inflated / pial)" shape=ellipse fillcolor="#FAD7A0" color="#E67E22"]
+        v1 -> v2 -> v3
+    }
+
+    a3 -> s1 [label="epochs→source"]
+    s3 -> r1 [label="stc→RDM"]
+    r4 -> v1 [label="scores→map"]
+}

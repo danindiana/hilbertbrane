@@ -1,2 +1,70 @@
-digraph G { label="Interactive Tuner Flow"; 
-        "User Adjusts Slider" -> "Callback Triggered" -> "Recompute Spline & Radii" -> "Update Actor"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Interactive Tuner: PyVista GUI Event Flow" rankdir="TB"]
+
+    subgraph cluster_setup {
+        label="GUI Setup"
+        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        su1 [label="pv.Plotter()" fillcolor="#D2B4DE" color="#8E44AD"]
+        su2 [label="add_slider_widget() × 3 sliders" fillcolor="#D2B4DE" color="#8E44AD"]
+        su3 [label="initial update_mesh()" fillcolor="#D2B4DE" color="#8E44AD"]
+        su1 -> su2 -> su3
+    }
+
+    subgraph cluster_sliders {
+        label="Slider Events"
+        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        sl1 [label="Brain Size slider\n[20 .. 200]" shape=diamond fillcolor="#D2B4DE" color="#8E44AD"]
+        sl2 [label="Gyri Radius slider\n[0.5 .. 15]" shape=diamond fillcolor="#D2B4DE" color="#8E44AD"]
+        sl3 [label="Sulcus Depth slider\n[0 .. 0.95]" shape=diamond fillcolor="#D2B4DE" color="#8E44AD"]
+        pd  [label="params dict update" fillcolor="#D2B4DE" color="#8E44AD"]
+        sl1 -> pd
+        sl2 -> pd
+        sl3 -> pd
+    }
+
+    subgraph cluster_recompute {
+        label="Mesh Recompute"
+        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        m1 [label="update_mesh() callback" fillcolor="#D2B4DE" color="#8E44AD"]
+        m2 [label="scale & spline\nresample" fillcolor="#D2B4DE" color="#8E44AD"]
+        m3 [label="pinch field P(t)" fillcolor="#D2B4DE" color="#8E44AD"]
+        m4 [label="radius profile\nper-point" fillcolor="#D2B4DE" color="#8E44AD"]
+        m5 [label="centerline.tube()" fillcolor="#D2B4DE" color="#8E44AD"]
+        m6 [label="p.remove_actor()\np.add_mesh()" fillcolor="#D2B4DE" color="#8E44AD"]
+        m1 -> m2 -> m3 -> m4 -> m5 -> m6
+    }
+
+    subgraph cluster_render {
+        label="Render"
+        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        rv [label="OpenGL Render" shape=ellipse fillcolor="#D2B4DE" color="#8E44AD"]
+        disp [label="3D Viewport" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
+        rv -> disp
+    }
+
+    su3 -> m1
+    pd -> m1
+    m6 -> rv
+    disp -> sl1 [label="user interacts" style=dashed color="#999999"]
+}

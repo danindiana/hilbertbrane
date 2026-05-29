@@ -1,2 +1,73 @@
-digraph G { label="Directory Structure Map"; 
-        "Root" -> "docs/"; "Root" -> "src/"; "Root" -> "output/"; "docs/" -> "diagrams"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Project Directory Structure" rankdir="LR"]
+
+    root [label="hilbertbrane/\n(repo root)" shape=tab fillcolor="#A2D9CE" color="#17A589"]
+
+    subgraph cluster_scripts {
+        label="Generator Scripts"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        sc1 [label="Hilbertbrane.py\n(CLI, interactive)" fillcolor="#A2D9CE" color="#17A589"]
+        sc2 [label="HilbertGyri.py\n(base generator)" fillcolor="#A2D9CE" color="#17A589"]
+        sc3 [label="HilbertGyri2.py\n(detailed)" fillcolor="#A2D9CE" color="#17A589"]
+        sc4 [label="HilbertGyri3.py\n(biological)" fillcolor="#A2D9CE" color="#17A589"]
+        sc5 [label="interactive_tuner.py\n(PyVista GUI)" fillcolor="#A2D9CE" color="#17A589"]
+        sc6 [label="brain_box.py\n(MNE-RSA diagram)" fillcolor="#A2D9CE" color="#17A589"]
+        sc7 [label="run.sh\n(batch runner)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
+    }
+
+    subgraph cluster_docs {
+        label="docs/"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        d1 [label="architecture.dot/.png/.svg" fillcolor="#A2D9CE" color="#17A589"]
+        d2 [label="diagrams_25/\n25 × .dot + .png + .svg" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+    }
+
+    subgraph cluster_output {
+        label="Output Artifacts"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        o1 [label="HilbertBrain.stl\n(~24 MB)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        o2 [label="HilbertGyri.stl\n(~15 MB)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        o3 [label="*_screenshot.png" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+    }
+
+    subgraph cluster_venv {
+        label="venv/"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        v1 [label="pyvista · vtk · numpy\nnoise · matplotlib" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
+    }
+
+    root -> sc1 [label="contains"]
+    root -> sc2
+    root -> sc3
+    root -> sc4
+    root -> sc5
+    root -> sc6
+    root -> sc7
+    root -> d1
+    root -> d2
+    root -> o1
+    root -> o2
+    root -> o3
+    root -> v1
+}

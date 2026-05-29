@@ -1,2 +1,53 @@
-digraph G { label="Offline Rendering (Screenshot)"; 
-        "Xvfb / Offscreen Plotter" -> "Add Mesh" -> "Set Iso Camera" -> "Export PNG"; }
+digraph G {
+    graph [
+        fontname="Helvetica,Arial,sans-serif"
+        bgcolor="#ffffff"
+        splines=spline
+        nodesep=0.6
+        ranksep=0.8
+        pad=0.4
+        labelloc="t"
+        labeljust="c"
+        fontsize=14
+    ]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    graph [label="Headless / Offline Screenshot Pipeline" rankdir="TB"]
+
+    subgraph cluster_env {
+        label="Environment Setup"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        e1 [label="Xvfb (virtual framebuffer)\nOR off_screen=True" fillcolor="#A2D9CE" color="#17A589"]
+        e2 [label="pv.Plotter(\n  off_screen=True,\n  window_size=(800,800)\n)" fillcolor="#A2D9CE" color="#17A589"]
+        e1 -> e2
+    }
+
+    subgraph cluster_scene {
+        label="Scene Assembly"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        s1 [label="pv.read('*.stl')" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
+        s2 [label="p.add_mesh(mesh,\n  color='lightblue',\n  smooth_shading=True)" fillcolor="#A2D9CE" color="#17A589"]
+        s3 [label="p.camera_position='iso'" fillcolor="#A2D9CE" color="#17A589"]
+        s1 -> s2 -> s3
+    }
+
+    subgraph cluster_cap {
+        label="Capture and Export"
+        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
+        fontname="Helvetica,Arial,sans-serif"
+
+        c1 [label="p.screenshot(\n  'output.png'\n)" fillcolor="#A2D9CE" color="#17A589"]
+        c2 [label="PNG file\n(800 × 800 px)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        c1 -> c2
+    }
+
+    usage [label="Used in screenshot.py\nfor automated CI/preview" shape=note fillcolor="#FDFEFE" color="#17A589"]
+
+    e2 -> s1
+    s3 -> c1
+    c2 -> usage [style=dashed]
+}
