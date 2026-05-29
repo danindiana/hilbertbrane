@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" alt="Hilbertbrane Logo" width="400">
+  <img src="docs/logo.png" alt="Hilbertbrane Logo" width="820">
 </p>
 
 # Hilbertbrane: A Generative Biological Mesh Architecture 🧠
@@ -208,6 +208,24 @@ View the full interactive gallery at **[calisota.ai/hilbertbrane](http://calisot
 </p>
 
 Planned extensions include L-systems, reaction-diffusion Turing patterns, temporal developmental animations, multi-subject cortical atlases, and a browser-hosted WebGL viewer.
+
+---
+
+## 🖼 Infographics
+
+### Project Overview
+
+<p align="center">
+  <img src="docs/infographics/hilbertbrane_overview.png" alt="Hilbertbrane Generative Biological Mesh Architecture overview" width="900">
+</p>
+
+### MNE-RSA Architecture
+
+<p align="center">
+  <img src="docs/infographics/mne_rsa_architecture.png" alt="MNE-RSA Architecture diagram" width="900">
+</p>
+
+Source files live in [`docs/infographics/`](docs/infographics/).
 
 ---
 
