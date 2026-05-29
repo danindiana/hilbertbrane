@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,37 +11,37 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Mathematical Pipeline: Integer Index → 3D Coordinate" rankdir="LR"]
 
     subgraph cluster_input {
         label="Input"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
-        i1 [label="Integer Index i\n(0 … N³-1)" shape=parallelogram fillcolor="#AED6F1" color="#2980B9"]
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
+        i1 [label="Integer Index i\n(0 … N³-1)" shape=parallelogram fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
     }
 
     subgraph cluster_gray {
         label="Bitwise Gray Code Transform"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
 
-        g1 [label="Extract bit plane i\n(x>>i)&1, (y>>i)&1, (z>>i)&1" fillcolor="#AED6F1" color="#2980B9"]
-        g2 [label="Pack to prefix\n(xb<<2)|(yb<<1)|zb" fillcolor="#AED6F1" color="#2980B9"]
-        g3 [label="Apply Gray XOR\nprefix ^= prefix >> 1" fillcolor="#AED6F1" color="#2980B9"]
-        g4 [label="Accumulate\nh |= prefix << (3*i)" fillcolor="#AED6F1" color="#2980B9"]
+        g1 [label="Extract bit plane i\n(x>>i)&1, (y>>i)&1, (z>>i)&1" fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        g2 [label="Pack to prefix\n(xb<<2)|(yb<<1)|zb" fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        g3 [label="Apply Gray XOR\nprefix ^= prefix >> 1" fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        g4 [label="Accumulate\nh |= prefix << (3*i)" fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
         g1 -> g2 -> g3 -> g4 [label="per bit"]
     }
 
     subgraph cluster_output {
         label="Output"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
 
-        o1 [label="Hilbert Index h" shape=cylinder fillcolor="#AED6F1" color="#2980B9"]
-        o2 [label="Sort all points by h\n→ continuous path order" fillcolor="#AED6F1" color="#2980B9"]
-        o3 [label="(x, y, z) coordinate" shape=parallelogram fillcolor="#AED6F1" color="#2980B9"]
+        o1 [label="Hilbert Index h" shape=cylinder fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        o2 [label="Sort all points by h\n→ continuous path order" fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        o3 [label="(x, y, z) coordinate" shape=parallelogram fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
         o1 -> o2 -> o3
     }
 

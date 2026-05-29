@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,46 +11,46 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Hilbert Curve: Fractal Space-Filling Theory" rankdir="TB"]
 
     subgraph cluster_dim {
         label="Dimensionality Progression"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
 
-        d1 [label="1D Line Segment" shape=box fillcolor="#AED6F1" color="#2980B9"]
-        d2 [label="2D Space-Filling Curve\n(Order N fills unit square)" shape=box fillcolor="#AED6F1" color="#2980B9"]
-        d3 [label="3D Hilbert Volume\n(fills unit cube without self-intersection)" shape=box fillcolor="#AED6F1" color="#2980B9"]
+        d1 [label="1D Line Segment" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        d2 [label="2D Space-Filling Curve\n(Order N fills unit square)" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        d3 [label="3D Hilbert Volume\n(fills unit cube without self-intersection)" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
         d1 -> d2 [label="extrude"]
         d2 -> d3 [label="extrude"]
     }
 
     subgraph cluster_orders {
         label="Fractal Orders"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
 
-        o1 [label="Order 1\n8 voxels" shape=box fillcolor="#AED6F1" color="#2980B9"]
-        o2 [label="Order 2\n64 voxels" shape=box fillcolor="#AED6F1" color="#2980B9"]
-        o3 [label="Order 3\n512 voxels" shape=box fillcolor="#AED6F1" color="#2980B9"]
-        o4 [label="Order 4\n4096 voxels" shape=box fillcolor="#AED6F1" color="#2980B9"]
+        o1 [label="Order 1\n8 voxels" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        o2 [label="Order 2\n64 voxels" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        o3 [label="Order 3\n512 voxels" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        o4 [label="Order 4\n4096 voxels" shape=box fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
         o1 -> o2 -> o3 -> o4 [label="2× depth"]
     }
 
     subgraph cluster_props {
         label="Key Mathematical Properties"
-        style="filled,rounded" fillcolor="#EBF5FB" color="#2980B9" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d1a" color="#00bfff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00bfff"
 
-        p1 [label="Space-Filling Property\n(visits every voxel exactly once)" shape=ellipse fillcolor="#AED6F1" color="#2980B9"]
-        p2 [label="Self-Similarity\n(each sub-curve is a scaled copy)" shape=ellipse fillcolor="#AED6F1" color="#2980B9"]
-        p3 [label="Locality Preservation\n(nearby indices → nearby positions)" shape=ellipse fillcolor="#AED6F1" color="#2980B9"]
+        p1 [label="Space-Filling Property\n(visits every voxel exactly once)" shape=ellipse fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        p2 [label="Self-Similarity\n(each sub-curve is a scaled copy)" shape=ellipse fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
+        p3 [label="Locality Preservation\n(nearby indices → nearby positions)" shape=ellipse fillcolor="#001a2e" color="#00bfff" fontcolor="#00bfff"]
     }
 
     d3 -> p1 [label="implies"]
     d3 -> p2 [label="implies"]
     d3 -> p3 [label="implies"]
-    o4 -> d3 [label="used in HilbertBrain.py" style=dashed]
+    o4 -> d3 [label="used in HilbertBrain.py" style=dashed color="#334455" fontcolor="#778899"]
 }

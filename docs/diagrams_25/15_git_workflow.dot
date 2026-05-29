@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,48 +11,48 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Git Version Control Workflow" rankdir="LR"]
 
     subgraph cluster_local {
         label="Local Working Tree"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        wt1 [label="Edit files\n(*.py, *.md, *.dot)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        wt2 [label="git status\n(see changes)" fillcolor="#A2D9CE" color="#17A589"]
-        wt3 [label="git add <files>" fillcolor="#A2D9CE" color="#17A589"]
-        wt4 [label="Staging Area\n(index)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        wt1 [label="Edit files\n(*.py, *.md, *.dot)" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        wt2 [label="git status\n(see changes)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        wt3 [label="git add <files>" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        wt4 [label="Staging Area\n(index)" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         wt1 -> wt2 -> wt3 -> wt4 [label="stage"]
     }
 
     subgraph cluster_repo {
         label="Local Repository"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        r1 [label="git commit -m '...'" fillcolor="#A2D9CE" color="#17A589"]
-        r2 [label="Local commit\n(SHA hash)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
-        r3 [label="git log\n(history)" fillcolor="#A2D9CE" color="#17A589"]
+        r1 [label="git commit -m '...'" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        r2 [label="Local commit\n(SHA hash)" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        r3 [label="git log\n(history)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         r1 -> r2 -> r3
     }
 
     subgraph cluster_remote {
         label="Remote Repository"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        rm1 [label="git push origin main" fillcolor="#A2D9CE" color="#17A589"]
-        rm2 [label="GitHub remote\n(origin)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
-        rm3 [label="Actions / CI\n(optional)" fillcolor="#A2D9CE" color="#17A589"]
+        rm1 [label="git push origin main" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        rm2 [label="GitHub remote\n(origin)" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        rm3 [label="Actions / CI\n(optional)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         rm1 -> rm2 -> rm3
     }
 
-    pull [label="git pull\n(sync from remote)" style=dashed fillcolor="#D0ECE7" color="#17A589"]
+    pull [label="git pull\n(sync from remote)" style=dashed fillcolor="#0d1a1a" color="#335555" fontcolor="#557777"]
 
     wt4 -> r1 [label="commit"]
     r2 -> rm1 [label="push"]
-    rm2 -> pull [label="pull" style=dashed color="#999999"]
-    pull -> wt1 [style=dashed color="#999999"]
+    rm2 -> pull [label="pull" style=dashed color="#335555"]
+    pull -> wt1 [style=dashed color="#335555"]
 }

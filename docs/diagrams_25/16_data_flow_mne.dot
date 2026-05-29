@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,65 +11,65 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="MNE-RSA Complete Data Flow" rankdir="TB"]
 
     subgraph cluster_raw {
         label="Raw Data"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        rw1 [label="MEG raw file\n(.fif / .ds)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        rw2 [label="EEG raw file\n(.edf / .bdf)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        rw3 [label="mne.read_epochs()\nor events-based" fillcolor="#FAD7A0" color="#E67E22"]
+        rw1 [label="MEG raw file\n(.fif / .ds)" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        rw2 [label="EEG raw file\n(.edf / .bdf)" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        rw3 [label="mne.read_epochs()\nor events-based" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         rw1 -> rw3
         rw2 -> rw3
     }
 
     subgraph cluster_prep {
         label="Preprocessing"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        pr1 [label="Band-pass filter\n(1–40 Hz)" fillcolor="#FAD7A0" color="#E67E22"]
-        pr2 [label="ICA artifact removal" fillcolor="#FAD7A0" color="#E67E22"]
-        pr3 [label="Baseline correction" fillcolor="#FAD7A0" color="#E67E22"]
-        pr4 [label="mne.Epochs object" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        pr1 [label="Band-pass filter\n(1–40 Hz)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        pr2 [label="ICA artifact removal" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        pr3 [label="Baseline correction" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        pr4 [label="mne.Epochs object" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         pr1 -> pr2 -> pr3 -> pr4
     }
 
     subgraph cluster_src {
         label="Source Space"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        sr1 [label="Freesurfer cortical surface\n(pial / inflated)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        sr2 [label="Forward solution\n(BEM / sphere model)" fillcolor="#FAD7A0" color="#E67E22"]
-        sr3 [label="make_inverse_operator()" fillcolor="#FAD7A0" color="#E67E22"]
-        sr4 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        sr1 [label="Freesurfer cortical surface\n(pial / inflated)" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        sr2 [label="Forward solution\n(BEM / sphere model)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        sr3 [label="make_inverse_operator()" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        sr4 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         sr1 -> sr2 -> sr3 -> sr4
     }
 
     subgraph cluster_rsa {
         label="RSA"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        rs1 [label="Pairwise dissimilarity\n(1 - correlation)" fillcolor="#FAD7A0" color="#E67E22"]
-        rs2 [label="RDM: N×N matrix" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        rs3 [label="Compare to model RDM\n(Spearman r)" fillcolor="#FAD7A0" color="#E67E22"]
-        rs4 [label="RSA score per vertex" fillcolor="#FAD7A0" color="#E67E22"]
+        rs1 [label="Pairwise dissimilarity\n(1 - correlation)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        rs2 [label="RDM: N×N matrix" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        rs3 [label="Compare to model RDM\n(Spearman r)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        rs4 [label="RSA score per vertex" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         rs1 -> rs2 -> rs3 -> rs4
     }
 
     subgraph cluster_out {
         label="Output"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        ov [label="mne.viz.plot_source_estimates()" fillcolor="#FAD7A0" color="#E67E22"]
-        op [label="brain_map.png" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        ov [label="mne.viz.plot_source_estimates()" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        op [label="brain_map.png" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         ov -> op
     }
 

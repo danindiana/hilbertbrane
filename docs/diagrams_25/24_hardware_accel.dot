@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,68 +11,68 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Hardware Acceleration Stack" rankdir="LR"]
 
     subgraph cluster_app {
         label="Application Layer"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        ap1 [label="PyVista\n(Python API)" fillcolor="#A2D9CE" color="#17A589"]
-        ap2 [label="VTK Pipeline\n(C++ render engine)" fillcolor="#A2D9CE" color="#17A589"]
-        ap3 [label="vtkPolyDataMapper\nvtkActor · vtkRenderer" fillcolor="#A2D9CE" color="#17A589"]
+        ap1 [label="PyVista\n(Python API)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        ap2 [label="VTK Pipeline\n(C++ render engine)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        ap3 [label="vtkPolyDataMapper\nvtkActor · vtkRenderer" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         ap1 -> ap2 -> ap3
     }
 
     subgraph cluster_driver {
         label="Graphics Driver Layer"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        dr1 [label="OpenGL 3.3+\n(cross-platform)" fillcolor="#A2D9CE" color="#17A589"]
-        dr2 [label="GPU Shaders\n(GLSL vertex + fragment)" fillcolor="#A2D9CE" color="#17A589"]
-        dr3 [label="Z-buffer\nDepth testing" fillcolor="#A2D9CE" color="#17A589"]
-        dr4 [label="EGL (headless)\nfor off_screen=True" style=dashed fillcolor="#D0ECE7" color="#17A589"]
+        dr1 [label="OpenGL 3.3+\n(cross-platform)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        dr2 [label="GPU Shaders\n(GLSL vertex + fragment)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        dr3 [label="Z-buffer\nDepth testing" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        dr4 [label="EGL (headless)\nfor off_screen=True" style=dashed fillcolor="#0d1a1a" color="#335555" fontcolor="#557777"]
         dr1 -> dr2 -> dr3
-        dr1 -> dr4 [style=dashed]
+        dr1 -> dr4 [style=dashed color="#335555"]
     }
 
     subgraph cluster_gpu {
         label="GPU Hardware"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        gp1 [label="Geometry stage\n(vertex transform)" fillcolor="#A2D9CE" color="#17A589"]
-        gp2 [label="Rasterization\n(triangle → fragments)" fillcolor="#A2D9CE" color="#17A589"]
-        gp3 [label="Fragment shading\n(PBR materials)" fillcolor="#A2D9CE" color="#17A589"]
-        gp4 [label="Framebuffer\n(RGBA + depth)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        gp1 [label="Geometry stage\n(vertex transform)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        gp2 [label="Rasterization\n(triangle → fragments)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        gp3 [label="Fragment shading\n(PBR materials)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        gp4 [label="Framebuffer\n(RGBA + depth)" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         gp1 -> gp2 -> gp3 -> gp4
     }
 
     subgraph cluster_cuda {
         label="Optional CUDA"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        cu1 [label="CUDA (optional)\nlarge mesh compute" style=dashed fillcolor="#D0ECE7" color="#17A589"]
-        cu2 [label="cuVTK acceleration" style=dashed fillcolor="#D0ECE7" color="#17A589"]
-        cu1 -> cu2 [style=dashed]
+        cu1 [label="CUDA (optional)\nlarge mesh compute" style=dashed fillcolor="#0d1a1a" color="#335555" fontcolor="#557777"]
+        cu2 [label="cuVTK acceleration" style=dashed fillcolor="#0d1a1a" color="#335555" fontcolor="#557777"]
+        cu1 -> cu2 [style=dashed color="#335555"]
     }
 
     subgraph cluster_out {
         label="Output"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        ot1 [label="p.show()\n(display)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        ot2 [label="p.screenshot()\n(PNG export)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
+        ot1 [label="p.show()\n(display)" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        ot2 [label="p.screenshot()\n(PNG export)" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
     }
 
     ap3 -> dr1
     dr3 -> gp1
     gp4 -> ot1
     gp4 -> ot2
-    cu2 -> gp1 [style=dashed color="#999999"]
+    cu2 -> gp1 [style=dashed color="#335555"]
 }

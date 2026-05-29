@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilbertbrane — Architecture Diagram Gallery</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #21262d;
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    header img.logo {
+      width: 120px;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #00bfff;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    header p.subtitle {
+      color: #8b949e;
+      font-size: 1rem;
+      max-width: 640px;
+      margin: 0 auto 1rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .badges a img { height: 20px; }
+
+    header a.gh-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #00bfff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.15s;
+    }
+    header a.gh-link:hover { background: #30363d; }
+
+    .demo-gif {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    .demo-gif img {
+      max-width: 900px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #21262d;
+    }
+
+    .section-title {
+      text-align: center;
+      padding: 2rem 1rem 0.5rem;
+      font-size: 1.3rem;
+      color: #00ffe7;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.2rem;
+      padding: 1.5rem 1.5rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      border-color: #00bfff;
+      transform: translateY(-2px);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      background: #0d1117;
+    }
+
+    .card-footer {
+      padding: 0.6rem 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .caption {
+      font-size: 0.82rem;
+      color: #8b949e;
+      flex: 1;
+    }
+    .caption strong { color: #c9d1d9; }
+
+    .card-links { display: flex; gap: 0.4rem; flex-shrink: 0; }
+
+    .card-links a {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      color: #8b949e;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .card-links a:hover { color: #00bfff; border-color: #00bfff; }
+
+    /* Neon accent per category */
+    .cat-math    .card-footer { border-top: 2px solid #00bfff; }
+    .cat-mesh    .card-footer { border-top: 2px solid #00ff88; }
+    .cat-neuro   .card-footer { border-top: 2px solid #ff2d78; }
+    .cat-ui      .card-footer { border-top: 2px solid #bf00ff; }
+    .cat-infra   .card-footer { border-top: 2px solid #00ffe7; }
+    .cat-perf    .card-footer { border-top: 2px solid #ff6600; }
+    .cat-mat     .card-footer { border-top: 2px solid #ffaa00; }
+    .cat-future  .card-footer { border-top: 2px solid #ffe600; }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #4a5568;
+      font-size: 0.8rem;
+      border-top: 1px solid #21262d;
+    }
+    footer a { color: #00bfff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="logo.png" alt="Hilbertbrane logo">
+  <h1>Hilbertbrane</h1>
+  <p class="subtitle">A generative biological mesh architecture mapping 3D Hilbert space-filling curves to cortical folding patterns.</p>
+  <div class="badges">
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT"></a>
+    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python"></a>
+    <a href="https://docs.pyvista.org/"><img src="https://img.shields.io/badge/Rendered_with-PyVista-green.svg" alt="PyVista"></a>
+  </div>
+  <a class="gh-link" href="https://github.com/danindiana/hilbertbrane">View on GitHub →</a>
+</header>
+
+<div class="demo-gif">
+  <img src="demo.gif" alt="Hilbertbrane diagram preview">
+</div>
+
+<p class="section-title">25 Architecture Diagrams</p>
+
+<main class="gallery">
+
+  <div class="card cat-math">
+    <a href="diagrams_25/01_hilbert_theory.png"><img src="diagrams_25/01_hilbert_theory.png" alt="Hilbert Curve Theory" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>01.</strong> Hilbert Curve: Fractal Space-Filling Theory</p>
+      <div class="card-links"><a href="diagrams_25/01_hilbert_theory.svg">SVG</a><a href="diagrams_25/01_hilbert_theory.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-math">
+    <a href="diagrams_25/02_math_pipeline.png"><img src="diagrams_25/02_math_pipeline.png" alt="Math Pipeline" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>02.</strong> Mathematical Pipeline: Index → 3D Coordinate</p>
+      <div class="card-links"><a href="diagrams_25/02_math_pipeline.svg">SVG</a><a href="diagrams_25/02_math_pipeline.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-mesh">
+    <a href="diagrams_25/03_pyvista_mesh.png"><img src="diagrams_25/03_pyvista_mesh.png" alt="PyVista Mesh" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>03.</strong> PyVista Mesh Generation Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/03_pyvista_mesh.svg">SVG</a><a href="diagrams_25/03_pyvista_mesh.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-neuro">
+    <a href="diagrams_25/04_noise_modulation.png"><img src="diagrams_25/04_noise_modulation.png" alt="Noise Modulation" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>04.</strong> Sulcal Pinch Field: Harmonic + Perlin Modulation</p>
+      <div class="card-links"><a href="diagrams_25/04_noise_modulation.svg">SVG</a><a href="diagrams_25/04_noise_modulation.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-neuro">
+    <a href="diagrams_25/05_mne_rsa_integration.png"><img src="diagrams_25/05_mne_rsa_integration.png" alt="MNE-RSA Integration" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>05.</strong> MNE-RSA Neuroscience Integration Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/05_mne_rsa_integration.svg">SVG</a><a href="diagrams_25/05_mne_rsa_integration.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-ui">
+    <a href="diagrams_25/06_user_interaction.png"><img src="diagrams_25/06_user_interaction.png" alt="User Interaction" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>06.</strong> Interactive Tuner: PyVista GUI Event Flow</p>
+      <div class="card-links"><a href="diagrams_25/06_user_interaction.svg">SVG</a><a href="diagrams_25/06_user_interaction.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/07_file_structure.png"><img src="diagrams_25/07_file_structure.png" alt="File Structure" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>07.</strong> Project Directory Structure</p>
+      <div class="card-links"><a href="diagrams_25/07_file_structure.svg">SVG</a><a href="diagrams_25/07_file_structure.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-mesh">
+    <a href="diagrams_25/08_decimation_process.png"><img src="diagrams_25/08_decimation_process.png" alt="Decimation Process" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>08.</strong> Mesh Decimation and Smoothing Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/08_decimation_process.svg">SVG</a><a href="diagrams_25/08_decimation_process.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-neuro">
+    <a href="diagrams_25/09_biological_growth.png"><img src="diagrams_25/09_biological_growth.png" alt="Biological Growth" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>09.</strong> Differential Cortical Growth Simulation</p>
+      <div class="card-links"><a href="diagrams_25/09_biological_growth.svg">SVG</a><a href="diagrams_25/09_biological_growth.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-perf">
+    <a href="diagrams_25/10_performance_metrics.png"><img src="diagrams_25/10_performance_metrics.png" alt="Performance Metrics" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>10.</strong> Performance and Memory Scaling by Order</p>
+      <div class="card-links"><a href="diagrams_25/10_performance_metrics.svg">SVG</a><a href="diagrams_25/10_performance_metrics.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/11_script_hierarchy.png"><img src="diagrams_25/11_script_hierarchy.png" alt="Script Hierarchy" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>11.</strong> Script Dependency Hierarchy</p>
+      <div class="card-links"><a href="diagrams_25/11_script_hierarchy.svg">SVG</a><a href="diagrams_25/11_script_hierarchy.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-math">
+    <a href="diagrams_25/12_ellipsoid_mapping.png"><img src="diagrams_25/12_ellipsoid_mapping.png" alt="Ellipsoid Mapping" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>12.</strong> Unit Cube to Brain Ellipsoid Transform</p>
+      <div class="card-links"><a href="diagrams_25/12_ellipsoid_mapping.svg">SVG</a><a href="diagrams_25/12_ellipsoid_mapping.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-mat">
+    <a href="diagrams_25/13_color_materials.png"><img src="diagrams_25/13_color_materials.png" alt="Color Materials" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>13.</strong> PBR Material and Lighting Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/13_color_materials.svg">SVG</a><a href="diagrams_25/13_color_materials.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/14_offline_rendering.png"><img src="diagrams_25/14_offline_rendering.png" alt="Offline Rendering" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>14.</strong> Headless / Offline Screenshot Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/14_offline_rendering.svg">SVG</a><a href="diagrams_25/14_offline_rendering.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/15_git_workflow.png"><img src="diagrams_25/15_git_workflow.png" alt="Git Workflow" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>15.</strong> Git Version Control Workflow</p>
+      <div class="card-links"><a href="diagrams_25/15_git_workflow.svg">SVG</a><a href="diagrams_25/15_git_workflow.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-neuro">
+    <a href="diagrams_25/16_data_flow_mne.png"><img src="diagrams_25/16_data_flow_mne.png" alt="MNE Data Flow" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>16.</strong> MNE-RSA Complete Data Flow</p>
+      <div class="card-links"><a href="diagrams_25/16_data_flow_mne.svg">SVG</a><a href="diagrams_25/16_data_flow_mne.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-neuro">
+    <a href="diagrams_25/17_ventricle_mask.png"><img src="diagrams_25/17_ventricle_mask.png" alt="Ventricle Mask" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>17.</strong> Ventricle Thinning: Z-Axis Threshold Mask</p>
+      <div class="card-links"><a href="diagrams_25/17_ventricle_mask.svg">SVG</a><a href="diagrams_25/17_ventricle_mask.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-mesh">
+    <a href="diagrams_25/18_tube_normals.png"><img src="diagrams_25/18_tube_normals.png" alt="Tube Normals" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>18.</strong> Tube Surface: Centerline to Geometry</p>
+      <div class="card-links"><a href="diagrams_25/18_tube_normals.svg">SVG</a><a href="diagrams_25/18_tube_normals.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-math">
+    <a href="diagrams_25/19_parameter_space.png"><img src="diagrams_25/19_parameter_space.png" alt="Parameter Space" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>19.</strong> Parameter Interaction and Trade-off Space</p>
+      <div class="card-links"><a href="diagrams_25/19_parameter_space.svg">SVG</a><a href="diagrams_25/19_parameter_space.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/20_deployment.png"><img src="diagrams_25/20_deployment.png" alt="Deployment" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>20.</strong> User Deployment Workflow</p>
+      <div class="card-links"><a href="diagrams_25/20_deployment.svg">SVG</a><a href="diagrams_25/20_deployment.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/21_error_handling.png"><img src="diagrams_25/21_error_handling.png" alt="Error Handling" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>21.</strong> vary_radius API Compatibility and Fallbacks</p>
+      <div class="card-links"><a href="diagrams_25/21_error_handling.svg">SVG</a><a href="diagrams_25/21_error_handling.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-mesh">
+    <a href="diagrams_25/22_stl_export.png"><img src="diagrams_25/22_stl_export.png" alt="STL Export" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>22.</strong> STL Export Pipeline</p>
+      <div class="card-links"><a href="diagrams_25/22_stl_export.svg">SVG</a><a href="diagrams_25/22_stl_export.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-ui">
+    <a href="diagrams_25/23_cli_interface.png"><img src="diagrams_25/23_cli_interface.png" alt="CLI Interface" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>23.</strong> CLI Parameter Prompting Interface</p>
+      <div class="card-links"><a href="diagrams_25/23_cli_interface.svg">SVG</a><a href="diagrams_25/23_cli_interface.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-infra">
+    <a href="diagrams_25/24_hardware_accel.png"><img src="diagrams_25/24_hardware_accel.png" alt="Hardware Acceleration" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>24.</strong> Hardware Acceleration Stack</p>
+      <div class="card-links"><a href="diagrams_25/24_hardware_accel.svg">SVG</a><a href="diagrams_25/24_hardware_accel.dot">DOT</a></div>
+    </div>
+  </div>
+
+  <div class="card cat-future">
+    <a href="diagrams_25/25_future_work.png"><img src="diagrams_25/25_future_work.png" alt="Future Work" loading="lazy"></a>
+    <div class="card-footer">
+      <p class="caption"><strong>25.</strong> Future Extensions and Research Directions</p>
+      <div class="card-links"><a href="diagrams_25/25_future_work.svg">SVG</a><a href="diagrams_25/25_future_work.dot">DOT</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>MIT License · <a href="https://github.com/danindiana/hilbertbrane">github.com/danindiana/hilbertbrane</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,51 +11,51 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Script Dependency Hierarchy" rankdir="TB"]
 
     subgraph cluster_entry {
         label="Entry Points"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        e1 [label="run.sh\n(bash automation)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        e2 [label="python3 -m venv\npip install -r requirements.txt" fillcolor="#A2D9CE" color="#17A589"]
+        e1 [label="run.sh\n(bash automation)" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        e2 [label="python3 -m venv\npip install -r requirements.txt" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
     }
 
     subgraph cluster_gen {
         label="Generator Scripts"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        g1 [label="Hilbertbrane.py\n(CLI, interactive)" fillcolor="#A2D9CE" color="#17A589"]
-        g2 [label="HilbertGyri.py\n(base generator)" fillcolor="#A2D9CE" color="#17A589"]
-        g3 [label="HilbertGyri2.py\n(detailed, no Perlin)" fillcolor="#A2D9CE" color="#17A589"]
-        g4 [label="HilbertGyri3.py\n(biological + noise)" fillcolor="#A2D9CE" color="#17A589"]
-        g5 [label="interactive_tuner.py\n(PyVista GUI)" fillcolor="#A2D9CE" color="#17A589"]
+        g1 [label="Hilbertbrane.py\n(CLI, interactive)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g2 [label="HilbertGyri.py\n(base generator)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g3 [label="HilbertGyri2.py\n(detailed, no Perlin)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g4 [label="HilbertGyri3.py\n(biological + noise)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g5 [label="interactive_tuner.py\n(PyVista GUI)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
     }
 
     subgraph cluster_deps {
         label="Python Dependencies"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        d1 [label="numpy\n(arrays, linalg)" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
-        d2 [label="pyvista + vtk\n(mesh / rendering)" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
-        d3 [label="noise\n(pnoise1)" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
-        d4 [label="matplotlib\n(brain_box.py)" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
-        d5 [label="inspect\n(API compat)" shape=ellipse fillcolor="#A2D9CE" color="#17A589"]
+        d1 [label="numpy\n(arrays, linalg)" shape=ellipse fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        d2 [label="pyvista + vtk\n(mesh / rendering)" shape=ellipse fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        d3 [label="noise\n(pnoise1)" shape=ellipse fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        d4 [label="matplotlib\n(brain_box.py)" shape=ellipse fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        d5 [label="inspect\n(API compat)" shape=ellipse fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
     }
 
     subgraph cluster_out {
         label="Output Artifacts"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        o1 [label="HilbertGyri.stl" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
-        o2 [label="HilbertBrain.stl" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
-        o3 [label="mne_rsa_dark_neon.png" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        o1 [label="HilbertGyri.stl" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        o2 [label="HilbertBrain.stl" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        o3 [label="mne_rsa_dark_neon.png" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
     }
 
     e1 -> g1 [label="triggers"]

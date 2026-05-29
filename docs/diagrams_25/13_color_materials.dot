@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,38 +11,38 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="PBR Material and Lighting Pipeline" rankdir="TB"]
 
     subgraph cluster_in {
         label="PolyData Input"
-        style="filled,rounded" fillcolor="#FEF9E7" color="#D35400" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
-        ci [label="mesh (PolyData)\ntriangulated surface" shape=cylinder fillcolor="#FAD390" color="#D35400"]
+        style="filled,rounded" fillcolor="#1a0f00" color="#ffaa00" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffaa00"
+        ci [label="mesh (PolyData)\ntriangulated surface" shape=cylinder fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
     }
 
     subgraph cluster_color {
         label="Color Assignment"
-        style="filled,rounded" fillcolor="#FEF9E7" color="#D35400" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0f00" color="#ffaa00" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffaa00"
 
-        cc1 [label="color='lightblue'\n(or lightcoral)" fillcolor="#FAD390" color="#D35400"]
-        cc2 [label="p.add_mesh(mesh,\n  smooth_shading=True)" fillcolor="#FAD390" color="#D35400"]
+        cc1 [label="color='lightblue'\n(or lightcoral)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        cc2 [label="p.add_mesh(mesh,\n  smooth_shading=True)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
         cc1 -> cc2
     }
 
     subgraph cluster_pbr {
         label="PBR Shading Parameters"
-        style="filled,rounded" fillcolor="#FEF9E7" color="#D35400" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0f00" color="#ffaa00" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffaa00"
 
-        pb1 [label="ambient = 0.0–0.2\n(self-illumination)" fillcolor="#FAD390" color="#D35400"]
-        pb2 [label="diffuse = 0.5–1.0\n(Lambertian reflection)" fillcolor="#FAD390" color="#D35400"]
-        pb3 [label="specular = 0–10\n(highlight intensity)" fillcolor="#FAD390" color="#D35400"]
-        pb4 [label="metallic = 0.0–0.1" fillcolor="#FAD390" color="#D35400"]
-        pb5 [label="roughness = 0.5" fillcolor="#FAD390" color="#D35400"]
-        pbs [label="PBR Shader\n(VTK physically based)" fillcolor="#FAD390" color="#D35400"]
+        pb1 [label="ambient = 0.0–0.2\n(self-illumination)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        pb2 [label="diffuse = 0.5–1.0\n(Lambertian reflection)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        pb3 [label="specular = 0–10\n(highlight intensity)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        pb4 [label="metallic = 0.0–0.1" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        pb5 [label="roughness = 0.5" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        pbs [label="PBR Shader\n(VTK physically based)" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
         pb1 -> pbs
         pb2 -> pbs
         pb3 -> pbs
@@ -51,13 +52,13 @@ digraph G {
 
     subgraph cluster_light {
         label="Lighting"
-        style="filled,rounded" fillcolor="#FEF9E7" color="#D35400" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0f00" color="#ffaa00" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffaa00"
 
-        l1 [label="Key light\n(main directional)" shape=ellipse fillcolor="#FAD390" color="#D35400"]
-        l2 [label="Fill light" shape=ellipse fillcolor="#FAD390" color="#D35400"]
-        l3 [label="Back light" shape=ellipse fillcolor="#FAD390" color="#D35400"]
-        ogl [label="OpenGL render" fillcolor="#FAD390" color="#D35400"]
+        l1 [label="Key light\n(main directional)" shape=ellipse fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        l2 [label="Fill light" shape=ellipse fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        l3 [label="Back light" shape=ellipse fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        ogl [label="OpenGL render" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
         l1 -> ogl
         l2 -> ogl
         l3 -> ogl
@@ -65,16 +66,15 @@ digraph G {
 
     subgraph cluster_out {
         label="Output"
-        style="filled,rounded" fillcolor="#FEF9E7" color="#D35400" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0f00" color="#ffaa00" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffaa00"
 
-        out [label="Rendered framebuffer" fillcolor="#FAD390" color="#D35400"]
-        disp [label="Display / screenshot" shape=parallelogram fillcolor="#FAD390" color="#D35400"]
+        out [label="Rendered framebuffer" fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
+        disp [label="Display / screenshot" shape=parallelogram fillcolor="#2e1a00" color="#ffaa00" fontcolor="#ffaa00"]
         out -> disp
     }
 
     ci -> cc1
-    cc2 -> pb1 [style=invis]
     pbs -> ogl [label="GPU pipeline"]
     ogl -> out
 }

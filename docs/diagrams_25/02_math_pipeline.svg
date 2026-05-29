@@ -8,124 +8,124 @@
  viewBox="0.00 0.00 1956.81 197.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 168.8)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-168.8 1928.01,-168.8 1928.01,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="949.6" y="-124.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Mathematical Pipeline: Integer Index → 3D Coordinate</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-168.8 1928.01,-168.8 1928.01,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="949.6" y="-124.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">Mathematical Pipeline: Integer Index → 3D Coordinate</text>
 <g id="clust1" class="cluster">
 <title>cluster_input</title>
-<path fill="#ebf5fb" stroke="#2980b9" d="M20,-8C20,-8 188.25,-8 188.25,-8 194.25,-8 200.25,-14 200.25,-20 200.25,-20 200.25,-97 200.25,-97 200.25,-103 194.25,-109 188.25,-109 188.25,-109 20,-109 20,-109 14,-109 8,-103 8,-97 8,-97 8,-20 8,-20 8,-14 14,-8 20,-8"/>
-<text text-anchor="middle" x="104.12" y="-95.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Input</text>
+<path fill="#000d1a" stroke="#00bfff" d="M20,-8C20,-8 188.25,-8 188.25,-8 194.25,-8 200.25,-14 200.25,-20 200.25,-20 200.25,-97 200.25,-97 200.25,-103 194.25,-109 188.25,-109 188.25,-109 20,-109 20,-109 14,-109 8,-103 8,-97 8,-97 8,-20 8,-20 8,-14 14,-8 20,-8"/>
+<text text-anchor="middle" x="104.12" y="-95.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00bfff">Input</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_gray</title>
-<path fill="#ebf5fb" stroke="#2980b9" d="M273.25,-10C273.25,-10 1198.9,-10 1198.9,-10 1204.9,-10 1210.9,-16 1210.9,-22 1210.9,-22 1210.9,-88 1210.9,-88 1210.9,-94 1204.9,-100 1198.9,-100 1198.9,-100 273.25,-100 273.25,-100 267.25,-100 261.25,-94 261.25,-88 261.25,-88 261.25,-22 261.25,-22 261.25,-16 267.25,-10 273.25,-10"/>
-<text text-anchor="middle" x="736.07" y="-86.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Bitwise Gray Code Transform</text>
+<path fill="#000d1a" stroke="#00bfff" d="M273.25,-10C273.25,-10 1198.9,-10 1198.9,-10 1204.9,-10 1210.9,-16 1210.9,-22 1210.9,-22 1210.9,-88 1210.9,-88 1210.9,-94 1204.9,-100 1198.9,-100 1198.9,-100 273.25,-100 273.25,-100 267.25,-100 261.25,-94 261.25,-88 261.25,-88 261.25,-22 261.25,-22 261.25,-16 267.25,-10 273.25,-10"/>
+<text text-anchor="middle" x="736.07" y="-86.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00bfff">Bitwise Gray Code Transform</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_output</title>
-<path fill="#ebf5fb" stroke="#2980b9" d="M1308.9,-17C1308.9,-17 1879.21,-17 1879.21,-17 1885.21,-17 1891.21,-23 1891.21,-29 1891.21,-29 1891.21,-88 1891.21,-88 1891.21,-94 1885.21,-100 1879.21,-100 1879.21,-100 1308.9,-100 1308.9,-100 1302.9,-100 1296.9,-94 1296.9,-88 1296.9,-88 1296.9,-29 1296.9,-29 1296.9,-23 1302.9,-17 1308.9,-17"/>
-<text text-anchor="middle" x="1594.05" y="-86.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Output</text>
+<path fill="#000d1a" stroke="#00bfff" d="M1308.9,-17C1308.9,-17 1879.21,-17 1879.21,-17 1885.21,-17 1891.21,-23 1891.21,-29 1891.21,-29 1891.21,-88 1891.21,-88 1891.21,-94 1885.21,-100 1879.21,-100 1879.21,-100 1308.9,-100 1308.9,-100 1302.9,-100 1296.9,-94 1296.9,-88 1296.9,-88 1296.9,-29 1296.9,-29 1296.9,-23 1302.9,-17 1308.9,-17"/>
+<text text-anchor="middle" x="1594.05" y="-86.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00bfff">Output</text>
 </g>
 <!-- i1 -->
 <g id="node1" class="node">
 <title>i1</title>
-<path fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" d="M180.37,-80C180.37,-80 63.99,-80 63.99,-80 57.99,-80 49.04,-74.77 46.09,-69.55 46.09,-69.55 21.77,-26.45 21.77,-26.45 18.82,-21.23 21.88,-16 27.88,-16 27.88,-16 144.26,-16 144.26,-16 150.26,-16 159.21,-21.23 162.16,-26.45 162.16,-26.45 186.48,-69.55 186.48,-69.55 189.42,-74.77 186.37,-80 180.37,-80"/>
-<text text-anchor="middle" x="104.12" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Integer Index i</text>
-<text text-anchor="middle" x="104.12" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(0 … N³&#45;1)</text>
+<path fill="#001a2e" stroke="#00bfff" stroke-width="1.8" d="M180.37,-80C180.37,-80 63.99,-80 63.99,-80 57.99,-80 49.04,-74.77 46.09,-69.55 46.09,-69.55 21.77,-26.45 21.77,-26.45 18.82,-21.23 21.88,-16 27.88,-16 27.88,-16 144.26,-16 144.26,-16 150.26,-16 159.21,-21.23 162.16,-26.45 162.16,-26.45 186.48,-69.55 186.48,-69.55 189.42,-74.77 186.37,-80 180.37,-80"/>
+<text text-anchor="middle" x="104.12" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Integer Index i</text>
+<text text-anchor="middle" x="104.12" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">(0 … N³&#45;1)</text>
 </g>
 <!-- g1 -->
 <g id="node2" class="node">
 <title>g1</title>
-<ellipse fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" cx="378.85" cy="-48" rx="109.7" ry="22.76"/>
-<text text-anchor="middle" x="378.85" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Extract bit plane i</text>
-<text text-anchor="middle" x="378.85" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(x&gt;&gt;i)&amp;1, (y&gt;&gt;i)&amp;1, (z&gt;&gt;i)&amp;1</text>
+<ellipse fill="#001a2e" stroke="#00bfff" stroke-width="1.8" cx="378.85" cy="-48" rx="109.7" ry="22.76"/>
+<text text-anchor="middle" x="378.85" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Extract bit plane i</text>
+<text text-anchor="middle" x="378.85" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">(x&gt;&gt;i)&amp;1, (y&gt;&gt;i)&amp;1, (z&gt;&gt;i)&amp;1</text>
 </g>
 <!-- i1&#45;&gt;g1 -->
 <g id="edge6" class="edge">
 <title>i1&#45;&gt;g1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M174.65,-48C200.34,-48 230.24,-48 259.07,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="259.22,-51.5 269.22,-48 259.22,-44.5 259.22,-51.5"/>
-<text text-anchor="middle" x="230.75" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">feed</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M174.65,-48C200.34,-48 230.24,-48 259.07,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="259.22,-51.5 269.22,-48 259.22,-44.5 259.22,-51.5"/>
+<text text-anchor="middle" x="230.75" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">feed</text>
 </g>
 <!-- g2 -->
 <g id="node3" class="node">
 <title>g2</title>
-<ellipse fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" cx="650.23" cy="-48" rx="77.56" ry="22.76"/>
-<text text-anchor="middle" x="650.23" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Pack to prefix</text>
-<text text-anchor="middle" x="650.23" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(xb&lt;&lt;2)|(yb&lt;&lt;1)|zb</text>
+<ellipse fill="#001a2e" stroke="#00bfff" stroke-width="1.8" cx="650.23" cy="-48" rx="77.56" ry="22.76"/>
+<text text-anchor="middle" x="650.23" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Pack to prefix</text>
+<text text-anchor="middle" x="650.23" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">(xb&lt;&lt;2)|(yb&lt;&lt;1)|zb</text>
 </g>
 <!-- g1&#45;&gt;g2 -->
 <g id="edge1" class="edge">
 <title>g1&#45;&gt;g2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M488.64,-48C513.06,-48 538.67,-48 562.07,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="562.31,-51.5 572.31,-48 562.31,-44.5 562.31,-51.5"/>
-<text text-anchor="middle" x="530.45" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">per bit</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M488.64,-48C513.06,-48 538.67,-48 562.07,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="562.31,-51.5 572.31,-48 562.31,-44.5 562.31,-51.5"/>
+<text text-anchor="middle" x="530.45" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">per bit</text>
 </g>
 <!-- g3 -->
 <g id="node4" class="node">
 <title>g3</title>
-<ellipse fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" cx="891.92" cy="-48" rx="79.81" ry="22.76"/>
-<text text-anchor="middle" x="891.92" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Apply Gray XOR</text>
-<text text-anchor="middle" x="891.92" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">prefix ^= prefix &gt;&gt; 1</text>
+<ellipse fill="#001a2e" stroke="#00bfff" stroke-width="1.8" cx="891.92" cy="-48" rx="79.81" ry="22.76"/>
+<text text-anchor="middle" x="891.92" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Apply Gray XOR</text>
+<text text-anchor="middle" x="891.92" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">prefix ^= prefix &gt;&gt; 1</text>
 </g>
 <!-- g2&#45;&gt;g3 -->
 <g id="edge2" class="edge">
 <title>g2&#45;&gt;g3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M728.06,-48C751.42,-48 777.3,-48 801.42,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="801.64,-51.5 811.64,-48 801.64,-44.5 801.64,-51.5"/>
-<text text-anchor="middle" x="770.01" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">per bit</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M728.06,-48C751.42,-48 777.3,-48 801.42,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="801.64,-51.5 811.64,-48 801.64,-44.5 801.64,-51.5"/>
+<text text-anchor="middle" x="770.01" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">per bit</text>
 </g>
 <!-- g4 -->
 <g id="node5" class="node">
 <title>g4</title>
-<ellipse fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" cx="1129.36" cy="-48" rx="73.58" ry="22.76"/>
-<text text-anchor="middle" x="1129.36" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Accumulate</text>
-<text text-anchor="middle" x="1129.36" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">h |= prefix &lt;&lt; (3*i)</text>
+<ellipse fill="#001a2e" stroke="#00bfff" stroke-width="1.8" cx="1129.36" cy="-48" rx="73.58" ry="22.76"/>
+<text text-anchor="middle" x="1129.36" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Accumulate</text>
+<text text-anchor="middle" x="1129.36" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">h |= prefix &lt;&lt; (3*i)</text>
 </g>
 <!-- g3&#45;&gt;g4 -->
 <g id="edge3" class="edge">
 <title>g3&#45;&gt;g4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M971.97,-48C995.58,-48 1021.53,-48 1045.39,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="1045.47,-51.5 1055.47,-48 1045.47,-44.5 1045.47,-51.5"/>
-<text text-anchor="middle" x="1013.82" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">per bit</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M971.97,-48C995.58,-48 1021.53,-48 1045.39,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="1045.47,-51.5 1055.47,-48 1045.47,-44.5 1045.47,-51.5"/>
+<text text-anchor="middle" x="1013.82" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">per bit</text>
 </g>
 <!-- o1 -->
 <g id="node6" class="node">
 <title>o1</title>
-<path fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" d="M1390.9,-62.73C1390.9,-64.53 1371.63,-66 1347.9,-66 1324.17,-66 1304.9,-64.53 1304.9,-62.73 1304.9,-62.73 1304.9,-33.27 1304.9,-33.27 1304.9,-31.47 1324.17,-30 1347.9,-30 1371.63,-30 1390.9,-31.47 1390.9,-33.27 1390.9,-33.27 1390.9,-62.73 1390.9,-62.73"/>
-<path fill="none" stroke="#2980b9" stroke-width="1.5" d="M1390.9,-62.73C1390.9,-60.92 1371.63,-59.45 1347.9,-59.45 1324.17,-59.45 1304.9,-60.92 1304.9,-62.73"/>
-<text text-anchor="middle" x="1347.9" y="-45.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Hilbert Index h</text>
+<path fill="#001a2e" stroke="#00bfff" stroke-width="1.8" d="M1390.9,-62.73C1390.9,-64.53 1371.63,-66 1347.9,-66 1324.17,-66 1304.9,-64.53 1304.9,-62.73 1304.9,-62.73 1304.9,-33.27 1304.9,-33.27 1304.9,-31.47 1324.17,-30 1347.9,-30 1371.63,-30 1390.9,-31.47 1390.9,-33.27 1390.9,-33.27 1390.9,-62.73 1390.9,-62.73"/>
+<path fill="none" stroke="#00bfff" stroke-width="1.8" d="M1390.9,-62.73C1390.9,-60.92 1371.63,-59.45 1347.9,-59.45 1324.17,-59.45 1304.9,-60.92 1304.9,-62.73"/>
+<text text-anchor="middle" x="1347.9" y="-45.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Hilbert Index h</text>
 </g>
 <!-- g4&#45;&gt;o1 -->
 <g id="edge7" class="edge">
 <title>g4&#45;&gt;o1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M1203.07,-48C1233.03,-48 1267.07,-48 1294.52,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="1294.69,-51.5 1304.69,-48 1294.69,-44.5 1294.69,-51.5"/>
-<text text-anchor="middle" x="1253.9" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">concat bits</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M1203.07,-48C1233.03,-48 1267.07,-48 1294.52,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="1294.69,-51.5 1304.69,-48 1294.69,-44.5 1294.69,-51.5"/>
+<text text-anchor="middle" x="1253.9" y="-50.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">concat bits</text>
 </g>
 <!-- o2 -->
 <g id="node7" class="node">
 <title>o2</title>
-<ellipse fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" cx="1545.36" cy="-48" rx="95.42" ry="22.76"/>
-<text text-anchor="middle" x="1545.36" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Sort all points by h</text>
-<text text-anchor="middle" x="1545.36" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">→ continuous path order</text>
+<ellipse fill="#001a2e" stroke="#00bfff" stroke-width="1.8" cx="1545.36" cy="-48" rx="95.42" ry="22.76"/>
+<text text-anchor="middle" x="1545.36" y="-51.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">Sort all points by h</text>
+<text text-anchor="middle" x="1545.36" y="-39.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">→ continuous path order</text>
 </g>
 <!-- o1&#45;&gt;o2 -->
 <g id="edge4" class="edge">
 <title>o1&#45;&gt;o2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M1391.31,-48C1405.76,-48 1422.63,-48 1439.77,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="1439.88,-51.5 1449.88,-48 1439.88,-44.5 1439.88,-51.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M1391.31,-48C1405.76,-48 1422.63,-48 1439.77,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="1439.88,-51.5 1449.88,-48 1439.88,-44.5 1439.88,-51.5"/>
 </g>
 <!-- o3 -->
 <g id="node8" class="node">
 <title>o3</title>
-<path fill="#aed6f1" stroke="#2980b9" stroke-width="1.5" d="M1871.4,-66C1871.4,-66 1749.23,-66 1749.23,-66 1743.23,-66 1732.89,-61.85 1728.56,-57.7 1728.56,-57.7 1708.29,-38.3 1708.29,-38.3 1703.96,-34.15 1705.62,-30 1711.62,-30 1711.62,-30 1833.8,-30 1833.8,-30 1839.8,-30 1850.13,-34.15 1854.47,-38.3 1854.47,-38.3 1874.73,-57.7 1874.73,-57.7 1879.07,-61.85 1877.4,-66 1871.4,-66"/>
-<text text-anchor="middle" x="1791.51" y="-45.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(x, y, z) coordinate</text>
+<path fill="#001a2e" stroke="#00bfff" stroke-width="1.8" d="M1871.4,-66C1871.4,-66 1749.23,-66 1749.23,-66 1743.23,-66 1732.89,-61.85 1728.56,-57.7 1728.56,-57.7 1708.29,-38.3 1708.29,-38.3 1703.96,-34.15 1705.62,-30 1711.62,-30 1711.62,-30 1833.8,-30 1833.8,-30 1839.8,-30 1850.13,-34.15 1854.47,-38.3 1854.47,-38.3 1874.73,-57.7 1874.73,-57.7 1879.07,-61.85 1877.4,-66 1871.4,-66"/>
+<text text-anchor="middle" x="1791.51" y="-45.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00bfff">(x, y, z) coordinate</text>
 </g>
 <!-- o2&#45;&gt;o3 -->
 <g id="edge5" class="edge">
 <title>o2&#45;&gt;o3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M1641.1,-48C1663.21,-48 1686.57,-48 1708.09,-48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="1708.16,-51.5 1718.16,-48 1708.16,-44.5 1708.16,-51.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M1641.1,-48C1663.21,-48 1686.57,-48 1708.09,-48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="1708.16,-51.5 1718.16,-48 1708.16,-44.5 1708.16,-51.5"/>
 </g>
 </g>
 </svg>

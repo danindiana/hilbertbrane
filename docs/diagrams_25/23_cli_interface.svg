@@ -8,184 +8,184 @@
  viewBox="0.00 0.00 361.60 1350.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 1321.8)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-1321.8 332.8,-1321.8 332.8,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="152" y="-1277.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">CLI Parameter Prompting Interface</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-1321.8 332.8,-1321.8 332.8,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="152" y="-1277.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">CLI Parameter Prompting Interface</text>
 <g id="clust1" class="cluster">
 <title>cluster_hilbert</title>
-<path fill="#f5eef8" stroke="#8e44ad" d="M20,-773C20,-773 284,-773 284,-773 290,-773 296,-779 296,-785 296,-785 296,-1184 296,-1184 296,-1190 290,-1196 284,-1196 284,-1196 20,-1196 20,-1196 14,-1196 8,-1190 8,-1184 8,-1184 8,-785 8,-785 8,-779 14,-773 20,-773"/>
-<text text-anchor="middle" x="152" y="-1182.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Hilbert Parameters</text>
+<path fill="#0d001a" stroke="#bf00ff" d="M20,-773C20,-773 284,-773 284,-773 290,-773 296,-779 296,-785 296,-785 296,-1184 296,-1184 296,-1190 290,-1196 284,-1196 284,-1196 20,-1196 20,-1196 14,-1196 8,-1190 8,-1184 8,-1184 8,-785 8,-785 8,-779 14,-773 20,-773"/>
+<text text-anchor="middle" x="152" y="-1182.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#bf00ff">Hilbert Parameters</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_geom</title>
-<path fill="#f5eef8" stroke="#8e44ad" d="M27,-396C27,-396 277,-396 277,-396 283,-396 289,-402 289,-408 289,-408 289,-731 289,-731 289,-737 283,-743 277,-743 277,-743 27,-743 27,-743 21,-743 15,-737 15,-731 15,-731 15,-408 15,-408 15,-402 21,-396 27,-396"/>
-<text text-anchor="middle" x="152" y="-729.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Geometry Parameters</text>
+<path fill="#0d001a" stroke="#bf00ff" d="M27,-396C27,-396 277,-396 277,-396 283,-396 289,-402 289,-408 289,-408 289,-731 289,-731 289,-737 283,-743 277,-743 277,-743 27,-743 27,-743 21,-743 15,-737 15,-731 15,-731 15,-408 15,-408 15,-402 21,-396 27,-396"/>
+<text text-anchor="middle" x="152" y="-729.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#bf00ff">Geometry Parameters</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_pinch</title>
-<path fill="#f5eef8" stroke="#8e44ad" d="M94,-293C94,-293 210,-293 210,-293 216,-293 222,-299 222,-305 222,-305 222,-354 222,-354 222,-360 216,-366 210,-366 210,-366 94,-366 94,-366 88,-366 82,-360 82,-354 82,-354 82,-305 82,-305 82,-299 88,-293 94,-293"/>
-<text text-anchor="middle" x="152" y="-352.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Pinch Field Parameters</text>
+<path fill="#0d001a" stroke="#bf00ff" d="M94,-293C94,-293 210,-293 210,-293 216,-293 222,-299 222,-305 222,-305 222,-354 222,-354 222,-360 216,-366 210,-366 210,-366 94,-366 94,-366 88,-366 82,-360 82,-354 82,-354 82,-305 82,-305 82,-299 88,-293 94,-293"/>
+<text text-anchor="middle" x="152" y="-352.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#bf00ff">Pinch Field Parameters</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_out</title>
-<path fill="#f5eef8" stroke="#8e44ad" d="M49,-95C49,-95 255,-95 255,-95 261,-95 267,-101 267,-107 267,-107 267,-251 267,-251 267,-257 261,-263 255,-263 255,-263 49,-263 49,-263 43,-263 37,-257 37,-251 37,-251 37,-107 37,-107 37,-101 43,-95 49,-95"/>
-<text text-anchor="middle" x="152" y="-249.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Output Parameters</text>
+<path fill="#0d001a" stroke="#bf00ff" d="M49,-95C49,-95 255,-95 255,-95 261,-95 267,-101 267,-107 267,-107 267,-251 267,-251 267,-257 261,-263 255,-263 255,-263 49,-263 49,-263 43,-263 37,-257 37,-251 37,-251 37,-107 37,-107 37,-101 43,-95 49,-95"/>
+<text text-anchor="middle" x="152" y="-249.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#bf00ff">Output Parameters</text>
 </g>
 <!-- banner -->
 <g id="node1" class="node">
 <title>banner</title>
-<polygon fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" points="253.5,-1270 44.5,-1270 44.5,-1234 259.5,-1234 259.5,-1264 253.5,-1270"/>
-<polyline fill="none" stroke="#8e44ad" stroke-width="1.5" points="253.5,-1270 253.5,-1264 "/>
-<polyline fill="none" stroke="#8e44ad" stroke-width="1.5" points="259.5,-1264 253.5,-1264 "/>
-<text text-anchor="middle" x="152" y="-1249.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">=== Hilbert Brain Surface Generator ===</text>
+<polygon fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" points="253.5,-1270 44.5,-1270 44.5,-1234 259.5,-1234 259.5,-1264 253.5,-1270"/>
+<polyline fill="none" stroke="#bf00ff" stroke-width="1.8" points="253.5,-1270 253.5,-1264 "/>
+<polyline fill="none" stroke="#bf00ff" stroke-width="1.8" points="259.5,-1264 253.5,-1264 "/>
+<text text-anchor="middle" x="152" y="-1249.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">=== Hilbert Brain Surface Generator ===</text>
 </g>
 <!-- h1 -->
 <g id="node2" class="node">
 <title>h1</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M232.04,-1167C232.04,-1167 109.62,-1167 109.62,-1167 103.62,-1167 94.58,-1161.83 91.54,-1156.66 91.54,-1156.66 66.04,-1113.34 66.04,-1113.34 63,-1108.17 65.96,-1103 71.96,-1103 71.96,-1103 194.38,-1103 194.38,-1103 200.38,-1103 209.42,-1108.17 212.46,-1113.34 212.46,-1113.34 237.96,-1156.66 237.96,-1156.66 241,-1161.83 238.04,-1167 232.04,-1167"/>
-<text text-anchor="middle" x="152" y="-1138.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Prompt: order</text>
-<text text-anchor="middle" x="152" y="-1126.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(2–5, default 3)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M232.04,-1167C232.04,-1167 109.62,-1167 109.62,-1167 103.62,-1167 94.58,-1161.83 91.54,-1156.66 91.54,-1156.66 66.04,-1113.34 66.04,-1113.34 63,-1108.17 65.96,-1103 71.96,-1103 71.96,-1103 194.38,-1103 194.38,-1103 200.38,-1103 209.42,-1108.17 212.46,-1113.34 212.46,-1113.34 237.96,-1156.66 237.96,-1156.66 241,-1161.83 238.04,-1167 232.04,-1167"/>
+<text text-anchor="middle" x="152" y="-1138.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Prompt: order</text>
+<text text-anchor="middle" x="152" y="-1126.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">(2–5, default 3)</text>
 </g>
 <!-- banner&#45;&gt;h1 -->
 <g id="edge7" class="edge">
 <title>banner&#45;&gt;h1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-1233.53C152,-1218.62 152,-1196.57 152,-1177.21"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-1177.09 152,-1167.09 148.5,-1177.09 155.5,-1177.09"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-1233.53C152,-1218.62 152,-1196.57 152,-1177.21"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-1177.09 152,-1167.09 148.5,-1177.09 155.5,-1177.09"/>
 </g>
 <!-- h2 -->
 <g id="node3" class="node">
 <title>h2</title>
-<ellipse fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" cx="88" cy="-1026" rx="62.58" ry="18"/>
-<text text-anchor="middle" x="88" y="-1023.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">input().strip() or &#39;3&#39;</text>
+<ellipse fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" cx="88" cy="-1026" rx="62.58" ry="18"/>
+<text text-anchor="middle" x="88" y="-1023.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">input().strip() or &#39;3&#39;</text>
 </g>
 <!-- h1&#45;&gt;h2 -->
 <g id="edge1" class="edge">
 <title>h1&#45;&gt;h2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M133.32,-1102.76C123.78,-1086.83 112.33,-1067.68 103.33,-1052.62"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="106.21,-1050.63 98.07,-1043.84 100.2,-1054.22 106.21,-1050.63"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M133.32,-1102.76C123.78,-1086.83 112.33,-1067.68 103.33,-1052.62"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="106.21,-1050.63 98.07,-1043.84 100.2,-1054.22 106.21,-1050.63"/>
 </g>
 <!-- h3 -->
 <g id="node4" class="node">
 <title>h3</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M140.17,-946.99C140.17,-946.99 57.73,-933.01 57.73,-933.01 51.81,-932 51.81,-930 57.73,-928.99 57.73,-928.99 140.17,-915.01 140.17,-915.01 146.08,-914 157.92,-914 163.83,-915.01 163.83,-915.01 246.27,-928.99 246.27,-928.99 252.19,-930 252.19,-932 246.27,-933.01 246.27,-933.01 163.83,-946.99 163.83,-946.99 157.92,-948 146.08,-948 140.17,-946.99"/>
-<text text-anchor="middle" x="152" y="-928.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Valid int 2 ≤ order ≤ 5?</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M140.17,-946.99C140.17,-946.99 57.73,-933.01 57.73,-933.01 51.81,-932 51.81,-930 57.73,-928.99 57.73,-928.99 140.17,-915.01 140.17,-915.01 146.08,-914 157.92,-914 163.83,-915.01 163.83,-915.01 246.27,-928.99 246.27,-928.99 252.19,-930 252.19,-932 246.27,-933.01 246.27,-933.01 163.83,-946.99 163.83,-946.99 157.92,-948 146.08,-948 140.17,-946.99"/>
+<text text-anchor="middle" x="152" y="-928.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Valid int 2 ≤ order ≤ 5?</text>
 </g>
 <!-- h2&#45;&gt;h3 -->
 <g id="edge2" class="edge">
 <title>h2&#45;&gt;h3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M99.74,-1007.94C109.79,-993.34 124.36,-972.16 135.57,-955.88"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="138.61,-957.63 141.4,-947.41 132.85,-953.66 138.61,-957.63"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M99.74,-1007.94C109.79,-993.34 124.36,-972.16 135.57,-955.88"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="138.61,-957.63 141.4,-947.41 132.85,-953.66 138.61,-957.63"/>
 </g>
 <!-- h3&#45;&gt;h1 -->
 <g id="edge4" class="edge">
 <title>h3&#45;&gt;h1</title>
-<path fill="none" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,2" d="M157.52,-948.07C162.44,-963.29 169.27,-986.89 172,-1008 175.68,-1036.48 170.51,-1068.42 164.5,-1093.02"/>
-<polygon fill="#999999" stroke="#999999" stroke-width="1.2" points="161.1,-1092.19 161.99,-1102.74 167.88,-1093.94 161.1,-1092.19"/>
-<text text-anchor="middle" x="194" y="-1023.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">NO – retry</text>
+<path fill="none" stroke="#553366" stroke-width="1.2" stroke-dasharray="5,2" d="M157.52,-948.07C162.44,-963.29 169.27,-986.89 172,-1008 175.68,-1036.48 170.51,-1068.42 164.5,-1093.02"/>
+<polygon fill="#553366" stroke="#553366" stroke-width="1.2" points="161.1,-1092.19 161.99,-1102.74 167.88,-1093.94 161.1,-1092.19"/>
+<text text-anchor="middle" x="194" y="-1023.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#887799">NO – retry</text>
 </g>
 <!-- h4 -->
 <g id="node5" class="node">
 <title>h4</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M275.63,-845C275.63,-845 83.87,-845 83.87,-845 77.87,-845 67.94,-840.47 64.01,-835.93 64.01,-835.93 24.23,-790.07 24.23,-790.07 20.3,-785.53 22.37,-781 28.37,-781 28.37,-781 220.13,-781 220.13,-781 226.13,-781 236.06,-785.53 239.99,-790.07 239.99,-790.07 279.77,-835.93 279.77,-835.93 283.7,-840.47 281.63,-845 275.63,-845"/>
-<text text-anchor="middle" x="152" y="-816.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Prompt: spline_samples</text>
-<text text-anchor="middle" x="152" y="-804.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(1000–8000)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M275.63,-845C275.63,-845 83.87,-845 83.87,-845 77.87,-845 67.94,-840.47 64.01,-835.93 64.01,-835.93 24.23,-790.07 24.23,-790.07 20.3,-785.53 22.37,-781 28.37,-781 28.37,-781 220.13,-781 220.13,-781 226.13,-781 236.06,-785.53 239.99,-790.07 239.99,-790.07 279.77,-835.93 279.77,-835.93 283.7,-840.47 281.63,-845 275.63,-845"/>
+<text text-anchor="middle" x="152" y="-816.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Prompt: spline_samples</text>
+<text text-anchor="middle" x="152" y="-804.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">(1000–8000)</text>
 </g>
 <!-- h3&#45;&gt;h4 -->
 <g id="edge3" class="edge">
 <title>h3&#45;&gt;h4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-912.88C152,-897.75 152,-875.06 152,-855.23"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-855.18 152,-845.18 148.5,-855.18 155.5,-855.18"/>
-<text text-anchor="middle" x="161.5" y="-876.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00">YES</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-912.88C152,-897.75 152,-875.06 152,-855.23"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-855.18 152,-845.18 148.5,-855.18 155.5,-855.18"/>
+<text text-anchor="middle" x="161.5" y="-876.8" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">YES</text>
 </g>
 <!-- gp1 -->
 <g id="node6" class="node">
 <title>gp1</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M261.1,-714C261.1,-714 92.46,-714 92.46,-714 86.46,-714 76.78,-709.26 73.11,-704.51 73.11,-704.51 38.25,-659.49 38.25,-659.49 34.57,-654.74 36.9,-650 42.9,-650 42.9,-650 211.54,-650 211.54,-650 217.54,-650 227.22,-654.74 230.89,-659.49 230.89,-659.49 265.75,-704.51 265.75,-704.51 269.43,-709.26 267.1,-714 261.1,-714"/>
-<text text-anchor="middle" x="152" y="-685.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Prompt: ridge_radius</text>
-<text text-anchor="middle" x="152" y="-673.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(0.5–5.0)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M261.1,-714C261.1,-714 92.46,-714 92.46,-714 86.46,-714 76.78,-709.26 73.11,-704.51 73.11,-704.51 38.25,-659.49 38.25,-659.49 34.57,-654.74 36.9,-650 42.9,-650 42.9,-650 211.54,-650 211.54,-650 217.54,-650 227.22,-654.74 230.89,-659.49 230.89,-659.49 265.75,-704.51 265.75,-704.51 269.43,-709.26 267.1,-714 261.1,-714"/>
+<text text-anchor="middle" x="152" y="-685.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Prompt: ridge_radius</text>
+<text text-anchor="middle" x="152" y="-673.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">(0.5–5.0)</text>
 </g>
 <!-- h4&#45;&gt;gp1 -->
 <g id="edge8" class="edge">
 <title>h4&#45;&gt;gp1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-780.77C152,-763.86 152,-742.75 152,-724.48"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-724.39 152,-714.39 148.5,-724.39 155.5,-724.39"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-780.77C152,-763.86 152,-742.75 152,-724.48"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-724.39 152,-714.39 148.5,-724.39 155.5,-724.39"/>
 </g>
 <!-- gp2 -->
 <g id="node7" class="node">
 <title>gp2</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M263.25,-591C263.25,-591 91.19,-591 91.19,-591 85.19,-591 75.47,-586.29 71.76,-581.57 71.76,-581.57 36.18,-536.43 36.18,-536.43 32.47,-531.71 34.75,-527 40.75,-527 40.75,-527 212.81,-527 212.81,-527 218.81,-527 228.53,-531.71 232.24,-536.43 232.24,-536.43 267.82,-581.57 267.82,-581.57 271.53,-586.29 269.25,-591 263.25,-591"/>
-<text text-anchor="middle" x="152" y="-562.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Prompt: sulcus_scale</text>
-<text text-anchor="middle" x="152" y="-550.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(0.0–0.8)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M263.25,-591C263.25,-591 91.19,-591 91.19,-591 85.19,-591 75.47,-586.29 71.76,-581.57 71.76,-581.57 36.18,-536.43 36.18,-536.43 32.47,-531.71 34.75,-527 40.75,-527 40.75,-527 212.81,-527 212.81,-527 218.81,-527 228.53,-531.71 232.24,-536.43 232.24,-536.43 267.82,-581.57 267.82,-581.57 271.53,-586.29 269.25,-591 263.25,-591"/>
+<text text-anchor="middle" x="152" y="-562.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Prompt: sulcus_scale</text>
+<text text-anchor="middle" x="152" y="-550.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">(0.0–0.8)</text>
 </g>
 <!-- gp1&#45;&gt;gp2 -->
 <g id="edge5" class="edge">
 <title>gp1&#45;&gt;gp2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-649.84C152,-635.02 152,-617.1 152,-601.18"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-601.05 152,-591.05 148.5,-601.05 155.5,-601.05"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-649.84C152,-635.02 152,-617.1 152,-601.18"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-601.05 152,-591.05 148.5,-601.05 155.5,-601.05"/>
 </g>
 <!-- gp3 -->
 <g id="node8" class="node">
 <title>gp3</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M268.61,-468C268.61,-468 88.02,-468 88.02,-468 82.02,-468 72.21,-463.37 68.4,-458.73 68.4,-458.73 31.01,-413.27 31.01,-413.27 27.2,-408.63 29.39,-404 35.39,-404 35.39,-404 215.98,-404 215.98,-404 221.98,-404 231.79,-408.63 235.6,-413.27 235.6,-413.27 272.99,-458.73 272.99,-458.73 276.8,-463.37 274.61,-468 268.61,-468"/>
-<text text-anchor="middle" x="152" y="-439.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Prompt: growth_factor</text>
-<text text-anchor="middle" x="152" y="-427.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(1.0–2.0)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M268.61,-468C268.61,-468 88.02,-468 88.02,-468 82.02,-468 72.21,-463.37 68.4,-458.73 68.4,-458.73 31.01,-413.27 31.01,-413.27 27.2,-408.63 29.39,-404 35.39,-404 35.39,-404 215.98,-404 215.98,-404 221.98,-404 231.79,-408.63 235.6,-413.27 235.6,-413.27 272.99,-458.73 272.99,-458.73 276.8,-463.37 274.61,-468 268.61,-468"/>
+<text text-anchor="middle" x="152" y="-439.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Prompt: growth_factor</text>
+<text text-anchor="middle" x="152" y="-427.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">(1.0–2.0)</text>
 </g>
 <!-- gp2&#45;&gt;gp3 -->
 <g id="edge6" class="edge">
 <title>gp2&#45;&gt;gp3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-526.84C152,-512.02 152,-494.1 152,-478.18"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-478.05 152,-468.05 148.5,-478.05 155.5,-478.05"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-526.84C152,-512.02 152,-494.1 152,-478.18"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-478.05 152,-468.05 148.5,-478.05 155.5,-478.05"/>
 </g>
 <!-- pp -->
 <g id="node9" class="node">
 <title>pp</title>
-<polygon fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" points="195,-337 121,-337 121,-341 109,-341 109,-301 195,-301 195,-337"/>
-<polyline fill="none" stroke="#8e44ad" stroke-width="1.5" points="109,-337 121,-337 "/>
-<text text-anchor="middle" x="152" y="-322.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">k1, k2, w1, w2</text>
-<text text-anchor="middle" x="152" y="-310.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">wobble, seed</text>
+<polygon fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" points="195,-337 121,-337 121,-341 109,-341 109,-301 195,-301 195,-337"/>
+<polyline fill="none" stroke="#bf00ff" stroke-width="1.8" points="109,-337 121,-337 "/>
+<text text-anchor="middle" x="152" y="-322.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">k1, k2, w1, w2</text>
+<text text-anchor="middle" x="152" y="-310.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">wobble, seed</text>
 </g>
 <!-- gp3&#45;&gt;pp -->
 <g id="edge9" class="edge">
 <title>gp3&#45;&gt;pp</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-403.88C152,-386.31 152,-364.54 152,-347.59"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-347.23 152,-337.23 148.5,-347.23 155.5,-347.23"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-403.88C152,-386.31 152,-364.54 152,-347.59"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-347.23 152,-337.23 148.5,-347.23 155.5,-347.23"/>
 </g>
 <!-- op1 -->
 <g id="node10" class="node">
 <title>op1</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M246.87,-234C246.87,-234 100.87,-234 100.87,-234 94.87,-234 84.23,-230.19 79.6,-226.37 79.6,-226.37 54.4,-205.63 54.4,-205.63 49.77,-201.81 51.13,-198 57.13,-198 57.13,-198 203.13,-198 203.13,-198 209.13,-198 219.77,-201.81 224.4,-205.63 224.4,-205.63 249.6,-226.37 249.6,-226.37 254.23,-230.19 252.87,-234 246.87,-234"/>
-<text text-anchor="middle" x="152" y="-213.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">output_filename (*.stl)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M246.87,-234C246.87,-234 100.87,-234 100.87,-234 94.87,-234 84.23,-230.19 79.6,-226.37 79.6,-226.37 54.4,-205.63 54.4,-205.63 49.77,-201.81 51.13,-198 57.13,-198 57.13,-198 203.13,-198 203.13,-198 209.13,-198 219.77,-201.81 224.4,-205.63 224.4,-205.63 249.6,-226.37 249.6,-226.37 254.23,-230.19 252.87,-234 246.87,-234"/>
+<text text-anchor="middle" x="152" y="-213.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">output_filename (*.stl)</text>
 </g>
 <!-- pp&#45;&gt;op1 -->
 <g id="edge10" class="edge">
 <title>pp&#45;&gt;op1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-300.87C152,-285.41 152,-262.42 152,-244.41"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-244.22 152,-234.22 148.5,-244.22 155.5,-244.22"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-300.87C152,-285.41 152,-262.42 152,-244.41"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-244.22 152,-234.22 148.5,-244.22 155.5,-244.22"/>
 </g>
 <!-- op2 -->
 <g id="node11" class="node">
 <title>op2</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M241.29,-139C241.29,-139 104.16,-139 104.16,-139 98.16,-139 87.63,-135.07 83.1,-131.13 83.1,-131.13 59.77,-110.87 59.77,-110.87 55.24,-106.93 56.71,-103 62.71,-103 62.71,-103 199.84,-103 199.84,-103 205.84,-103 216.37,-106.93 220.9,-110.87 220.9,-110.87 244.23,-131.13 244.23,-131.13 248.76,-135.07 247.29,-139 241.29,-139"/>
-<text text-anchor="middle" x="152" y="-118.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">decimation (0.1–0.9)</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M241.29,-139C241.29,-139 104.16,-139 104.16,-139 98.16,-139 87.63,-135.07 83.1,-131.13 83.1,-131.13 59.77,-110.87 59.77,-110.87 55.24,-106.93 56.71,-103 62.71,-103 62.71,-103 199.84,-103 199.84,-103 205.84,-103 216.37,-106.93 220.9,-110.87 220.9,-110.87 244.23,-131.13 244.23,-131.13 248.76,-135.07 247.29,-139 241.29,-139"/>
+<text text-anchor="middle" x="152" y="-118.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">decimation (0.1–0.9)</text>
 </g>
 <!-- op1&#45;&gt;op2 -->
 <g id="edge12" class="edge">
 <title>op1&#45;&gt;op2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-197.94C152,-184.39 152,-165.18 152,-149.47"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-149.26 152,-139.26 148.5,-149.26 155.5,-149.26"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-197.94C152,-184.39 152,-165.18 152,-149.47"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-149.26 152,-139.26 148.5,-149.26 155.5,-149.26"/>
 </g>
 <!-- result -->
 <g id="node12" class="node">
 <title>result</title>
-<path fill="#d2b4de" stroke="#8e44ad" stroke-width="1.5" d="M202,-40C202,-42.21 179.59,-44 152,-44 124.41,-44 102,-42.21 102,-40 102,-40 102,-4 102,-4 102,-1.79 124.41,0 152,0 179.59,0 202,-1.79 202,-4 202,-4 202,-40 202,-40"/>
-<path fill="none" stroke="#8e44ad" stroke-width="1.5" d="M202,-40C202,-37.79 179.59,-36 152,-36 124.41,-36 102,-37.79 102,-40"/>
-<text text-anchor="middle" x="152" y="-25.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Return config dict</text>
-<text text-anchor="middle" x="152" y="-13.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">→ generator call</text>
+<path fill="#1a0033" stroke="#bf00ff" stroke-width="1.8" d="M202,-40C202,-42.21 179.59,-44 152,-44 124.41,-44 102,-42.21 102,-40 102,-40 102,-4 102,-4 102,-1.79 124.41,0 152,0 179.59,0 202,-1.79 202,-4 202,-4 202,-40 202,-40"/>
+<path fill="none" stroke="#bf00ff" stroke-width="1.8" d="M202,-40C202,-37.79 179.59,-36 152,-36 124.41,-36 102,-37.79 102,-40"/>
+<text text-anchor="middle" x="152" y="-25.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">Return config dict</text>
+<text text-anchor="middle" x="152" y="-13.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#bf00ff">→ generator call</text>
 </g>
 <!-- op2&#45;&gt;result -->
 <g id="edge11" class="edge">
 <title>op2&#45;&gt;result</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M152,-102.66C152,-89.25 152,-70.33 152,-54.29"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="155.5,-54.25 152,-44.25 148.5,-54.25 155.5,-54.25"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M152,-102.66C152,-89.25 152,-70.33 152,-54.29"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="155.5,-54.25 152,-44.25 148.5,-54.25 155.5,-54.25"/>
 </g>
 </g>
 </svg>

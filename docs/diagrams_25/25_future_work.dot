@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,21 +11,21 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Future Extensions and Research Directions" rankdir="TB"]
 
-    current [label="HilbertBrane v1\n(current codebase)" shape=tab fillcolor="#FCF3CF" color="#F39C12"]
+    current [label="HilbertBrane v1\n(current codebase)" shape=tab fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
 
     subgraph cluster_alt {
         label="Alternative Geometry"
-        style="filled,rounded" fillcolor="#FDFEFE" color="#F39C12" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a1800" color="#ffe600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffe600"
 
-        a1 [label="L-Systems\n(Lindenmayer branching)" fillcolor="#FCF3CF" color="#F39C12"]
-        a2 [label="Reaction-Diffusion\n(Turing patterns)" fillcolor="#FCF3CF" color="#F39C12"]
-        a3 [label="Fractal IFS\n(iterated function systems)" fillcolor="#FCF3CF" color="#F39C12"]
-        alt [label="Alternative folding\ngeometries" shape=ellipse fillcolor="#FCF3CF" color="#F39C12"]
+        a1 [label="L-Systems\n(Lindenmayer branching)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        a2 [label="Reaction-Diffusion\n(Turing patterns)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        a3 [label="Fractal IFS\n(iterated function systems)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        alt [label="Alternative folding\ngeometries" shape=ellipse fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
         a1 -> alt
         a2 -> alt
         a3 -> alt
@@ -32,45 +33,45 @@ digraph G {
 
     subgraph cluster_time {
         label="Temporal Evolution"
-        style="filled,rounded" fillcolor="#FDFEFE" color="#F39C12" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a1800" color="#ffe600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffe600"
 
-        t1 [label="Time-series mesh\n(animated growth)" fillcolor="#FCF3CF" color="#F39C12"]
-        t2 [label="Developmental stages\n(fetal → adult)" fillcolor="#FCF3CF" color="#F39C12"]
-        t3 [label="VTK animation export\n(.vtk sequence)" shape=cylinder fillcolor="#FCF3CF" color="#F39C12"]
+        t1 [label="Time-series mesh\n(animated growth)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        t2 [label="Developmental stages\n(fetal → adult)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        t3 [label="VTK animation export\n(.vtk sequence)" shape=cylinder fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
         t1 -> t2 -> t3
     }
 
     subgraph cluster_atlas {
         label="Multi-Subject Atlas"
-        style="filled,rounded" fillcolor="#FDFEFE" color="#F39C12" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a1800" color="#ffe600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffe600"
 
-        at1 [label="Freesurfer subject DB" shape=cylinder fillcolor="#FCF3CF" color="#F39C12"]
-        at2 [label="Statistical shape model\n(PCA on vertices)" fillcolor="#FCF3CF" color="#F39C12"]
-        at3 [label="Average cortical\nfolding atlas" fillcolor="#FCF3CF" color="#F39C12"]
+        at1 [label="Freesurfer subject DB" shape=cylinder fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        at2 [label="Statistical shape model\n(PCA on vertices)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        at3 [label="Average cortical\nfolding atlas" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
         at1 -> at2 -> at3
     }
 
     subgraph cluster_web {
         label="WebGL Integration"
-        style="filled,rounded" fillcolor="#FDFEFE" color="#F39C12" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a1800" color="#ffe600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffe600"
 
-        w1 [label="STL → glTF/OBJ\n(format conversion)" fillcolor="#FCF3CF" color="#F39C12"]
-        w2 [label="Three.js / Babylon.js\ninteractive viewer" fillcolor="#FCF3CF" color="#F39C12"]
-        w3 [label="Browser-hosted\nbrain explorer" shape=ellipse fillcolor="#FCF3CF" color="#F39C12"]
+        w1 [label="STL → glTF/OBJ\n(format conversion)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        w2 [label="Three.js / Babylon.js\ninteractive viewer" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        w3 [label="Browser-hosted\nbrain explorer" shape=ellipse fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
         w1 -> w2 -> w3
     }
 
     subgraph cluster_neuro {
         label="Advanced Neuroscience"
-        style="filled,rounded" fillcolor="#FDFEFE" color="#F39C12" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a1800" color="#ffe600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ffe600"
 
-        n1 [label="MEG source imaging\n(beamformer)" fillcolor="#FCF3CF" color="#F39C12"]
-        n2 [label="RSA on\nHilbert topology" fillcolor="#FCF3CF" color="#F39C12"]
-        n3 [label="Cortical connectivity\nmap" shape=ellipse fillcolor="#FCF3CF" color="#F39C12"]
+        n1 [label="MEG source imaging\n(beamformer)" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        n2 [label="RSA on\nHilbert topology" fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
+        n3 [label="Cortical connectivity\nmap" shape=ellipse fillcolor="#2e2a00" color="#ffe600" fontcolor="#ffe600"]
         n1 -> n2 -> n3
     }
 

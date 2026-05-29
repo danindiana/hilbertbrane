@@ -8,197 +8,197 @@
  viewBox="0.00 0.00 342.60 1458.64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 1429.84)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-1429.84 313.8,-1429.84 313.8,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="142.5" y="-1385.84" font-family="Helvetica,Arial,sans-serif" font-size="14.00">MNE&#45;RSA Neuroscience Integration Pipeline</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-1429.84 313.8,-1429.84 313.8,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="142.5" y="-1385.84" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">MNE&#45;RSA Neuroscience Integration Pipeline</text>
 <g id="clust1" class="cluster">
 <title>cluster_acq</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M40.5,-1088.53C40.5,-1088.53 244.5,-1088.53 244.5,-1088.53 250.5,-1088.53 256.5,-1094.53 256.5,-1100.53 256.5,-1100.53 256.5,-1358.04 256.5,-1358.04 256.5,-1364.04 250.5,-1370.04 244.5,-1370.04 244.5,-1370.04 40.5,-1370.04 40.5,-1370.04 34.5,-1370.04 28.5,-1364.04 28.5,-1358.04 28.5,-1358.04 28.5,-1100.53 28.5,-1100.53 28.5,-1094.53 34.5,-1088.53 40.5,-1088.53"/>
-<text text-anchor="middle" x="142.5" y="-1356.44" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Data Acquisition</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M40.5,-1088.53C40.5,-1088.53 244.5,-1088.53 244.5,-1088.53 250.5,-1088.53 256.5,-1094.53 256.5,-1100.53 256.5,-1100.53 256.5,-1358.04 256.5,-1358.04 256.5,-1364.04 250.5,-1370.04 244.5,-1370.04 244.5,-1370.04 40.5,-1370.04 40.5,-1370.04 34.5,-1370.04 28.5,-1364.04 28.5,-1358.04 28.5,-1358.04 28.5,-1100.53 28.5,-1100.53 28.5,-1094.53 34.5,-1088.53 40.5,-1088.53"/>
+<text text-anchor="middle" x="142.5" y="-1356.44" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Data Acquisition</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_src</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M44.5,-760.02C44.5,-760.02 240.5,-760.02 240.5,-760.02 246.5,-760.02 252.5,-766.02 252.5,-772.02 252.5,-772.02 252.5,-1037.53 252.5,-1037.53 252.5,-1043.53 246.5,-1049.53 240.5,-1049.53 240.5,-1049.53 44.5,-1049.53 44.5,-1049.53 38.5,-1049.53 32.5,-1043.53 32.5,-1037.53 32.5,-1037.53 32.5,-772.02 32.5,-772.02 32.5,-766.02 38.5,-760.02 44.5,-760.02"/>
-<text text-anchor="middle" x="142.5" y="-1035.93" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Source Estimation</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M44.5,-760.02C44.5,-760.02 240.5,-760.02 240.5,-760.02 246.5,-760.02 252.5,-766.02 252.5,-772.02 252.5,-772.02 252.5,-1037.53 252.5,-1037.53 252.5,-1043.53 246.5,-1049.53 240.5,-1049.53 240.5,-1049.53 44.5,-1049.53 44.5,-1049.53 38.5,-1049.53 32.5,-1043.53 32.5,-1037.53 32.5,-1037.53 32.5,-772.02 32.5,-772.02 32.5,-766.02 38.5,-760.02 44.5,-760.02"/>
+<text text-anchor="middle" x="142.5" y="-1035.93" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Source Estimation</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_rsa</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M60.5,-328.51C60.5,-328.51 224.5,-328.51 224.5,-328.51 230.5,-328.51 236.5,-334.51 236.5,-340.51 236.5,-340.51 236.5,-709.02 236.5,-709.02 236.5,-715.02 230.5,-721.02 224.5,-721.02 224.5,-721.02 60.5,-721.02 60.5,-721.02 54.5,-721.02 48.5,-715.02 48.5,-709.02 48.5,-709.02 48.5,-340.51 48.5,-340.51 48.5,-334.51 54.5,-328.51 60.5,-328.51"/>
-<text text-anchor="middle" x="142.5" y="-707.42" font-family="Helvetica,Arial,sans-serif" font-size="12.00">RSA Computation</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M60.5,-328.51C60.5,-328.51 224.5,-328.51 224.5,-328.51 230.5,-328.51 236.5,-334.51 236.5,-340.51 236.5,-340.51 236.5,-709.02 236.5,-709.02 236.5,-715.02 230.5,-721.02 224.5,-721.02 224.5,-721.02 60.5,-721.02 60.5,-721.02 54.5,-721.02 48.5,-715.02 48.5,-709.02 48.5,-709.02 48.5,-340.51 48.5,-340.51 48.5,-334.51 54.5,-328.51 60.5,-328.51"/>
+<text text-anchor="middle" x="142.5" y="-707.42" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">RSA Computation</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_viz</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M77.5,-8C77.5,-8 207.5,-8 207.5,-8 213.5,-8 219.5,-14 219.5,-20 219.5,-20 219.5,-277.51 219.5,-277.51 219.5,-283.51 213.5,-289.51 207.5,-289.51 207.5,-289.51 77.5,-289.51 77.5,-289.51 71.5,-289.51 65.5,-283.51 65.5,-277.51 65.5,-277.51 65.5,-20 65.5,-20 65.5,-14 71.5,-8 77.5,-8"/>
-<text text-anchor="middle" x="142.5" y="-275.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Brain Visualization</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M77.5,-8C77.5,-8 207.5,-8 207.5,-8 213.5,-8 219.5,-14 219.5,-20 219.5,-20 219.5,-277.51 219.5,-277.51 219.5,-283.51 213.5,-289.51 207.5,-289.51 207.5,-289.51 77.5,-289.51 77.5,-289.51 71.5,-289.51 65.5,-283.51 65.5,-277.51 65.5,-277.51 65.5,-20 65.5,-20 65.5,-14 71.5,-8 77.5,-8"/>
+<text text-anchor="middle" x="142.5" y="-275.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Brain Visualization</text>
 </g>
 <!-- a1 -->
 <g id="node1" class="node">
 <title>a1</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M236.1,-1341.04C236.1,-1341.04 92.11,-1341.04 92.11,-1341.04 86.11,-1341.04 75.5,-1337.2 70.89,-1333.36 70.89,-1333.36 46.12,-1312.72 46.12,-1312.72 41.51,-1308.88 42.9,-1305.04 48.9,-1305.04 48.9,-1305.04 192.89,-1305.04 192.89,-1305.04 198.89,-1305.04 209.5,-1308.88 214.11,-1312.72 214.11,-1312.72 238.88,-1333.36 238.88,-1333.36 243.49,-1337.2 242.1,-1341.04 236.1,-1341.04"/>
-<text text-anchor="middle" x="142.5" y="-1320.24" font-family="Helvetica,Arial,sans-serif" font-size="11.00">MEG/EEG Recording</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M236.1,-1341.04C236.1,-1341.04 92.11,-1341.04 92.11,-1341.04 86.11,-1341.04 75.5,-1337.2 70.89,-1333.36 70.89,-1333.36 46.12,-1312.72 46.12,-1312.72 41.51,-1308.88 42.9,-1305.04 48.9,-1305.04 48.9,-1305.04 192.89,-1305.04 192.89,-1305.04 198.89,-1305.04 209.5,-1308.88 214.11,-1312.72 214.11,-1312.72 238.88,-1333.36 238.88,-1333.36 243.49,-1337.2 242.1,-1341.04 236.1,-1341.04"/>
+<text text-anchor="middle" x="142.5" y="-1320.24" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">MEG/EEG Recording</text>
 </g>
 <!-- a2 -->
 <g id="node2" class="node">
 <title>a2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-1223.41" rx="90.52" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-1226.61" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne.Epochs</text>
-<text text-anchor="middle" x="142.5" y="-1214.61" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(time&#45;locked segments)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-1223.41" rx="90.52" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-1226.61" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">mne.Epochs</text>
+<text text-anchor="middle" x="142.5" y="-1214.61" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(time&#45;locked segments)</text>
 </g>
 <!-- a1&#45;&gt;a2 -->
 <g id="edge1" class="edge">
 <title>a1&#45;&gt;a2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-1305.03C142.5,-1291.68 142.5,-1272.7 142.5,-1256.51"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-1256.36 142.5,-1246.36 139,-1256.36 146,-1256.36"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-1305.03C142.5,-1291.68 142.5,-1272.7 142.5,-1256.51"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-1256.36 142.5,-1246.36 139,-1256.36 146,-1256.36"/>
 </g>
 <!-- a3 -->
 <g id="node3" class="node">
 <title>a3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-1119.16" rx="79.81" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-1122.36" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Preprocessing</text>
-<text text-anchor="middle" x="142.5" y="-1110.36" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(filter, ICA, baseline)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-1119.16" rx="79.81" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-1122.36" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Preprocessing</text>
+<text text-anchor="middle" x="142.5" y="-1110.36" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(filter, ICA, baseline)</text>
 </g>
 <!-- a2&#45;&gt;a3 -->
 <g id="edge2" class="edge">
 <title>a2&#45;&gt;a3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-1200.73C142.5,-1186.63 142.5,-1168 142.5,-1152.2"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-1151.81 142.5,-1141.81 139,-1151.81 146,-1151.81"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-1200.73C142.5,-1186.63 142.5,-1168 142.5,-1152.2"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-1151.81 142.5,-1141.81 139,-1151.81 146,-1151.81"/>
 </g>
 <!-- s1 -->
 <g id="node4" class="node">
 <title>s1</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-997.9" rx="63.78" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-1001.1" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Forward Model</text>
-<text text-anchor="middle" x="142.5" y="-989.1" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(BEM / sphere)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-997.9" rx="63.78" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-1001.1" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Forward Model</text>
+<text text-anchor="middle" x="142.5" y="-989.1" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(BEM / sphere)</text>
 </g>
 <!-- a3&#45;&gt;s1 -->
 <g id="edge10" class="edge">
 <title>a3&#45;&gt;s1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-1096.28C142.5,-1077.96 142.5,-1051.56 142.5,-1030.86"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-1030.64 142.5,-1020.64 139,-1030.64 146,-1030.64"/>
-<text text-anchor="middle" x="176" y="-1060.33" font-family="Helvetica,Arial,sans-serif" font-size="9.00">epochs→source</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-1096.28C142.5,-1077.96 142.5,-1051.56 142.5,-1030.86"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-1030.64 142.5,-1020.64 139,-1030.64 146,-1030.64"/>
+<text text-anchor="middle" x="176" y="-1060.33" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">epochs→source</text>
 </g>
 <!-- s2 -->
 <g id="node5" class="node">
 <title>s2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-893.65" rx="101.65" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-896.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Inverse Operator</text>
-<text text-anchor="middle" x="142.5" y="-884.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(MNE / dSPM / sLORETA)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-893.65" rx="101.65" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-896.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Inverse Operator</text>
+<text text-anchor="middle" x="142.5" y="-884.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(MNE / dSPM / sLORETA)</text>
 </g>
 <!-- s1&#45;&gt;s2 -->
 <g id="edge3" class="edge">
 <title>s1&#45;&gt;s2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-975.22C142.5,-961.12 142.5,-942.49 142.5,-926.69"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-926.3 142.5,-916.3 139,-926.3 146,-926.3"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-975.22C142.5,-961.12 142.5,-942.49 142.5,-926.69"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-926.3 142.5,-916.3 139,-926.3 146,-926.3"/>
 </g>
 <!-- s3 -->
 <g id="node6" class="node">
 <title>s3</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M205,-808.02C205,-810.23 176.99,-812.02 142.5,-812.02 108.01,-812.02 80,-810.23 80,-808.02 80,-808.02 80,-772.02 80,-772.02 80,-769.81 108.01,-768.02 142.5,-768.02 176.99,-768.02 205,-769.81 205,-772.02 205,-772.02 205,-808.02 205,-808.02"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M205,-808.02C205,-805.81 176.99,-804.02 142.5,-804.02 108.01,-804.02 80,-805.81 80,-808.02"/>
-<text text-anchor="middle" x="142.5" y="-793.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00">SourceEstimate (STC)</text>
-<text text-anchor="middle" x="142.5" y="-781.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00">vertices × time</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M205,-808.02C205,-810.23 176.99,-812.02 142.5,-812.02 108.01,-812.02 80,-810.23 80,-808.02 80,-808.02 80,-772.02 80,-772.02 80,-769.81 108.01,-768.02 142.5,-768.02 176.99,-768.02 205,-769.81 205,-772.02 205,-772.02 205,-808.02 205,-808.02"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M205,-808.02C205,-805.81 176.99,-804.02 142.5,-804.02 108.01,-804.02 80,-805.81 80,-808.02"/>
+<text text-anchor="middle" x="142.5" y="-793.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">SourceEstimate (STC)</text>
+<text text-anchor="middle" x="142.5" y="-781.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">vertices × time</text>
 </g>
 <!-- s2&#45;&gt;s3 -->
 <g id="edge4" class="edge">
 <title>s2&#45;&gt;s3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-870.85C142.5,-856.72 142.5,-838.11 142.5,-822.4"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-822.09 142.5,-812.09 139,-822.09 146,-822.09"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-870.85C142.5,-856.72 142.5,-838.11 142.5,-822.4"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-822.09 142.5,-812.09 139,-822.09 146,-822.09"/>
 </g>
 <!-- r1 -->
 <g id="node7" class="node">
 <title>r1</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M215,-688.02C215,-690.23 182.5,-692.02 142.5,-692.02 102.5,-692.02 70,-690.23 70,-688.02 70,-688.02 70,-652.02 70,-652.02 70,-649.81 102.5,-648.02 142.5,-648.02 182.5,-648.02 215,-649.81 215,-652.02 215,-652.02 215,-688.02 215,-688.02"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M215,-688.02C215,-685.81 182.5,-684.02 142.5,-684.02 102.5,-684.02 70,-685.81 70,-688.02"/>
-<text text-anchor="middle" x="142.5" y="-673.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00">RDM: pairwise dissimilarity</text>
-<text text-anchor="middle" x="142.5" y="-661.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(1 &#45; correlation)</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M215,-688.02C215,-690.23 182.5,-692.02 142.5,-692.02 102.5,-692.02 70,-690.23 70,-688.02 70,-688.02 70,-652.02 70,-652.02 70,-649.81 102.5,-648.02 142.5,-648.02 182.5,-648.02 215,-649.81 215,-652.02 215,-652.02 215,-688.02 215,-688.02"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M215,-688.02C215,-685.81 182.5,-684.02 142.5,-684.02 102.5,-684.02 70,-685.81 70,-688.02"/>
+<text text-anchor="middle" x="142.5" y="-673.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">RDM: pairwise dissimilarity</text>
+<text text-anchor="middle" x="142.5" y="-661.22" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(1 &#45; correlation)</text>
 </g>
 <!-- s3&#45;&gt;r1 -->
 <g id="edge11" class="edge">
 <title>s3&#45;&gt;r1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-767.92C142.5,-749.75 142.5,-723.24 142.5,-702.55"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-702.33 142.5,-692.33 139,-702.33 146,-702.33"/>
-<text text-anchor="middle" x="163.5" y="-731.82" font-family="Helvetica,Arial,sans-serif" font-size="9.00">stc→RDM</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-767.92C142.5,-749.75 142.5,-723.24 142.5,-702.55"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-702.33 142.5,-692.33 139,-702.33 146,-702.33"/>
+<text text-anchor="middle" x="163.5" y="-731.82" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">stc→RDM</text>
 </g>
 <!-- r2 -->
 <g id="node8" class="node">
 <title>r2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-566.39" rx="79.81" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-569.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Searchlight Analysis</text>
-<text text-anchor="middle" x="142.5" y="-557.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(per&#45;vertex sphere)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-566.39" rx="79.81" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-569.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Searchlight Analysis</text>
+<text text-anchor="middle" x="142.5" y="-557.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(per&#45;vertex sphere)</text>
 </g>
 <!-- r1&#45;&gt;r2 -->
 <g id="edge5" class="edge">
 <title>r1&#45;&gt;r2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-647.96C142.5,-633.98 142.5,-615.36 142.5,-599.54"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-599.12 142.5,-589.12 139,-599.12 146,-599.12"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-647.96C142.5,-633.98 142.5,-615.36 142.5,-599.54"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-599.12 142.5,-589.12 139,-599.12 146,-599.12"/>
 </g>
 <!-- r3 -->
 <g id="node9" class="node">
 <title>r3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-462.14" rx="86.03" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-465.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Spearman / Pearson r</text>
-<text text-anchor="middle" x="142.5" y="-453.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">vs model RDM</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-462.14" rx="86.03" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-465.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Spearman / Pearson r</text>
+<text text-anchor="middle" x="142.5" y="-453.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">vs model RDM</text>
 </g>
 <!-- r2&#45;&gt;r3 -->
 <g id="edge6" class="edge">
 <title>r2&#45;&gt;r3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-543.71C142.5,-529.61 142.5,-510.98 142.5,-495.18"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-494.79 142.5,-484.79 139,-494.79 146,-494.79"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-543.71C142.5,-529.61 142.5,-510.98 142.5,-495.18"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-494.79 142.5,-484.79 139,-494.79 146,-494.79"/>
 </g>
 <!-- r4 -->
 <g id="node10" class="node">
 <title>r4</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M189.5,-376.51C189.5,-378.72 168.43,-380.51 142.5,-380.51 116.57,-380.51 95.5,-378.72 95.5,-376.51 95.5,-376.51 95.5,-340.51 95.5,-340.51 95.5,-338.3 116.57,-336.51 142.5,-336.51 168.43,-336.51 189.5,-338.3 189.5,-340.51 189.5,-340.51 189.5,-376.51 189.5,-376.51"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M189.5,-376.51C189.5,-374.3 168.43,-372.51 142.5,-372.51 116.57,-372.51 95.5,-374.3 95.5,-376.51"/>
-<text text-anchor="middle" x="142.5" y="-361.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">RSA Score Map</text>
-<text text-anchor="middle" x="142.5" y="-349.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(vertex&#45;level)</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M189.5,-376.51C189.5,-378.72 168.43,-380.51 142.5,-380.51 116.57,-380.51 95.5,-378.72 95.5,-376.51 95.5,-376.51 95.5,-340.51 95.5,-340.51 95.5,-338.3 116.57,-336.51 142.5,-336.51 168.43,-336.51 189.5,-338.3 189.5,-340.51 189.5,-340.51 189.5,-376.51 189.5,-376.51"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M189.5,-376.51C189.5,-374.3 168.43,-372.51 142.5,-372.51 116.57,-372.51 95.5,-374.3 95.5,-376.51"/>
+<text text-anchor="middle" x="142.5" y="-361.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">RSA Score Map</text>
+<text text-anchor="middle" x="142.5" y="-349.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(vertex&#45;level)</text>
 </g>
 <!-- r3&#45;&gt;r4 -->
 <g id="edge7" class="edge">
 <title>r3&#45;&gt;r4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-439.34C142.5,-425.21 142.5,-406.6 142.5,-390.89"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-390.58 142.5,-380.58 139,-390.58 146,-390.58"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-439.34C142.5,-425.21 142.5,-406.6 142.5,-390.89"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-390.58 142.5,-380.58 139,-390.58 146,-390.58"/>
 </g>
 <!-- v1 -->
 <g id="node11" class="node">
 <title>v1</title>
-<polygon fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" points="205,-260.51 74,-260.51 74,-224.51 211,-224.51 211,-254.51 205,-260.51"/>
-<polyline fill="none" stroke="#e67e22" stroke-width="1.5" points="205,-260.51 205,-254.51 "/>
-<polyline fill="none" stroke="#e67e22" stroke-width="1.5" points="211,-254.51 205,-254.51 "/>
-<text text-anchor="middle" x="142.5" y="-245.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">brain_box.py</text>
-<text text-anchor="middle" x="142.5" y="-233.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne_rsa_dark_neon.png</text>
+<polygon fill="#1a1a2e" stroke="#ff2d78" stroke-width="1.8" points="205,-260.51 74,-260.51 74,-224.51 211,-224.51 211,-254.51 205,-260.51"/>
+<polyline fill="none" stroke="#ff2d78" stroke-width="1.8" points="205,-260.51 205,-254.51 "/>
+<polyline fill="none" stroke="#ff2d78" stroke-width="1.8" points="211,-254.51 205,-254.51 "/>
+<text text-anchor="middle" x="142.5" y="-245.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#cccccc">brain_box.py</text>
+<text text-anchor="middle" x="142.5" y="-233.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#cccccc">mne_rsa_dark_neon.png</text>
 </g>
 <!-- r4&#45;&gt;v1 -->
 <g id="edge12" class="edge">
 <title>r4&#45;&gt;v1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-336.33C142.5,-317.89 142.5,-291.02 142.5,-270.93"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-270.84 142.5,-260.84 139,-270.84 146,-270.84"/>
-<text text-anchor="middle" x="170" y="-300.31" font-family="Helvetica,Arial,sans-serif" font-size="9.00">scores→map</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-336.33C142.5,-317.89 142.5,-291.02 142.5,-270.93"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-270.84 142.5,-260.84 139,-270.84 146,-270.84"/>
+<text text-anchor="middle" x="170" y="-300.31" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">scores→map</text>
 </g>
 <!-- v2 -->
 <g id="node12" class="node">
 <title>v2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-142.88" rx="68.68" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-146.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne.viz /</text>
-<text text-anchor="middle" x="142.5" y="-134.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">pyvista brain plot</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-142.88" rx="68.68" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-146.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">mne.viz /</text>
+<text text-anchor="middle" x="142.5" y="-134.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">pyvista brain plot</text>
 </g>
 <!-- v1&#45;&gt;v2 -->
 <g id="edge8" class="edge">
 <title>v1&#45;&gt;v2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-224.5C142.5,-211.15 142.5,-192.17 142.5,-175.98"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-175.83 142.5,-165.83 139,-175.83 146,-175.83"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-224.5C142.5,-211.15 142.5,-192.17 142.5,-175.98"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-175.83 142.5,-165.83 139,-175.83 146,-175.83"/>
 </g>
 <!-- v3 -->
 <g id="node13" class="node">
 <title>v3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="142.5" cy="-38.63" rx="59.29" ry="22.76"/>
-<text text-anchor="middle" x="142.5" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Surface Plot</text>
-<text text-anchor="middle" x="142.5" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(inflated / pial)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="142.5" cy="-38.63" rx="59.29" ry="22.76"/>
+<text text-anchor="middle" x="142.5" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Surface Plot</text>
+<text text-anchor="middle" x="142.5" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(inflated / pial)</text>
 </g>
 <!-- v2&#45;&gt;v3 -->
 <g id="edge9" class="edge">
 <title>v2&#45;&gt;v3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M142.5,-120.2C142.5,-106.1 142.5,-87.47 142.5,-71.67"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146,-71.28 142.5,-61.28 139,-71.28 146,-71.28"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M142.5,-120.2C142.5,-106.1 142.5,-87.47 142.5,-71.67"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146,-71.28 142.5,-61.28 139,-71.28 146,-71.28"/>
 </g>
 </g>
 </svg>

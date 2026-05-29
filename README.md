@@ -13,6 +13,14 @@
 
 Hilbertbrane maps the continuous, space-filling properties of the **3D Hilbert Curve** through a volumetric pipeline to synthesize cortical folding patterns that parallel biological neurogenesis — producing watertight STL meshes ready for 3D printing, physics simulation, or WebGL visualization.
 
+<p align="center">
+  <img src="docs/demo.gif" alt="Hilbertbrane diagram preview" width="800">
+</p>
+
+<p align="center">
+  <a href="http://calisota.ai/hilbertbrane/"><strong>Browse all 25 diagrams →</strong></a>
+</p>
+
 ---
 
 ## 🔬 Theoretical Background
@@ -190,6 +198,8 @@ Regenerate all diagrams at any time:
 ```bash
 python generate_25_diagrams.py
 ```
+
+View the full interactive gallery at **[calisota.ai/hilbertbrane](http://calisota.ai/hilbertbrane/)** — each card links to the full-size PNG and vector SVG source.
 
 ### Future Directions
 

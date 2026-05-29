@@ -8,195 +8,195 @@
  viewBox="0.00 0.00 637.60 1291.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 1263.07)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-1263.07 608.8,-1263.07 608.8,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="290" y="-1219.07" font-family="Helvetica,Arial,sans-serif" font-size="14.00">User Deployment Workflow</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-1263.07 608.8,-1263.07 608.8,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="290" y="-1219.07" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">User Deployment Workflow</text>
 <g id="clust1" class="cluster">
 <title>cluster_install</title>
-<path fill="#e8f8f5" stroke="#17a589" d="M130,-893.76C130,-893.76 480,-893.76 480,-893.76 486,-893.76 492,-899.76 492,-905.76 492,-905.76 492,-1191.27 492,-1191.27 492,-1197.27 486,-1203.27 480,-1203.27 480,-1203.27 130,-1203.27 130,-1203.27 124,-1203.27 118,-1197.27 118,-1191.27 118,-1191.27 118,-905.76 118,-905.76 118,-899.76 124,-893.76 130,-893.76"/>
-<text text-anchor="middle" x="305" y="-1189.67" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Installation</text>
+<path fill="#000d0d" stroke="#00ffe7" d="M130,-893.76C130,-893.76 480,-893.76 480,-893.76 486,-893.76 492,-899.76 492,-905.76 492,-905.76 492,-1191.27 492,-1191.27 492,-1197.27 486,-1203.27 480,-1203.27 480,-1203.27 130,-1203.27 130,-1203.27 124,-1203.27 118,-1197.27 118,-1191.27 118,-1191.27 118,-905.76 118,-905.76 118,-899.76 124,-893.76 130,-893.76"/>
+<text text-anchor="middle" x="305" y="-1189.67" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00ffe7">Installation</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_gen</title>
-<path fill="#e8f8f5" stroke="#17a589" d="M202,-554.25C202,-554.25 408,-554.25 408,-554.25 414,-554.25 420,-560.25 420,-566.25 420,-566.25 420,-851.76 420,-851.76 420,-857.76 414,-863.76 408,-863.76 408,-863.76 202,-863.76 202,-863.76 196,-863.76 190,-857.76 190,-851.76 190,-851.76 190,-566.25 190,-566.25 190,-560.25 196,-554.25 202,-554.25"/>
-<text text-anchor="middle" x="305" y="-850.16" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Generation</text>
+<path fill="#000d0d" stroke="#00ffe7" d="M202,-554.25C202,-554.25 408,-554.25 408,-554.25 414,-554.25 420,-560.25 420,-566.25 420,-566.25 420,-851.76 420,-851.76 420,-857.76 414,-863.76 408,-863.76 408,-863.76 202,-863.76 202,-863.76 196,-863.76 190,-857.76 190,-851.76 190,-851.76 190,-566.25 190,-566.25 190,-560.25 196,-554.25 202,-554.25"/>
+<text text-anchor="middle" x="305" y="-850.16" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00ffe7">Generation</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_tune</title>
-<path fill="#e8f8f5" stroke="#17a589" d="M189,-224.25C189,-224.25 421,-224.25 421,-224.25 427,-224.25 433,-230.25 433,-236.25 433,-236.25 433,-512.25 433,-512.25 433,-518.25 427,-524.25 421,-524.25 421,-524.25 189,-524.25 189,-524.25 183,-524.25 177,-518.25 177,-512.25 177,-512.25 177,-236.25 177,-236.25 177,-230.25 183,-224.25 189,-224.25"/>
-<text text-anchor="middle" x="305" y="-510.65" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Interactive Refinement</text>
+<path fill="#000d0d" stroke="#00ffe7" d="M189,-224.25C189,-224.25 421,-224.25 421,-224.25 427,-224.25 433,-230.25 433,-236.25 433,-236.25 433,-512.25 433,-512.25 433,-518.25 427,-524.25 421,-524.25 421,-524.25 189,-524.25 189,-524.25 183,-524.25 177,-518.25 177,-512.25 177,-512.25 177,-236.25 177,-236.25 177,-230.25 183,-224.25 189,-224.25"/>
+<text text-anchor="middle" x="305" y="-510.65" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00ffe7">Interactive Refinement</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_export</title>
-<path fill="#e8f8f5" stroke="#17a589" d="M20,-8C20,-8 560,-8 560,-8 566,-8 572,-14 572,-20 572,-20 572,-173.25 572,-173.25 572,-179.25 566,-185.25 560,-185.25 560,-185.25 20,-185.25 20,-185.25 14,-185.25 8,-179.25 8,-173.25 8,-173.25 8,-20 8,-20 8,-14 14,-8 20,-8"/>
-<text text-anchor="middle" x="290" y="-171.65" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Export and Delivery</text>
+<path fill="#000d0d" stroke="#00ffe7" d="M20,-8C20,-8 560,-8 560,-8 566,-8 572,-14 572,-20 572,-20 572,-173.25 572,-173.25 572,-179.25 566,-185.25 560,-185.25 560,-185.25 20,-185.25 20,-185.25 14,-185.25 8,-179.25 8,-173.25 8,-173.25 8,-20 8,-20 8,-14 14,-8 20,-8"/>
+<text text-anchor="middle" x="290" y="-171.65" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#00ffe7">Export and Delivery</text>
 </g>
 <!-- i1 -->
 <g id="node1" class="node">
 <title>i1</title>
-<path fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" d="M472.22,-1174.27C472.22,-1174.27 211.12,-1174.27 211.12,-1174.27 205.12,-1174.27 194.6,-1170.33 190.08,-1166.38 190.08,-1166.38 134.82,-1118.16 134.82,-1118.16 130.3,-1114.22 131.78,-1110.27 137.78,-1110.27 137.78,-1110.27 398.88,-1110.27 398.88,-1110.27 404.88,-1110.27 415.4,-1114.22 419.92,-1118.16 419.92,-1118.16 475.18,-1166.38 475.18,-1166.38 479.7,-1170.33 478.22,-1174.27 472.22,-1174.27"/>
-<text text-anchor="middle" x="305" y="-1145.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">git clone</text>
-<text text-anchor="middle" x="305" y="-1133.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">https://github.com/.../hilbertbrane</text>
+<path fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" d="M472.22,-1174.27C472.22,-1174.27 211.12,-1174.27 211.12,-1174.27 205.12,-1174.27 194.6,-1170.33 190.08,-1166.38 190.08,-1166.38 134.82,-1118.16 134.82,-1118.16 130.3,-1114.22 131.78,-1110.27 137.78,-1110.27 137.78,-1110.27 398.88,-1110.27 398.88,-1110.27 404.88,-1110.27 415.4,-1114.22 419.92,-1118.16 419.92,-1118.16 475.18,-1166.38 475.18,-1166.38 479.7,-1170.33 478.22,-1174.27 472.22,-1174.27"/>
+<text text-anchor="middle" x="305" y="-1145.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">git clone</text>
+<text text-anchor="middle" x="305" y="-1133.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">https://github.com/.../hilbertbrane</text>
 </g>
 <!-- i2 -->
 <g id="node2" class="node">
 <title>i2</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-1028.65" rx="92.76" ry="22.76"/>
-<text text-anchor="middle" x="305" y="-1031.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">python3 &#45;m venv venv</text>
-<text text-anchor="middle" x="305" y="-1019.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">source venv/bin/activate</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-1028.65" rx="92.76" ry="22.76"/>
+<text text-anchor="middle" x="305" y="-1031.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">python3 &#45;m venv venv</text>
+<text text-anchor="middle" x="305" y="-1019.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">source venv/bin/activate</text>
 </g>
 <!-- i1&#45;&gt;i2 -->
 <g id="edge1" class="edge">
 <title>i1&#45;&gt;i2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-1110.18C305,-1094.98 305,-1076.71 305,-1061.42"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-1061.39 305,-1051.39 301.5,-1061.39 308.5,-1061.39"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-1110.18C305,-1094.98 305,-1076.71 305,-1061.42"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-1061.39 305,-1051.39 301.5,-1061.39 308.5,-1061.39"/>
 </g>
 <!-- i3 -->
 <g id="node3" class="node">
 <title>i3</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-924.39" rx="139.1" ry="22.76"/>
-<text text-anchor="middle" x="305" y="-927.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">pip install &#45;r requirements.txt</text>
-<text text-anchor="middle" x="305" y="-915.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(pyvista, vtk, numpy, noise, matplotlib)</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-924.39" rx="139.1" ry="22.76"/>
+<text text-anchor="middle" x="305" y="-927.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">pip install &#45;r requirements.txt</text>
+<text text-anchor="middle" x="305" y="-915.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(pyvista, vtk, numpy, noise, matplotlib)</text>
 </g>
 <!-- i2&#45;&gt;i3 -->
 <g id="edge2" class="edge">
 <title>i2&#45;&gt;i3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-1005.96C305,-991.86 305,-973.23 305,-957.44"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-957.05 305,-947.05 301.5,-957.05 308.5,-957.05"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-1005.96C305,-991.86 305,-973.23 305,-957.44"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-957.05 305,-947.05 301.5,-957.05 308.5,-957.05"/>
 </g>
 <!-- g1 -->
 <g id="node4" class="node">
 <title>g1</title>
-<path fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" d="M381.25,-834.76C381.25,-834.76 264.87,-834.76 264.87,-834.76 258.87,-834.76 249.92,-829.54 246.97,-824.31 246.97,-824.31 222.65,-781.22 222.65,-781.22 219.7,-775.99 222.75,-770.76 228.75,-770.76 228.75,-770.76 345.13,-770.76 345.13,-770.76 351.13,-770.76 360.08,-775.99 363.03,-781.22 363.03,-781.22 387.35,-824.31 387.35,-824.31 390.3,-829.54 387.25,-834.76 381.25,-834.76"/>
-<text text-anchor="middle" x="305" y="-805.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">./run.sh</text>
-<text text-anchor="middle" x="305" y="-793.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(batch runner)</text>
+<path fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" d="M381.25,-834.76C381.25,-834.76 264.87,-834.76 264.87,-834.76 258.87,-834.76 249.92,-829.54 246.97,-824.31 246.97,-824.31 222.65,-781.22 222.65,-781.22 219.7,-775.99 222.75,-770.76 228.75,-770.76 228.75,-770.76 345.13,-770.76 345.13,-770.76 351.13,-770.76 360.08,-775.99 363.03,-781.22 363.03,-781.22 387.35,-824.31 387.35,-824.31 390.3,-829.54 387.25,-834.76 381.25,-834.76"/>
+<text text-anchor="middle" x="305" y="-805.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">./run.sh</text>
+<text text-anchor="middle" x="305" y="-793.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(batch runner)</text>
 </g>
 <!-- i3&#45;&gt;g1 -->
 <g id="edge11" class="edge">
 <title>i3&#45;&gt;g1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-901.73C305,-886.05 305,-864.37 305,-845.39"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-845.17 305,-835.17 301.5,-845.17 308.5,-845.17"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-901.73C305,-886.05 305,-864.37 305,-845.39"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-845.17 305,-835.17 301.5,-845.17 308.5,-845.17"/>
 </g>
 <!-- g2 -->
 <g id="node5" class="node">
 <title>g2</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-689.14" rx="71.34" ry="22.76"/>
-<text text-anchor="middle" x="305" y="-692.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">HilbertGyri3.py</text>
-<text text-anchor="middle" x="305" y="-680.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">→ HilbertBrain.stl</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-689.14" rx="71.34" ry="22.76"/>
+<text text-anchor="middle" x="305" y="-692.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">HilbertGyri3.py</text>
+<text text-anchor="middle" x="305" y="-680.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">→ HilbertBrain.stl</text>
 </g>
 <!-- g1&#45;&gt;g2 -->
 <g id="edge3" class="edge">
 <title>g1&#45;&gt;g2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-770.67C305,-755.47 305,-737.2 305,-721.91"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-721.88 305,-711.88 301.5,-721.88 308.5,-721.88"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-770.67C305,-755.47 305,-737.2 305,-721.91"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-721.88 305,-711.88 301.5,-721.88 308.5,-721.88"/>
 </g>
 <!-- g3 -->
 <g id="node6" class="node">
 <title>g3</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-584.88" rx="106.55" ry="22.76"/>
-<text text-anchor="middle" x="305" y="-588.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">brain_box.py</text>
-<text text-anchor="middle" x="305" y="-576.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">→ mne_rsa_dark_neon.png</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-584.88" rx="106.55" ry="22.76"/>
+<text text-anchor="middle" x="305" y="-588.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">brain_box.py</text>
+<text text-anchor="middle" x="305" y="-576.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">→ mne_rsa_dark_neon.png</text>
 </g>
 <!-- g2&#45;&gt;g3 -->
 <g id="edge4" class="edge">
 <title>g2&#45;&gt;g3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-666.45C305,-652.35 305,-633.72 305,-617.93"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-617.54 305,-607.54 301.5,-617.54 308.5,-617.54"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-666.45C305,-652.35 305,-633.72 305,-617.93"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-617.54 305,-607.54 301.5,-617.54 308.5,-617.54"/>
 </g>
 <!-- t1 -->
 <g id="node7" class="node">
 <title>t1</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-477.25" rx="87.39" ry="18"/>
-<text text-anchor="middle" x="305" y="-474.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">python interactive_tuner.py</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-477.25" rx="87.39" ry="18"/>
+<text text-anchor="middle" x="305" y="-474.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">python interactive_tuner.py</text>
 </g>
 <!-- g3&#45;&gt;t1 -->
 <g id="edge12" class="edge">
 <title>g3&#45;&gt;t1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-562.25C305,-545.86 305,-523.22 305,-505.57"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-505.33 305,-495.33 301.5,-505.33 308.5,-505.33"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-562.25C305,-545.86 305,-523.22 305,-505.57"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-505.33 305,-495.33 301.5,-505.33 308.5,-505.33"/>
 </g>
 <!-- t2 -->
 <g id="node8" class="node">
 <title>t2</title>
-<path fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" d="M293.41,-397.16C293.41,-397.16 196.59,-371.35 196.59,-371.35 190.8,-369.8 190.8,-366.71 196.59,-365.16 196.59,-365.16 293.41,-339.35 293.41,-339.35 299.2,-337.8 310.8,-337.8 316.59,-339.35 316.59,-339.35 413.41,-365.16 413.41,-365.16 419.2,-366.71 419.2,-369.8 413.41,-371.35 413.41,-371.35 316.59,-397.16 316.59,-397.16 310.8,-398.71 299.2,-398.71 293.41,-397.16"/>
-<text text-anchor="middle" x="305" y="-371.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Adjust sliders</text>
-<text text-anchor="middle" x="305" y="-359.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(size / radius / sulcus)</text>
+<path fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" d="M293.41,-397.16C293.41,-397.16 196.59,-371.35 196.59,-371.35 190.8,-369.8 190.8,-366.71 196.59,-365.16 196.59,-365.16 293.41,-339.35 293.41,-339.35 299.2,-337.8 310.8,-337.8 316.59,-339.35 316.59,-339.35 413.41,-365.16 413.41,-365.16 419.2,-366.71 419.2,-369.8 413.41,-371.35 413.41,-371.35 316.59,-397.16 316.59,-397.16 310.8,-398.71 299.2,-398.71 293.41,-397.16"/>
+<text text-anchor="middle" x="305" y="-371.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">Adjust sliders</text>
+<text text-anchor="middle" x="305" y="-359.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(size / radius / sulcus)</text>
 </g>
 <!-- t1&#45;&gt;t2 -->
 <g id="edge5" class="edge">
 <title>t1&#45;&gt;t2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-459.06C305,-446.05 305,-427.61 305,-410.82"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-410.65 305,-400.65 301.5,-410.65 308.5,-410.65"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-459.06C305,-446.05 305,-427.61 305,-410.82"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-410.65 305,-400.65 301.5,-410.65 308.5,-410.65"/>
 </g>
 <!-- t3 -->
 <g id="node9" class="node">
 <title>t3</title>
-<path fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" d="M293.55,-264.68C293.55,-264.68 258.8,-253.83 258.8,-253.83 253.07,-252.04 253.07,-248.47 258.8,-246.68 258.8,-246.68 293.55,-235.83 293.55,-235.83 299.27,-234.04 310.73,-234.04 316.45,-235.83 316.45,-235.83 351.2,-246.68 351.2,-246.68 356.93,-248.47 356.93,-252.04 351.2,-253.83 351.2,-253.83 316.45,-264.68 316.45,-264.68 310.73,-266.47 299.27,-266.47 293.55,-264.68"/>
-<text text-anchor="middle" x="305" y="-247.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Mesh OK?</text>
+<path fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" d="M293.55,-264.68C293.55,-264.68 258.8,-253.83 258.8,-253.83 253.07,-252.04 253.07,-248.47 258.8,-246.68 258.8,-246.68 293.55,-235.83 293.55,-235.83 299.27,-234.04 310.73,-234.04 316.45,-235.83 316.45,-235.83 351.2,-246.68 351.2,-246.68 356.93,-248.47 356.93,-252.04 351.2,-253.83 351.2,-253.83 316.45,-264.68 316.45,-264.68 310.73,-266.47 299.27,-266.47 293.55,-264.68"/>
+<text text-anchor="middle" x="305" y="-247.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">Mesh OK?</text>
 </g>
 <!-- t2&#45;&gt;t3 -->
 <g id="edge6" class="edge">
 <title>t2&#45;&gt;t3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M290.79,-339.89C285.78,-327.06 282.04,-311.49 285,-297.25 286.53,-289.92 289.28,-282.33 292.27,-275.47"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.6,-276.61 296.7,-266.07 289.27,-273.62 295.6,-276.61"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M290.79,-339.89C285.78,-327.06 282.04,-311.49 285,-297.25 286.53,-289.92 289.28,-282.33 292.27,-275.47"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.6,-276.61 296.7,-266.07 289.27,-273.62 295.6,-276.61"/>
 </g>
 <!-- t3&#45;&gt;t2 -->
 <g id="edge7" class="edge">
 <title>t3&#45;&gt;t2</title>
-<path fill="none" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,2" d="M305,-268.4C305,-283.55 305,-306.27 305,-326.11"/>
-<polygon fill="#999999" stroke="#999999" stroke-width="1.2" points="301.5,-326.17 305,-336.17 308.5,-326.17 301.5,-326.17"/>
-<text text-anchor="middle" x="329.5" y="-300.05" font-family="Helvetica,Arial,sans-serif" font-size="9.00">NO – adjust</text>
+<path fill="none" stroke="#335555" stroke-width="1.2" stroke-dasharray="5,2" d="M305,-268.4C305,-283.55 305,-306.27 305,-326.11"/>
+<polygon fill="#335555" stroke="#335555" stroke-width="1.2" points="301.5,-326.17 305,-336.17 308.5,-326.17 301.5,-326.17"/>
+<text text-anchor="middle" x="329.5" y="-300.05" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#557777">NO – adjust</text>
 </g>
 <!-- e1 -->
 <g id="node10" class="node">
 <title>e1</title>
-<path fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" d="M379.31,-156.25C379.31,-156.25 266.01,-156.25 266.01,-156.25 260.01,-156.25 249.81,-151.97 245.61,-147.69 245.61,-147.69 227.1,-128.82 227.1,-128.82 222.89,-124.54 224.69,-120.25 230.69,-120.25 230.69,-120.25 343.99,-120.25 343.99,-120.25 349.99,-120.25 360.19,-124.54 364.39,-128.82 364.39,-128.82 382.9,-147.69 382.9,-147.69 387.11,-151.97 385.31,-156.25 379.31,-156.25"/>
-<text text-anchor="middle" x="305" y="-135.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mesh.save(&#39;*.stl&#39;)</text>
+<path fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" d="M379.31,-156.25C379.31,-156.25 266.01,-156.25 266.01,-156.25 260.01,-156.25 249.81,-151.97 245.61,-147.69 245.61,-147.69 227.1,-128.82 227.1,-128.82 222.89,-124.54 224.69,-120.25 230.69,-120.25 230.69,-120.25 343.99,-120.25 343.99,-120.25 349.99,-120.25 360.19,-124.54 364.39,-128.82 364.39,-128.82 382.9,-147.69 382.9,-147.69 387.11,-151.97 385.31,-156.25 379.31,-156.25"/>
+<text text-anchor="middle" x="305" y="-135.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">mesh.save(&#39;*.stl&#39;)</text>
 </g>
 <!-- t3&#45;&gt;e1 -->
 <g id="edge13" class="edge">
 <title>t3&#45;&gt;e1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-232.07C305,-214.47 305,-186.86 305,-166.33"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-166.32 305,-156.32 301.5,-166.32 308.5,-166.32"/>
-<text text-anchor="middle" x="331.5" y="-196.05" font-family="Helvetica,Arial,sans-serif" font-size="9.00">YES – export</text>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-232.07C305,-214.47 305,-186.86 305,-166.33"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-166.32 305,-156.32 301.5,-166.32 308.5,-166.32"/>
+<text text-anchor="middle" x="331.5" y="-196.05" font-family="Helvetica,Arial,sans-serif" font-size="9.00" fill="#aaaacc">YES – export</text>
 </g>
 <!-- e2 -->
 <g id="node11" class="node">
 <title>e2</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="96" cy="-38.63" rx="79.81" ry="22.76"/>
-<text text-anchor="middle" x="96" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">3D Printer Slicer</text>
-<text text-anchor="middle" x="96" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(Cura / PrusaSlicer)</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="96" cy="-38.63" rx="79.81" ry="22.76"/>
+<text text-anchor="middle" x="96" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">3D Printer Slicer</text>
+<text text-anchor="middle" x="96" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(Cura / PrusaSlicer)</text>
 </g>
 <!-- e1&#45;&gt;e2 -->
 <g id="edge8" class="edge">
 <title>e1&#45;&gt;e2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M268.59,-120.25C234.42,-104.28 183.03,-80.28 145.21,-62.61"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="146.44,-59.33 135.9,-58.27 143.48,-65.67 146.44,-59.33"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M268.59,-120.25C234.42,-104.28 183.03,-80.28 145.21,-62.61"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="146.44,-59.33 135.9,-58.27 143.48,-65.67 146.44,-59.33"/>
 </g>
 <!-- e3 -->
 <g id="node12" class="node">
 <title>e3</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="305" cy="-38.63" rx="86.03" ry="22.76"/>
-<text text-anchor="middle" x="305" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">WebGL Viewer</text>
-<text text-anchor="middle" x="305" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(Three.js / Babylon.js)</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="305" cy="-38.63" rx="86.03" ry="22.76"/>
+<text text-anchor="middle" x="305" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">WebGL Viewer</text>
+<text text-anchor="middle" x="305" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(Three.js / Babylon.js)</text>
 </g>
 <!-- e1&#45;&gt;e3 -->
 <g id="edge9" class="edge">
 <title>e1&#45;&gt;e3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M305,-120.25C305,-106.89 305,-87.91 305,-71.72"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="308.5,-71.57 305,-61.57 301.5,-71.57 308.5,-71.57"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M305,-120.25C305,-106.89 305,-87.91 305,-71.72"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="308.5,-71.57 305,-61.57 301.5,-71.57 308.5,-71.57"/>
 </g>
 <!-- e4 -->
 <g id="node13" class="node">
 <title>e4</title>
-<ellipse fill="#a2d9ce" stroke="#17a589" stroke-width="1.5" cx="499" cy="-38.63" rx="65.11" ry="22.76"/>
-<text text-anchor="middle" x="499" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Physics Sim</text>
-<text text-anchor="middle" x="499" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(Blender / FEA)</text>
+<ellipse fill="#001a1a" stroke="#00ffe7" stroke-width="1.8" cx="499" cy="-38.63" rx="65.11" ry="22.76"/>
+<text text-anchor="middle" x="499" y="-41.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">Physics Sim</text>
+<text text-anchor="middle" x="499" y="-29.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#00ffe7">(Blender / FEA)</text>
 </g>
 <!-- e1&#45;&gt;e4 -->
 <g id="edge10" class="edge">
 <title>e1&#45;&gt;e4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M338.79,-120.25C370.78,-104.15 419.01,-79.88 454.2,-62.17"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="455.94,-65.22 463.3,-57.59 452.79,-58.96 455.94,-65.22"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M338.79,-120.25C370.78,-104.15 419.01,-79.88 454.2,-62.17"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="455.94,-65.22 463.3,-57.59 452.79,-58.96 455.94,-65.22"/>
 </g>
 </g>
 </svg>

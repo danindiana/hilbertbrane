@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,52 +11,52 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="MNE-RSA Neuroscience Integration Pipeline" rankdir="TB"]
 
     subgraph cluster_acq {
         label="Data Acquisition"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        a1 [label="MEG/EEG Recording" shape=parallelogram fillcolor="#FAD7A0" color="#E67E22"]
-        a2 [label="mne.Epochs\n(time-locked segments)" fillcolor="#FAD7A0" color="#E67E22"]
-        a3 [label="Preprocessing\n(filter, ICA, baseline)" fillcolor="#FAD7A0" color="#E67E22"]
+        a1 [label="MEG/EEG Recording" shape=parallelogram fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        a2 [label="mne.Epochs\n(time-locked segments)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        a3 [label="Preprocessing\n(filter, ICA, baseline)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         a1 -> a2 -> a3
     }
 
     subgraph cluster_src {
         label="Source Estimation"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        s1 [label="Forward Model\n(BEM / sphere)" fillcolor="#FAD7A0" color="#E67E22"]
-        s2 [label="Inverse Operator\n(MNE / dSPM / sLORETA)" fillcolor="#FAD7A0" color="#E67E22"]
-        s3 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        s1 [label="Forward Model\n(BEM / sphere)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        s2 [label="Inverse Operator\n(MNE / dSPM / sLORETA)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        s3 [label="SourceEstimate (STC)\nvertices × time" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         s1 -> s2 -> s3
     }
 
     subgraph cluster_rsa {
         label="RSA Computation"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        r1 [label="RDM: pairwise dissimilarity\n(1 - correlation)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        r2 [label="Searchlight Analysis\n(per-vertex sphere)" fillcolor="#FAD7A0" color="#E67E22"]
-        r3 [label="Spearman / Pearson r\nvs model RDM" fillcolor="#FAD7A0" color="#E67E22"]
-        r4 [label="RSA Score Map\n(vertex-level)" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
+        r1 [label="RDM: pairwise dissimilarity\n(1 - correlation)" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        r2 [label="Searchlight Analysis\n(per-vertex sphere)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        r3 [label="Spearman / Pearson r\nvs model RDM" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        r4 [label="RSA Score Map\n(vertex-level)" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         r1 -> r2 -> r3 -> r4
     }
 
     subgraph cluster_viz {
         label="Brain Visualization"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        v1 [label="brain_box.py\nmne_rsa_dark_neon.png" shape=note fillcolor="#FAD7A0" color="#E67E22"]
-        v2 [label="mne.viz /\npyvista brain plot" fillcolor="#FAD7A0" color="#E67E22"]
-        v3 [label="Surface Plot\n(inflated / pial)" shape=ellipse fillcolor="#FAD7A0" color="#E67E22"]
+        v1 [label="brain_box.py\nmne_rsa_dark_neon.png" shape=note fillcolor="#1a1a2e" color="#ff2d78" fontcolor="#cccccc"]
+        v2 [label="mne.viz /\npyvista brain plot" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        v3 [label="Surface Plot\n(inflated / pial)" shape=ellipse fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         v1 -> v2 -> v3
     }
 

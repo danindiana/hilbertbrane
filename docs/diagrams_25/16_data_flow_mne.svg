@@ -8,246 +8,246 @@
  viewBox="0.00 0.00 468.60 1555.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 1527.07)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-1527.07 439.8,-1527.07 439.8,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="205.5" y="-1483.07" font-family="Helvetica,Arial,sans-serif" font-size="14.00">MNE&#45;RSA Complete Data Flow</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-1527.07 439.8,-1527.07 439.8,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="205.5" y="-1483.07" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">MNE&#45;RSA Complete Data Flow</text>
 <g id="clust1" class="cluster">
 <title>cluster_raw</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M20,-1283.02C20,-1283.02 211,-1283.02 211,-1283.02 217,-1283.02 223,-1289.02 223,-1295.02 223,-1295.02 223,-1455.27 223,-1455.27 223,-1461.27 217,-1467.27 211,-1467.27 211,-1467.27 20,-1467.27 20,-1467.27 14,-1467.27 8,-1461.27 8,-1455.27 8,-1455.27 8,-1295.02 8,-1295.02 8,-1289.02 14,-1283.02 20,-1283.02"/>
-<text text-anchor="middle" x="115.5" y="-1453.67" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Raw Data</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M20,-1283.02C20,-1283.02 211,-1283.02 211,-1283.02 217,-1283.02 223,-1289.02 223,-1295.02 223,-1295.02 223,-1455.27 223,-1455.27 223,-1461.27 217,-1467.27 211,-1467.27 211,-1467.27 20,-1467.27 20,-1467.27 14,-1467.27 8,-1461.27 8,-1455.27 8,-1455.27 8,-1295.02 8,-1295.02 8,-1289.02 14,-1283.02 20,-1283.02"/>
+<text text-anchor="middle" x="115.5" y="-1453.67" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Raw Data</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_prep</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M52,-893.76C52,-893.76 178,-893.76 178,-893.76 184,-893.76 190,-899.76 190,-905.76 190,-905.76 190,-1250.02 190,-1250.02 190,-1256.02 184,-1262.02 178,-1262.02 178,-1262.02 52,-1262.02 52,-1262.02 46,-1262.02 40,-1256.02 40,-1250.02 40,-1250.02 40,-905.76 40,-905.76 40,-899.76 46,-893.76 52,-893.76"/>
-<text text-anchor="middle" x="115" y="-1248.42" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Preprocessing</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M52,-893.76C52,-893.76 178,-893.76 178,-893.76 184,-893.76 190,-899.76 190,-905.76 190,-905.76 190,-1250.02 190,-1250.02 190,-1256.02 184,-1262.02 178,-1262.02 178,-1262.02 52,-1262.02 52,-1262.02 46,-1262.02 40,-1256.02 40,-1250.02 40,-1250.02 40,-905.76 40,-905.76 40,-899.76 46,-893.76 52,-893.76"/>
+<text text-anchor="middle" x="115" y="-1248.42" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Preprocessing</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_src</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M210,-590.51C210,-590.51 374,-590.51 374,-590.51 380,-590.51 386,-596.51 386,-602.51 386,-602.51 386,-958.76 386,-958.76 386,-964.76 380,-970.76 374,-970.76 374,-970.76 210,-970.76 210,-970.76 204,-970.76 198,-964.76 198,-958.76 198,-958.76 198,-602.51 198,-602.51 198,-596.51 204,-590.51 210,-590.51"/>
-<text text-anchor="middle" x="292" y="-957.16" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Source Space</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M210,-590.51C210,-590.51 374,-590.51 374,-590.51 380,-590.51 386,-596.51 386,-602.51 386,-602.51 386,-958.76 386,-958.76 386,-964.76 380,-970.76 374,-970.76 374,-970.76 210,-970.76 210,-970.76 204,-970.76 198,-964.76 198,-958.76 198,-958.76 198,-602.51 198,-602.51 198,-596.51 204,-590.51 210,-590.51"/>
+<text text-anchor="middle" x="292" y="-957.16" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Source Space</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_rsa</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M201,-196C201,-196 383,-196 383,-196 389,-196 395,-202 395,-208 395,-208 395,-557.51 395,-557.51 395,-563.51 389,-569.51 383,-569.51 383,-569.51 201,-569.51 201,-569.51 195,-569.51 189,-563.51 189,-557.51 189,-557.51 189,-208 189,-208 189,-202 195,-196 201,-196"/>
-<text text-anchor="middle" x="292" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00">RSA</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M201,-196C201,-196 383,-196 383,-196 389,-196 395,-202 395,-208 395,-208 395,-557.51 395,-557.51 395,-563.51 389,-569.51 383,-569.51 383,-569.51 201,-569.51 201,-569.51 195,-569.51 189,-563.51 189,-557.51 189,-557.51 189,-208 189,-208 189,-202 195,-196 201,-196"/>
+<text text-anchor="middle" x="292" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">RSA</text>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_out</title>
-<path fill="#fdf2e9" stroke="#e67e22" d="M193,-8C193,-8 391,-8 391,-8 397,-8 403,-14 403,-20 403,-20 403,-163 403,-163 403,-169 397,-175 391,-175 391,-175 193,-175 193,-175 187,-175 181,-169 181,-163 181,-163 181,-20 181,-20 181,-14 187,-8 193,-8"/>
-<text text-anchor="middle" x="292" y="-161.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Output</text>
+<path fill="#1a000c" stroke="#ff2d78" d="M193,-8C193,-8 391,-8 391,-8 397,-8 403,-14 403,-20 403,-20 403,-163 403,-163 403,-169 397,-175 391,-175 391,-175 193,-175 193,-175 187,-175 181,-169 181,-163 181,-163 181,-20 181,-20 181,-14 187,-8 193,-8"/>
+<text text-anchor="middle" x="292" y="-161.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff2d78">Output</text>
 </g>
 <!-- rw1 -->
 <g id="node1" class="node">
 <title>rw1</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M215.5,-1434.27C215.5,-1436.48 197.8,-1438.27 176,-1438.27 154.2,-1438.27 136.5,-1436.48 136.5,-1434.27 136.5,-1434.27 136.5,-1398.27 136.5,-1398.27 136.5,-1396.07 154.2,-1394.27 176,-1394.27 197.8,-1394.27 215.5,-1396.07 215.5,-1398.27 215.5,-1398.27 215.5,-1434.27 215.5,-1434.27"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M215.5,-1434.27C215.5,-1432.07 197.8,-1430.27 176,-1430.27 154.2,-1430.27 136.5,-1432.07 136.5,-1434.27"/>
-<text text-anchor="middle" x="176" y="-1419.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">MEG raw file</text>
-<text text-anchor="middle" x="176" y="-1407.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(.fif / .ds)</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M215.5,-1434.27C215.5,-1436.48 197.8,-1438.27 176,-1438.27 154.2,-1438.27 136.5,-1436.48 136.5,-1434.27 136.5,-1434.27 136.5,-1398.27 136.5,-1398.27 136.5,-1396.07 154.2,-1394.27 176,-1394.27 197.8,-1394.27 215.5,-1396.07 215.5,-1398.27 215.5,-1398.27 215.5,-1434.27 215.5,-1434.27"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M215.5,-1434.27C215.5,-1432.07 197.8,-1430.27 176,-1430.27 154.2,-1430.27 136.5,-1432.07 136.5,-1434.27"/>
+<text text-anchor="middle" x="176" y="-1419.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">MEG raw file</text>
+<text text-anchor="middle" x="176" y="-1407.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(.fif / .ds)</text>
 </g>
 <!-- rw3 -->
 <g id="node3" class="node">
 <title>rw3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="115" cy="-1313.65" rx="77.56" ry="22.76"/>
-<text text-anchor="middle" x="115" y="-1316.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne.read_epochs()</text>
-<text text-anchor="middle" x="115" y="-1304.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00">or events&#45;based</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="115" cy="-1313.65" rx="77.56" ry="22.76"/>
+<text text-anchor="middle" x="115" y="-1316.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">mne.read_epochs()</text>
+<text text-anchor="middle" x="115" y="-1304.85" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">or events&#45;based</text>
 </g>
 <!-- rw1&#45;&gt;rw3 -->
 <g id="edge1" class="edge">
 <title>rw1&#45;&gt;rw3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M163.06,-1393.93C154.47,-1379.75 143.05,-1360.92 133.5,-1345.16"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="136.31,-1343.04 128.13,-1336.3 130.32,-1346.67 136.31,-1343.04"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M163.06,-1393.93C154.47,-1379.75 143.05,-1360.92 133.5,-1345.16"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="136.31,-1343.04 128.13,-1336.3 130.32,-1346.67 136.31,-1343.04"/>
 </g>
 <!-- rw2 -->
 <g id="node2" class="node">
 <title>rw2</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M93.5,-1434.27C93.5,-1436.48 76.24,-1438.27 55,-1438.27 33.76,-1438.27 16.5,-1436.48 16.5,-1434.27 16.5,-1434.27 16.5,-1398.27 16.5,-1398.27 16.5,-1396.07 33.76,-1394.27 55,-1394.27 76.24,-1394.27 93.5,-1396.07 93.5,-1398.27 93.5,-1398.27 93.5,-1434.27 93.5,-1434.27"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M93.5,-1434.27C93.5,-1432.07 76.24,-1430.27 55,-1430.27 33.76,-1430.27 16.5,-1432.07 16.5,-1434.27"/>
-<text text-anchor="middle" x="55" y="-1419.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">EEG raw file</text>
-<text text-anchor="middle" x="55" y="-1407.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(.edf / .bdf)</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M93.5,-1434.27C93.5,-1436.48 76.24,-1438.27 55,-1438.27 33.76,-1438.27 16.5,-1436.48 16.5,-1434.27 16.5,-1434.27 16.5,-1398.27 16.5,-1398.27 16.5,-1396.07 33.76,-1394.27 55,-1394.27 76.24,-1394.27 93.5,-1396.07 93.5,-1398.27 93.5,-1398.27 93.5,-1434.27 93.5,-1434.27"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M93.5,-1434.27C93.5,-1432.07 76.24,-1430.27 55,-1430.27 33.76,-1430.27 16.5,-1432.07 16.5,-1434.27"/>
+<text text-anchor="middle" x="55" y="-1419.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">EEG raw file</text>
+<text text-anchor="middle" x="55" y="-1407.47" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(.edf / .bdf)</text>
 </g>
 <!-- rw2&#45;&gt;rw3 -->
 <g id="edge2" class="edge">
 <title>rw2&#45;&gt;rw3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M67.72,-1393.93C76.18,-1379.75 87.41,-1360.92 96.8,-1345.16"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="99.97,-1346.68 102.09,-1336.3 93.96,-1343.1 99.97,-1346.68"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M67.72,-1393.93C76.18,-1379.75 87.41,-1360.92 96.8,-1345.16"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="99.97,-1346.68 102.09,-1336.3 93.96,-1343.1 99.97,-1346.68"/>
 </g>
 <!-- pr1 -->
 <g id="node4" class="node">
 <title>pr1</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="115" cy="-1210.39" rx="65.11" ry="22.76"/>
-<text text-anchor="middle" x="115" y="-1213.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Band&#45;pass filter</text>
-<text text-anchor="middle" x="115" y="-1201.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(1–40 Hz)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="115" cy="-1210.39" rx="65.11" ry="22.76"/>
+<text text-anchor="middle" x="115" y="-1213.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Band&#45;pass filter</text>
+<text text-anchor="middle" x="115" y="-1201.59" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(1–40 Hz)</text>
 </g>
 <!-- rw3&#45;&gt;pr1 -->
 <g id="edge13" class="edge">
 <title>rw3&#45;&gt;pr1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M115,-1290.93C115,-1277.04 115,-1258.8 115,-1243.29"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="118.5,-1243.08 115,-1233.08 111.5,-1243.08 118.5,-1243.08"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M115,-1290.93C115,-1277.04 115,-1258.8 115,-1243.29"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="118.5,-1243.08 115,-1233.08 111.5,-1243.08 118.5,-1243.08"/>
 </g>
 <!-- pr2 -->
 <g id="node5" class="node">
 <title>pr2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="115" cy="-1111.76" rx="67" ry="18"/>
-<text text-anchor="middle" x="115" y="-1108.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">ICA artifact removal</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="115" cy="-1111.76" rx="67" ry="18"/>
+<text text-anchor="middle" x="115" y="-1108.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">ICA artifact removal</text>
 </g>
 <!-- pr1&#45;&gt;pr2 -->
 <g id="edge3" class="edge">
 <title>pr1&#45;&gt;pr2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M115,-1187.47C115,-1173.4 115,-1155.02 115,-1140.02"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="118.5,-1139.79 115,-1129.79 111.5,-1139.79 118.5,-1139.79"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M115,-1187.47C115,-1173.4 115,-1155.02 115,-1140.02"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="118.5,-1139.79 115,-1129.79 111.5,-1139.79 118.5,-1139.79"/>
 </g>
 <!-- pr3 -->
 <g id="node6" class="node">
 <title>pr3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="116" cy="-1017.76" rx="64.89" ry="18"/>
-<text text-anchor="middle" x="116" y="-1014.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Baseline correction</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="116" cy="-1017.76" rx="64.89" ry="18"/>
+<text text-anchor="middle" x="116" y="-1014.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Baseline correction</text>
 </g>
 <!-- pr2&#45;&gt;pr3 -->
 <g id="edge4" class="edge">
 <title>pr2&#45;&gt;pr3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M115.19,-1093.46C115.33,-1080.22 115.53,-1061.71 115.7,-1046.43"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="119.2,-1046.03 115.81,-1035.99 112.2,-1045.95 119.2,-1046.03"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M115.19,-1093.46C115.33,-1080.22 115.53,-1061.71 115.7,-1046.43"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="119.2,-1046.03 115.81,-1035.99 112.2,-1045.95 119.2,-1046.03"/>
 </g>
 <!-- pr4 -->
 <g id="node7" class="node">
 <title>pr4</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M174,-934.49C174,-936.3 149.8,-937.76 120,-937.76 90.2,-937.76 66,-936.3 66,-934.49 66,-934.49 66,-905.04 66,-905.04 66,-903.23 90.2,-901.76 120,-901.76 149.8,-901.76 174,-903.23 174,-905.04 174,-905.04 174,-934.49 174,-934.49"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M174,-934.49C174,-932.69 149.8,-931.22 120,-931.22 90.2,-931.22 66,-932.69 66,-934.49"/>
-<text text-anchor="middle" x="120" y="-916.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne.Epochs object</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M174,-934.49C174,-936.3 149.8,-937.76 120,-937.76 90.2,-937.76 66,-936.3 66,-934.49 66,-934.49 66,-905.04 66,-905.04 66,-903.23 90.2,-901.76 120,-901.76 149.8,-901.76 174,-903.23 174,-905.04 174,-905.04 174,-934.49 174,-934.49"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M174,-934.49C174,-932.69 149.8,-931.22 120,-931.22 90.2,-931.22 66,-932.69 66,-934.49"/>
+<text text-anchor="middle" x="120" y="-916.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">mne.Epochs object</text>
 </g>
 <!-- pr3&#45;&gt;pr4 -->
 <g id="edge5" class="edge">
 <title>pr3&#45;&gt;pr4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M116.72,-999.6C117.31,-985.27 118.17,-964.57 118.87,-947.98"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="122.37,-947.92 119.29,-937.78 115.38,-947.62 122.37,-947.92"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M116.72,-999.6C117.31,-985.27 118.17,-964.57 118.87,-947.98"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="122.37,-947.92 119.29,-937.78 115.38,-947.62 122.37,-947.92"/>
 </g>
 <!-- sr2 -->
 <g id="node9" class="node">
 <title>sr2</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-817.14" rx="86.03" ry="22.76"/>
-<text text-anchor="middle" x="292" y="-820.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Forward solution</text>
-<text text-anchor="middle" x="292" y="-808.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(BEM / sphere model)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-817.14" rx="86.03" ry="22.76"/>
+<text text-anchor="middle" x="292" y="-820.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Forward solution</text>
+<text text-anchor="middle" x="292" y="-808.34" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(BEM / sphere model)</text>
 </g>
 <!-- pr4&#45;&gt;sr2 -->
 <g id="edge14" class="edge">
 <title>pr4&#45;&gt;sr2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M149.18,-901.69C176.57,-885.67 217.88,-861.5 249.04,-843.27"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="251.08,-846.13 257.94,-838.06 247.55,-840.09 251.08,-846.13"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M149.18,-901.69C176.57,-885.67 217.88,-861.5 249.04,-843.27"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="251.08,-846.13 257.94,-838.06 247.55,-840.09 251.08,-846.13"/>
 </g>
 <!-- sr1 -->
 <g id="node8" class="node">
 <title>sr1</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M362.5,-937.76C362.5,-939.97 330.9,-941.76 292,-941.76 253.1,-941.76 221.5,-939.97 221.5,-937.76 221.5,-937.76 221.5,-901.76 221.5,-901.76 221.5,-899.56 253.1,-897.76 292,-897.76 330.9,-897.76 362.5,-899.56 362.5,-901.76 362.5,-901.76 362.5,-937.76 362.5,-937.76"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M362.5,-937.76C362.5,-935.56 330.9,-933.76 292,-933.76 253.1,-933.76 221.5,-935.56 221.5,-937.76"/>
-<text text-anchor="middle" x="292" y="-922.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Freesurfer cortical surface</text>
-<text text-anchor="middle" x="292" y="-910.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(pial / inflated)</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M362.5,-937.76C362.5,-939.97 330.9,-941.76 292,-941.76 253.1,-941.76 221.5,-939.97 221.5,-937.76 221.5,-937.76 221.5,-901.76 221.5,-901.76 221.5,-899.56 253.1,-897.76 292,-897.76 330.9,-897.76 362.5,-899.56 362.5,-901.76 362.5,-901.76 362.5,-937.76 362.5,-937.76"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M362.5,-937.76C362.5,-935.56 330.9,-933.76 292,-933.76 253.1,-933.76 221.5,-935.56 221.5,-937.76"/>
+<text text-anchor="middle" x="292" y="-922.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Freesurfer cortical surface</text>
+<text text-anchor="middle" x="292" y="-910.96" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(pial / inflated)</text>
 </g>
 <!-- sr1&#45;&gt;sr2 -->
 <g id="edge6" class="edge">
 <title>sr1&#45;&gt;sr2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-897.42C292,-883.64 292,-865.46 292,-849.99"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-849.79 292,-839.79 288.5,-849.79 295.5,-849.79"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-897.42C292,-883.64 292,-865.46 292,-849.99"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-849.79 292,-839.79 288.5,-849.79 295.5,-849.79"/>
 </g>
 <!-- sr3 -->
 <g id="node10" class="node">
 <title>sr3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-718.51" rx="82.27" ry="18"/>
-<text text-anchor="middle" x="292" y="-715.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">make_inverse_operator()</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-718.51" rx="82.27" ry="18"/>
+<text text-anchor="middle" x="292" y="-715.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">make_inverse_operator()</text>
 </g>
 <!-- sr2&#45;&gt;sr3 -->
 <g id="edge7" class="edge">
 <title>sr2&#45;&gt;sr3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-794.21C292,-780.14 292,-761.77 292,-746.76"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-746.54 292,-736.54 288.5,-746.54 295.5,-746.54"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-794.21C292,-780.14 292,-761.77 292,-746.76"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-746.54 292,-736.54 288.5,-746.54 295.5,-746.54"/>
 </g>
 <!-- sr4 -->
 <g id="node11" class="node">
 <title>sr4</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M354.5,-638.51C354.5,-640.72 326.49,-642.51 292,-642.51 257.51,-642.51 229.5,-640.72 229.5,-638.51 229.5,-638.51 229.5,-602.51 229.5,-602.51 229.5,-600.3 257.51,-598.51 292,-598.51 326.49,-598.51 354.5,-600.3 354.5,-602.51 354.5,-602.51 354.5,-638.51 354.5,-638.51"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M354.5,-638.51C354.5,-636.3 326.49,-634.51 292,-634.51 257.51,-634.51 229.5,-636.3 229.5,-638.51"/>
-<text text-anchor="middle" x="292" y="-623.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">SourceEstimate (STC)</text>
-<text text-anchor="middle" x="292" y="-611.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00">vertices × time</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M354.5,-638.51C354.5,-640.72 326.49,-642.51 292,-642.51 257.51,-642.51 229.5,-640.72 229.5,-638.51 229.5,-638.51 229.5,-602.51 229.5,-602.51 229.5,-600.3 257.51,-598.51 292,-598.51 326.49,-598.51 354.5,-600.3 354.5,-602.51 354.5,-602.51 354.5,-638.51 354.5,-638.51"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M354.5,-638.51C354.5,-636.3 326.49,-634.51 292,-634.51 257.51,-634.51 229.5,-636.3 229.5,-638.51"/>
+<text text-anchor="middle" x="292" y="-623.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">SourceEstimate (STC)</text>
+<text text-anchor="middle" x="292" y="-611.71" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">vertices × time</text>
 </g>
 <!-- sr3&#45;&gt;sr4 -->
 <g id="edge8" class="edge">
 <title>sr3&#45;&gt;sr4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-700.35C292,-687.2 292,-668.7 292,-652.93"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-652.54 292,-642.54 288.5,-652.54 295.5,-652.54"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-700.35C292,-687.2 292,-668.7 292,-652.93"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-652.54 292,-642.54 288.5,-652.54 295.5,-652.54"/>
 </g>
 <!-- rs1 -->
 <g id="node12" class="node">
 <title>rs1</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-517.88" rx="81.13" ry="22.76"/>
-<text text-anchor="middle" x="292" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Pairwise dissimilarity</text>
-<text text-anchor="middle" x="292" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(1 &#45; correlation)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-517.88" rx="81.13" ry="22.76"/>
+<text text-anchor="middle" x="292" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Pairwise dissimilarity</text>
+<text text-anchor="middle" x="292" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(1 &#45; correlation)</text>
 </g>
 <!-- sr4&#45;&gt;rs1 -->
 <g id="edge15" class="edge">
 <title>sr4&#45;&gt;rs1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-598.17C292,-584.39 292,-566.21 292,-550.73"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-550.54 292,-540.54 288.5,-550.54 295.5,-550.54"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-598.17C292,-584.39 292,-566.21 292,-550.73"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-550.54 292,-540.54 288.5,-550.54 295.5,-550.54"/>
 </g>
 <!-- rs2 -->
 <g id="node13" class="node">
 <title>rs2</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M343.5,-433.98C343.5,-435.79 320.42,-437.25 292,-437.25 263.58,-437.25 240.5,-435.79 240.5,-433.98 240.5,-433.98 240.5,-404.53 240.5,-404.53 240.5,-402.72 263.58,-401.25 292,-401.25 320.42,-401.25 343.5,-402.72 343.5,-404.53 343.5,-404.53 343.5,-433.98 343.5,-433.98"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M343.5,-433.98C343.5,-432.18 320.42,-430.71 292,-430.71 263.58,-430.71 240.5,-432.18 240.5,-433.98"/>
-<text text-anchor="middle" x="292" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">RDM: N×N matrix</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M343.5,-433.98C343.5,-435.79 320.42,-437.25 292,-437.25 263.58,-437.25 240.5,-435.79 240.5,-433.98 240.5,-433.98 240.5,-404.53 240.5,-404.53 240.5,-402.72 263.58,-401.25 292,-401.25 320.42,-401.25 343.5,-402.72 343.5,-404.53 343.5,-404.53 343.5,-433.98 343.5,-433.98"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M343.5,-433.98C343.5,-432.18 320.42,-430.71 292,-430.71 263.58,-430.71 240.5,-432.18 240.5,-433.98"/>
+<text text-anchor="middle" x="292" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">RDM: N×N matrix</text>
 </g>
 <!-- rs1&#45;&gt;rs2 -->
 <g id="edge9" class="edge">
 <title>rs1&#45;&gt;rs2</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-494.96C292,-480.89 292,-462.51 292,-447.51"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-447.28 292,-437.28 288.5,-447.28 295.5,-447.28"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-494.96C292,-480.89 292,-462.51 292,-447.51"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-447.28 292,-437.28 288.5,-447.28 295.5,-447.28"/>
 </g>
 <!-- rs3 -->
 <g id="node14" class="node">
 <title>rs3</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-320.63" rx="94.51" ry="22.76"/>
-<text text-anchor="middle" x="292" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Compare to model RDM</text>
-<text text-anchor="middle" x="292" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(Spearman r)</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-320.63" rx="94.51" ry="22.76"/>
+<text text-anchor="middle" x="292" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">Compare to model RDM</text>
+<text text-anchor="middle" x="292" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">(Spearman r)</text>
 </g>
 <!-- rs2&#45;&gt;rs3 -->
 <g id="edge10" class="edge">
 <title>rs2&#45;&gt;rs3</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-400.98C292,-387.92 292,-369.63 292,-353.89"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-353.5 292,-343.5 288.5,-353.5 295.5,-353.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-400.98C292,-387.92 292,-369.63 292,-353.89"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-353.5 292,-343.5 288.5,-353.5 295.5,-353.5"/>
 </g>
 <!-- rs4 -->
 <g id="node15" class="node">
 <title>rs4</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-222" rx="71.62" ry="18"/>
-<text text-anchor="middle" x="292" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">RSA score per vertex</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-222" rx="71.62" ry="18"/>
+<text text-anchor="middle" x="292" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">RSA score per vertex</text>
 </g>
 <!-- rs3&#45;&gt;rs4 -->
 <g id="edge11" class="edge">
 <title>rs3&#45;&gt;rs4</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-297.7C292,-283.63 292,-265.26 292,-250.25"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-250.03 292,-240.03 288.5,-250.03 295.5,-250.03"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-297.7C292,-283.63 292,-265.26 292,-250.25"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-250.03 292,-240.03 288.5,-250.03 295.5,-250.03"/>
 </g>
 <!-- ov -->
 <g id="node16" class="node">
 <title>ov</title>
-<ellipse fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" cx="292" cy="-128" rx="102.66" ry="18"/>
-<text text-anchor="middle" x="292" y="-125.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">mne.viz.plot_source_estimates()</text>
+<ellipse fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" cx="292" cy="-128" rx="102.66" ry="18"/>
+<text text-anchor="middle" x="292" y="-125.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">mne.viz.plot_source_estimates()</text>
 </g>
 <!-- rs4&#45;&gt;ov -->
 <g id="edge16" class="edge">
 <title>rs4&#45;&gt;ov</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-203.7C292,-190.46 292,-171.95 292,-156.66"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-156.23 292,-146.23 288.5,-156.23 295.5,-156.23"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-203.7C292,-190.46 292,-171.95 292,-156.66"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-156.23 292,-146.23 288.5,-156.23 295.5,-156.23"/>
 </g>
 <!-- op -->
 <g id="node17" class="node">
 <title>op</title>
-<path fill="#fad7a0" stroke="#e67e22" stroke-width="1.5" d="M336.5,-48.73C336.5,-50.53 316.55,-52 292,-52 267.45,-52 247.5,-50.53 247.5,-48.73 247.5,-48.73 247.5,-19.27 247.5,-19.27 247.5,-17.47 267.45,-16 292,-16 316.55,-16 336.5,-17.47 336.5,-19.27 336.5,-19.27 336.5,-48.73 336.5,-48.73"/>
-<path fill="none" stroke="#e67e22" stroke-width="1.5" d="M336.5,-48.73C336.5,-46.92 316.55,-45.45 292,-45.45 267.45,-45.45 247.5,-46.92 247.5,-48.73"/>
-<text text-anchor="middle" x="292" y="-31.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">brain_map.png</text>
+<path fill="#2e0014" stroke="#ff2d78" stroke-width="1.8" d="M336.5,-48.73C336.5,-50.53 316.55,-52 292,-52 267.45,-52 247.5,-50.53 247.5,-48.73 247.5,-48.73 247.5,-19.27 247.5,-19.27 247.5,-17.47 267.45,-16 292,-16 316.55,-16 336.5,-17.47 336.5,-19.27 336.5,-19.27 336.5,-48.73 336.5,-48.73"/>
+<path fill="none" stroke="#ff2d78" stroke-width="1.8" d="M336.5,-48.73C336.5,-46.92 316.55,-45.45 292,-45.45 267.45,-45.45 247.5,-46.92 247.5,-48.73"/>
+<text text-anchor="middle" x="292" y="-31.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff2d78">brain_map.png</text>
 </g>
 <!-- ov&#45;&gt;op -->
 <g id="edge12" class="edge">
 <title>ov&#45;&gt;op</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M292,-109.7C292,-96.46 292,-77.95 292,-62.66"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="295.5,-62.23 292,-52.23 288.5,-62.23 295.5,-62.23"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M292,-109.7C292,-96.46 292,-77.95 292,-62.66"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="295.5,-62.23 292,-52.23 288.5,-62.23 295.5,-62.23"/>
 </g>
 </g>
 </svg>

@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,51 +11,51 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Performance and Memory Scaling by Hilbert Order" rankdir="TB"]
 
     subgraph cluster_o3 {
         label="Order 3"
-        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0500" color="#ff6600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff6600"
 
-        p3a [label="512 voxels\n(2³ × 2³ × 2³)" fillcolor="#F1948A" color="#C0392B"]
-        p3b [label="~2000 spline pts" fillcolor="#F1948A" color="#C0392B"]
-        p3c [label="~50k polys\n(~5 MB RAM)" fillcolor="#F1948A" color="#C0392B"]
-        p3d [label="< 5 seconds" fillcolor="#F1948A" color="#C0392B"]
+        p3a [label="512 voxels\n(2³ × 2³ × 2³)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p3b [label="~2000 spline pts" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p3c [label="~50k polys\n(~5 MB RAM)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p3d [label="< 5 seconds" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
         p3a -> p3b -> p3c -> p3d
     }
 
     subgraph cluster_o4 {
         label="Order 4  (default for HilbertBrain)"
-        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0500" color="#ff6600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff6600"
 
-        p4a [label="4096 voxels\n(4³ × 4³ × 4³)" fillcolor="#F1948A" color="#C0392B"]
-        p4b [label="~8000 spline pts" fillcolor="#F1948A" color="#C0392B"]
-        p4c [label="~300k polys\n(~150 MB RAM)" fillcolor="#F1948A" color="#C0392B"]
-        p4d [label="~30–60 seconds" fillcolor="#F1948A" color="#C0392B"]
+        p4a [label="4096 voxels\n(4³ × 4³ × 4³)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p4b [label="~8000 spline pts" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p4c [label="~300k polys\n(~150 MB RAM)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p4d [label="~30–60 seconds" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
         p4a -> p4b -> p4c -> p4d
     }
 
     subgraph cluster_o5 {
         label="Order 5"
-        style="filled,rounded" fillcolor="#FDEDEC" color="#C0392B" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a0500" color="#ff6600" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff6600"
 
-        p5a [label="32768 voxels\n(5³ × 5³ × 5³)" fillcolor="#F1948A" color="#C0392B"]
-        p5b [label="~50k+ spline pts" fillcolor="#F1948A" color="#C0392B"]
-        p5c [label=">1M polys\n(>1 GB RAM)" fillcolor="#F1948A" color="#C0392B"]
-        p5d [label="several minutes" fillcolor="#F1948A" color="#C0392B"]
+        p5a [label="32768 voxels\n(5³ × 5³ × 5³)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p5b [label="~50k+ spline pts" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p5c [label=">1M polys\n(>1 GB RAM)" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+        p5d [label="several minutes" fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
         p5a -> p5b -> p5c -> p5d
     }
 
-    gpu [label="GPU VRAM\n(VTK OpenGL buffer)" shape=cylinder fillcolor="#F1948A" color="#C0392B"]
-    note1 [label="Decimation reduces\npoly count 30–45%\nbefore STL export" shape=note fillcolor="#FDFEFE" color="#C0392B"]
+    gpu [label="GPU VRAM\n(VTK OpenGL buffer)" shape=cylinder fillcolor="#2e0900" color="#ff6600" fontcolor="#ff6600"]
+    note1 [label="Decimation reduces\npoly count 30–45%\nbefore STL export" shape=note fillcolor="#1a1a2e" color="#ff6600" fontcolor="#cccccc"]
 
     p3d -> gpu
     p4d -> gpu
     p5d -> gpu
-    gpu -> note1 [style=dashed]
+    gpu -> note1 [style=dashed color="#553300"]
 }

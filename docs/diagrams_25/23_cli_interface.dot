@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,55 +11,55 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="CLI Parameter Prompting Interface" rankdir="TB"]
 
-    banner [label="=== Hilbert Brain Surface Generator ===" shape=note fillcolor="#D2B4DE" color="#8E44AD"]
+    banner [label="=== Hilbert Brain Surface Generator ===" shape=note fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
 
     subgraph cluster_hilbert {
         label="Hilbert Parameters"
-        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#0d001a" color="#bf00ff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#bf00ff"
 
-        h1 [label="Prompt: order\n(2–5, default 3)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
-        h2 [label="input().strip() or '3'" fillcolor="#D2B4DE" color="#8E44AD"]
-        h3 [label="Valid int 2 ≤ order ≤ 5?" shape=diamond fillcolor="#D2B4DE" color="#8E44AD"]
-        h4 [label="Prompt: spline_samples\n(1000–8000)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
+        h1 [label="Prompt: order\n(2–5, default 3)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        h2 [label="input().strip() or '3'" fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        h3 [label="Valid int 2 ≤ order ≤ 5?" shape=diamond fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        h4 [label="Prompt: spline_samples\n(1000–8000)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
         h1 -> h2 -> h3
         h3 -> h4 [label="YES"]
-        h3 -> h1 [label="NO – retry" style=dashed color="#999999"]
+        h3 -> h1 [label="NO – retry" style=dashed color="#553366" fontcolor="#887799"]
     }
 
     subgraph cluster_geom {
         label="Geometry Parameters"
-        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#0d001a" color="#bf00ff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#bf00ff"
 
-        gp1 [label="Prompt: ridge_radius\n(0.5–5.0)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
-        gp2 [label="Prompt: sulcus_scale\n(0.0–0.8)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
-        gp3 [label="Prompt: growth_factor\n(1.0–2.0)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
+        gp1 [label="Prompt: ridge_radius\n(0.5–5.0)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        gp2 [label="Prompt: sulcus_scale\n(0.0–0.8)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        gp3 [label="Prompt: growth_factor\n(1.0–2.0)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
         gp1 -> gp2 -> gp3
     }
 
     subgraph cluster_pinch {
         label="Pinch Field Parameters"
-        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#0d001a" color="#bf00ff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#bf00ff"
 
-        pp [label="k1, k2, w1, w2\nwobble, seed" shape=tab fillcolor="#D2B4DE" color="#8E44AD"]
+        pp [label="k1, k2, w1, w2\nwobble, seed" shape=tab fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
     }
 
     subgraph cluster_out {
         label="Output Parameters"
-        style="filled,rounded" fillcolor="#F5EEF8" color="#8E44AD" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#0d001a" color="#bf00ff" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#bf00ff"
 
-        op1 [label="output_filename (*.stl)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
-        op2 [label="decimation (0.1–0.9)" shape=parallelogram fillcolor="#D2B4DE" color="#8E44AD"]
+        op1 [label="output_filename (*.stl)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
+        op2 [label="decimation (0.1–0.9)" shape=parallelogram fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
     }
 
-    result [label="Return config dict\n→ generator call" shape=cylinder fillcolor="#D2B4DE" color="#8E44AD"]
+    result [label="Return config dict\n→ generator call" shape=cylinder fillcolor="#1a0033" color="#bf00ff" fontcolor="#bf00ff"]
 
     banner -> h1
     h4 -> gp1

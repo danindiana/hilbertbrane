@@ -8,196 +8,196 @@
  viewBox="0.00 0.00 547.60 658.11" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(28.8 629.31)">
 <title>G</title>
-<polygon fill="#ffffff" stroke="transparent" points="-28.8,28.8 -28.8,-629.31 518.8,-629.31 518.8,28.8 -28.8,28.8"/>
-<text text-anchor="middle" x="245" y="-585.31" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Performance and Memory Scaling by Hilbert Order</text>
+<polygon fill="#0d1117" stroke="transparent" points="-28.8,28.8 -28.8,-629.31 518.8,-629.31 518.8,28.8 -28.8,28.8"/>
+<text text-anchor="middle" x="245" y="-585.31" font-family="Helvetica,Arial,sans-serif" font-size="14.00" fill="white">Performance and Memory Scaling by Hilbert Order</text>
 <g id="clust1" class="cluster">
 <title>cluster_o3</title>
-<path fill="#fdedec" stroke="#c0392b" d="M20,-196C20,-196 130,-196 130,-196 136,-196 142,-202 142,-208 142,-208 142,-557.51 142,-557.51 142,-563.51 136,-569.51 130,-569.51 130,-569.51 20,-569.51 20,-569.51 14,-569.51 8,-563.51 8,-557.51 8,-557.51 8,-208 8,-208 8,-202 14,-196 20,-196"/>
-<text text-anchor="middle" x="75" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Order 3</text>
+<path fill="#1a0500" stroke="#ff6600" d="M20,-196C20,-196 130,-196 130,-196 136,-196 142,-202 142,-208 142,-208 142,-557.51 142,-557.51 142,-563.51 136,-569.51 130,-569.51 130,-569.51 20,-569.51 20,-569.51 14,-569.51 8,-563.51 8,-557.51 8,-557.51 8,-208 8,-208 8,-202 14,-196 20,-196"/>
+<text text-anchor="middle" x="75" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff6600">Order 3</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_o4</title>
-<path fill="#fdedec" stroke="#c0392b" d="M162,-196C162,-196 328,-196 328,-196 334,-196 340,-202 340,-208 340,-208 340,-557.51 340,-557.51 340,-563.51 334,-569.51 328,-569.51 328,-569.51 162,-569.51 162,-569.51 156,-569.51 150,-563.51 150,-557.51 150,-557.51 150,-208 150,-208 150,-202 156,-196 162,-196"/>
-<text text-anchor="middle" x="245" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Order 4 &#160;(default for HilbertBrain)</text>
+<path fill="#1a0500" stroke="#ff6600" d="M162,-196C162,-196 328,-196 328,-196 334,-196 340,-202 340,-208 340,-208 340,-557.51 340,-557.51 340,-563.51 334,-569.51 328,-569.51 328,-569.51 162,-569.51 162,-569.51 156,-569.51 150,-563.51 150,-557.51 150,-557.51 150,-208 150,-208 150,-202 156,-196 162,-196"/>
+<text text-anchor="middle" x="245" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff6600">Order 4 &#160;(default for HilbertBrain)</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_o5</title>
-<path fill="#fdedec" stroke="#c0392b" d="M360,-196C360,-196 470,-196 470,-196 476,-196 482,-202 482,-208 482,-208 482,-557.51 482,-557.51 482,-563.51 476,-569.51 470,-569.51 470,-569.51 360,-569.51 360,-569.51 354,-569.51 348,-563.51 348,-557.51 348,-557.51 348,-208 348,-208 348,-202 354,-196 360,-196"/>
-<text text-anchor="middle" x="415" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Order 5</text>
+<path fill="#1a0500" stroke="#ff6600" d="M360,-196C360,-196 470,-196 470,-196 476,-196 482,-202 482,-208 482,-208 482,-557.51 482,-557.51 482,-563.51 476,-569.51 470,-569.51 470,-569.51 360,-569.51 360,-569.51 354,-569.51 348,-563.51 348,-557.51 348,-557.51 348,-208 348,-208 348,-202 354,-196 360,-196"/>
+<text text-anchor="middle" x="415" y="-555.91" font-family="Helvetica,Arial,sans-serif" font-size="12.00" fill="#ff6600">Order 5</text>
 </g>
 <!-- p3a -->
 <g id="node1" class="node">
 <title>p3a</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="75" cy="-517.88" rx="55.72" ry="22.76"/>
-<text text-anchor="middle" x="75" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">512 voxels</text>
-<text text-anchor="middle" x="75" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(2³ × 2³ × 2³)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="75" cy="-517.88" rx="55.72" ry="22.76"/>
+<text text-anchor="middle" x="75" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">512 voxels</text>
+<text text-anchor="middle" x="75" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(2³ × 2³ × 2³)</text>
 </g>
 <!-- p3b -->
 <g id="node2" class="node">
 <title>p3b</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="75" cy="-419.25" rx="57.25" ry="18"/>
-<text text-anchor="middle" x="75" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~2000 spline pts</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="75" cy="-419.25" rx="57.25" ry="18"/>
+<text text-anchor="middle" x="75" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~2000 spline pts</text>
 </g>
 <!-- p3a&#45;&gt;p3b -->
 <g id="edge1" class="edge">
 <title>p3a&#45;&gt;p3b</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M75,-494.96C75,-480.89 75,-462.51 75,-447.51"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="78.5,-447.28 75,-437.28 71.5,-447.28 78.5,-447.28"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M75,-494.96C75,-480.89 75,-462.51 75,-447.51"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="78.5,-447.28 75,-437.28 71.5,-447.28 78.5,-447.28"/>
 </g>
 <!-- p3c -->
 <g id="node3" class="node">
 <title>p3c</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="75" cy="-320.63" rx="59.29" ry="22.76"/>
-<text text-anchor="middle" x="75" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~50k polys</text>
-<text text-anchor="middle" x="75" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(~5 MB RAM)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="75" cy="-320.63" rx="59.29" ry="22.76"/>
+<text text-anchor="middle" x="75" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~50k polys</text>
+<text text-anchor="middle" x="75" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(~5 MB RAM)</text>
 </g>
 <!-- p3b&#45;&gt;p3c -->
 <g id="edge2" class="edge">
 <title>p3b&#45;&gt;p3c</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M75,-400.98C75,-387.92 75,-369.63 75,-353.89"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="78.5,-353.5 75,-343.5 71.5,-353.5 78.5,-353.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M75,-400.98C75,-387.92 75,-369.63 75,-353.89"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="78.5,-353.5 75,-343.5 71.5,-353.5 78.5,-353.5"/>
 </g>
 <!-- p3d -->
 <g id="node4" class="node">
 <title>p3d</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="82" cy="-222" rx="45.2" ry="18"/>
-<text text-anchor="middle" x="82" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">&lt; 5 seconds</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="82" cy="-222" rx="45.2" ry="18"/>
+<text text-anchor="middle" x="82" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">&lt; 5 seconds</text>
 </g>
 <!-- p3c&#45;&gt;p3d -->
 <g id="edge3" class="edge">
 <title>p3c&#45;&gt;p3d</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M76.59,-297.7C77.61,-283.63 78.94,-265.26 80.03,-250.25"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="83.53,-250.26 80.77,-240.03 76.55,-249.75 83.53,-250.26"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M76.59,-297.7C77.61,-283.63 78.94,-265.26 80.03,-250.25"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="83.53,-250.26 80.77,-240.03 76.55,-249.75 83.53,-250.26"/>
 </g>
 <!-- gpu -->
 <g id="node13" class="node">
 <title>gpu</title>
-<path fill="#f1948a" stroke="#c0392b" stroke-width="1.5" d="M305,-142C305,-144.21 278.11,-146 245,-146 211.89,-146 185,-144.21 185,-142 185,-142 185,-106 185,-106 185,-103.79 211.89,-102 245,-102 278.11,-102 305,-103.79 305,-106 305,-106 305,-142 305,-142"/>
-<path fill="none" stroke="#c0392b" stroke-width="1.5" d="M305,-142C305,-139.79 278.11,-138 245,-138 211.89,-138 185,-139.79 185,-142"/>
-<text text-anchor="middle" x="245" y="-127.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">GPU VRAM</text>
-<text text-anchor="middle" x="245" y="-115.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(VTK OpenGL buffer)</text>
+<path fill="#2e0900" stroke="#ff6600" stroke-width="1.8" d="M305,-142C305,-144.21 278.11,-146 245,-146 211.89,-146 185,-144.21 185,-142 185,-142 185,-106 185,-106 185,-103.79 211.89,-102 245,-102 278.11,-102 305,-103.79 305,-106 305,-106 305,-142 305,-142"/>
+<path fill="none" stroke="#ff6600" stroke-width="1.8" d="M305,-142C305,-139.79 278.11,-138 245,-138 211.89,-138 185,-139.79 185,-142"/>
+<text text-anchor="middle" x="245" y="-127.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">GPU VRAM</text>
+<text text-anchor="middle" x="245" y="-115.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(VTK OpenGL buffer)</text>
 </g>
 <!-- p3d&#45;&gt;gpu -->
 <g id="edge10" class="edge">
 <title>p3d&#45;&gt;gpu</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M106.4,-206.63C131.3,-191.96 170.48,-168.89 200.84,-151.01"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="202.71,-153.97 209.55,-145.88 199.16,-147.94 202.71,-153.97"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M106.4,-206.63C131.3,-191.96 170.48,-168.89 200.84,-151.01"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="202.71,-153.97 209.55,-145.88 199.16,-147.94 202.71,-153.97"/>
 </g>
 <!-- p4a -->
 <g id="node5" class="node">
 <title>p4a</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="245" cy="-517.88" rx="55.72" ry="22.76"/>
-<text text-anchor="middle" x="245" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">4096 voxels</text>
-<text text-anchor="middle" x="245" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(4³ × 4³ × 4³)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="245" cy="-517.88" rx="55.72" ry="22.76"/>
+<text text-anchor="middle" x="245" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">4096 voxels</text>
+<text text-anchor="middle" x="245" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(4³ × 4³ × 4³)</text>
 </g>
 <!-- p4b -->
 <g id="node6" class="node">
 <title>p4b</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="245" cy="-419.25" rx="57.25" ry="18"/>
-<text text-anchor="middle" x="245" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~8000 spline pts</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="245" cy="-419.25" rx="57.25" ry="18"/>
+<text text-anchor="middle" x="245" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~8000 spline pts</text>
 </g>
 <!-- p4a&#45;&gt;p4b -->
 <g id="edge4" class="edge">
 <title>p4a&#45;&gt;p4b</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M245,-494.96C245,-480.89 245,-462.51 245,-447.51"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="248.5,-447.28 245,-437.28 241.5,-447.28 248.5,-447.28"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M245,-494.96C245,-480.89 245,-462.51 245,-447.51"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="248.5,-447.28 245,-437.28 241.5,-447.28 248.5,-447.28"/>
 </g>
 <!-- p4c -->
 <g id="node7" class="node">
 <title>p4c</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="245" cy="-320.63" rx="67.76" ry="22.76"/>
-<text text-anchor="middle" x="245" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~300k polys</text>
-<text text-anchor="middle" x="245" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(~150 MB RAM)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="245" cy="-320.63" rx="67.76" ry="22.76"/>
+<text text-anchor="middle" x="245" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~300k polys</text>
+<text text-anchor="middle" x="245" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(~150 MB RAM)</text>
 </g>
 <!-- p4b&#45;&gt;p4c -->
 <g id="edge5" class="edge">
 <title>p4b&#45;&gt;p4c</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M245,-400.98C245,-387.92 245,-369.63 245,-353.89"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="248.5,-353.5 245,-343.5 241.5,-353.5 248.5,-353.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M245,-400.98C245,-387.92 245,-369.63 245,-353.89"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="248.5,-353.5 245,-343.5 241.5,-353.5 248.5,-353.5"/>
 </g>
 <!-- p4d -->
 <g id="node8" class="node">
 <title>p4d</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="245" cy="-222" rx="57.96" ry="18"/>
-<text text-anchor="middle" x="245" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~30–60 seconds</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="245" cy="-222" rx="57.96" ry="18"/>
+<text text-anchor="middle" x="245" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~30–60 seconds</text>
 </g>
 <!-- p4c&#45;&gt;p4d -->
 <g id="edge6" class="edge">
 <title>p4c&#45;&gt;p4d</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M245,-297.7C245,-283.63 245,-265.26 245,-250.25"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="248.5,-250.03 245,-240.03 241.5,-250.03 248.5,-250.03"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M245,-297.7C245,-283.63 245,-265.26 245,-250.25"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="248.5,-250.03 245,-240.03 241.5,-250.03 248.5,-250.03"/>
 </g>
 <!-- p4d&#45;&gt;gpu -->
 <g id="edge11" class="edge">
 <title>p4d&#45;&gt;gpu</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M245,-203.84C245,-190.69 245,-172.19 245,-156.42"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="248.5,-156.03 245,-146.03 241.5,-156.03 248.5,-156.03"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M245,-203.84C245,-190.69 245,-172.19 245,-156.42"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="248.5,-156.03 245,-146.03 241.5,-156.03 248.5,-156.03"/>
 </g>
 <!-- p5a -->
 <g id="node9" class="node">
 <title>p5a</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="415" cy="-517.88" rx="56.64" ry="22.76"/>
-<text text-anchor="middle" x="415" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">32768 voxels</text>
-<text text-anchor="middle" x="415" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(5³ × 5³ × 5³)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="415" cy="-517.88" rx="56.64" ry="22.76"/>
+<text text-anchor="middle" x="415" y="-521.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">32768 voxels</text>
+<text text-anchor="middle" x="415" y="-509.08" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(5³ × 5³ × 5³)</text>
 </g>
 <!-- p5b -->
 <g id="node10" class="node">
 <title>p5b</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="415" cy="-419.25" rx="57.25" ry="18"/>
-<text text-anchor="middle" x="415" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00">~50k+ spline pts</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="415" cy="-419.25" rx="57.25" ry="18"/>
+<text text-anchor="middle" x="415" y="-416.45" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">~50k+ spline pts</text>
 </g>
 <!-- p5a&#45;&gt;p5b -->
 <g id="edge7" class="edge">
 <title>p5a&#45;&gt;p5b</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M415,-494.96C415,-480.89 415,-462.51 415,-447.51"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="418.5,-447.28 415,-437.28 411.5,-447.28 418.5,-447.28"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M415,-494.96C415,-480.89 415,-462.51 415,-447.51"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="418.5,-447.28 415,-437.28 411.5,-447.28 418.5,-447.28"/>
 </g>
 <!-- p5c -->
 <g id="node11" class="node">
 <title>p5c</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="415" cy="-320.63" rx="58.88" ry="22.76"/>
-<text text-anchor="middle" x="415" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">&gt;1M polys</text>
-<text text-anchor="middle" x="415" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00">(&gt;1 GB RAM)</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="415" cy="-320.63" rx="58.88" ry="22.76"/>
+<text text-anchor="middle" x="415" y="-323.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">&gt;1M polys</text>
+<text text-anchor="middle" x="415" y="-311.83" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">(&gt;1 GB RAM)</text>
 </g>
 <!-- p5b&#45;&gt;p5c -->
 <g id="edge8" class="edge">
 <title>p5b&#45;&gt;p5c</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M415,-400.98C415,-387.92 415,-369.63 415,-353.89"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="418.5,-353.5 415,-343.5 411.5,-353.5 418.5,-353.5"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M415,-400.98C415,-387.92 415,-369.63 415,-353.89"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="418.5,-353.5 415,-343.5 411.5,-353.5 418.5,-353.5"/>
 </g>
 <!-- p5d -->
 <g id="node12" class="node">
 <title>p5d</title>
-<ellipse fill="#f1948a" stroke="#c0392b" stroke-width="1.5" cx="413" cy="-222" rx="55.15" ry="18"/>
-<text text-anchor="middle" x="413" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">several minutes</text>
+<ellipse fill="#2e0900" stroke="#ff6600" stroke-width="1.8" cx="413" cy="-222" rx="55.15" ry="18"/>
+<text text-anchor="middle" x="413" y="-219.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#ff6600">several minutes</text>
 </g>
 <!-- p5c&#45;&gt;p5d -->
 <g id="edge9" class="edge">
 <title>p5c&#45;&gt;p5d</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M414.55,-297.7C414.25,-283.63 413.87,-265.26 413.56,-250.25"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="417.06,-249.96 413.35,-240.03 410.06,-250.1 417.06,-249.96"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M414.55,-297.7C414.25,-283.63 413.87,-265.26 413.56,-250.25"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="417.06,-249.96 413.35,-240.03 410.06,-250.1 417.06,-249.96"/>
 </g>
 <!-- p5d&#45;&gt;gpu -->
 <g id="edge12" class="edge">
 <title>p5d&#45;&gt;gpu</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" d="M386.75,-206C361.05,-191.31 321.36,-168.64 290.52,-151.01"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="292.08,-147.87 281.66,-145.95 288.61,-153.95 292.08,-147.87"/>
+<path fill="none" stroke="#444466" stroke-width="1.2" d="M386.75,-206C361.05,-191.31 321.36,-168.64 290.52,-151.01"/>
+<polygon fill="#444466" stroke="#444466" stroke-width="1.2" points="292.08,-147.87 281.66,-145.95 288.61,-153.95 292.08,-147.87"/>
 </g>
 <!-- note1 -->
 <g id="node14" class="node">
 <title>note1</title>
-<polygon fill="#fdfefe" stroke="#c0392b" stroke-width="1.5" points="295,-44 189,-44 189,0 301,0 301,-38 295,-44"/>
-<polyline fill="none" stroke="#c0392b" stroke-width="1.5" points="295,-44 295,-38 "/>
-<polyline fill="none" stroke="#c0392b" stroke-width="1.5" points="301,-38 295,-38 "/>
-<text text-anchor="middle" x="245" y="-31.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">Decimation reduces</text>
-<text text-anchor="middle" x="245" y="-19.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">poly count 30–45%</text>
-<text text-anchor="middle" x="245" y="-7.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00">before STL export</text>
+<polygon fill="#1a1a2e" stroke="#ff6600" stroke-width="1.8" points="295,-44 189,-44 189,0 301,0 301,-38 295,-44"/>
+<polyline fill="none" stroke="#ff6600" stroke-width="1.8" points="295,-44 295,-38 "/>
+<polyline fill="none" stroke="#ff6600" stroke-width="1.8" points="301,-38 295,-38 "/>
+<text text-anchor="middle" x="245" y="-31.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#cccccc">Decimation reduces</text>
+<text text-anchor="middle" x="245" y="-19.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#cccccc">poly count 30–45%</text>
+<text text-anchor="middle" x="245" y="-7.2" font-family="Helvetica,Arial,sans-serif" font-size="11.00" fill="#cccccc">before STL export</text>
 </g>
 <!-- gpu&#45;&gt;note1 -->
 <g id="edge13" class="edge">
 <title>gpu&#45;&gt;note1</title>
-<path fill="none" stroke="#555555" stroke-width="1.2" stroke-dasharray="5,2" d="M245,-101.79C245,-88 245,-69.78 245,-54.34"/>
-<polygon fill="#555555" stroke="#555555" stroke-width="1.2" points="248.5,-54.18 245,-44.18 241.5,-54.18 248.5,-54.18"/>
+<path fill="none" stroke="#553300" stroke-width="1.2" stroke-dasharray="5,2" d="M245,-101.79C245,-88 245,-69.78 245,-54.34"/>
+<polygon fill="#553300" stroke="#553300" stroke-width="1.2" points="248.5,-54.18 245,-44.18 241.5,-54.18 248.5,-54.18"/>
 </g>
 </g>
 </svg>

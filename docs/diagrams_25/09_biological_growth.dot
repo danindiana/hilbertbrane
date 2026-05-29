@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,49 +11,49 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Differential Cortical Growth Simulation" rankdir="TB"]
 
     subgraph cluster_state {
         label="Mesh State"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        ms1 [label="Post-smoothed PolyData" shape=cylinder fillcolor="#FAD7A0" color="#E67E22"]
-        ms2 [label="mesh.point_normals\n(per-vertex normal vectors)" fillcolor="#FAD7A0" color="#E67E22"]
+        ms1 [label="Post-smoothed PolyData" shape=cylinder fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        ms2 [label="mesh.point_normals\n(per-vertex normal vectors)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         ms1 -> ms2
     }
 
     subgraph cluster_mask {
         label="Outer Surface Mask"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        mk1 [label="Z coords\nmesh.points[:,2]" fillcolor="#FAD7A0" color="#E67E22"]
-        mk2 [label="Z > Z.mean()\n(upper ~65% of volume)" shape=diamond fillcolor="#FAD7A0" color="#E67E22"]
-        mk3 [label="Outer surface mask\n(boolean array)" fillcolor="#FAD7A0" color="#E67E22"]
-        mki [label="Inner surface\n(no displacement)" style=dashed fillcolor="#FDEBD0" color="#999999"]
+        mk1 [label="Z coords\nmesh.points[:,2]" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        mk2 [label="Z > Z.mean()\n(upper ~65% of volume)" shape=diamond fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        mk3 [label="Outer surface mask\n(boolean array)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        mki [label="Inner surface\n(no displacement)" style=dashed fillcolor="#1a0010" color="#553344" fontcolor="#887788"]
         mk1 -> mk2
         mk2 -> mk3 [label="YES"]
-        mk2 -> mki [label="NO" style=dashed color="#999999"]
+        mk2 -> mki [label="NO" style=dashed color="#553344"]
     }
 
     subgraph cluster_disp {
         label="Normal Displacement"
-        style="filled,rounded" fillcolor="#FDF2E9" color="#E67E22" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#1a000c" color="#ff2d78" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#ff2d78"
 
-        dp1 [label="growth_factor = 1.08–1.25" shape=tab fillcolor="#FAD7A0" color="#E67E22"]
-        dp2 [label="disp = 0.25 × normals × (factor - 1.0)" fillcolor="#FAD7A0" color="#E67E22"]
-        dp3 [label="mesh.points[mask] += disp[mask]" fillcolor="#FAD7A0" color="#E67E22"]
-        dp4 [label="Outer expansion → buckling" shape=ellipse fillcolor="#FAD7A0" color="#E67E22"]
+        dp1 [label="growth_factor = 1.08–1.25" shape=tab fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        dp2 [label="disp = 0.25 × normals × (factor - 1.0)" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        dp3 [label="mesh.points[mask] += disp[mask]" fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
+        dp4 [label="Outer expansion → buckling" shape=ellipse fillcolor="#2e0014" color="#ff2d78" fontcolor="#ff2d78"]
         dp1 -> dp2 -> dp3 -> dp4
     }
 
-    bio [label="Biological analogy:\ncortical white matter\nexpansion drives folding" shape=note fillcolor="#FEF9E7" color="#E67E22"]
+    bio [label="Biological analogy:\ncortical white matter\nexpansion drives folding" shape=note fillcolor="#1a1a2e" color="#ff2d78" fontcolor="#cccccc"]
 
     ms2 -> mk1
     mk3 -> dp2
-    dp4 -> bio [style=dashed]
+    dp4 -> bio [style=dashed color="#553344"]
 }

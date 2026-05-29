@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,41 +11,41 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="PyVista Mesh Generation Pipeline" rankdir="TB"]
 
     subgraph cluster_cl {
         label="Centerline Construction"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        c1 [label="Hilbert Path\n(N³ discrete integer points)" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
-        c2 [label="pv.Spline(path, N_SAMPLES)\n→ smooth continuous centerline" fillcolor="#A9DFBF" color="#27AE60"]
-        c3 [label="Arclength t ∈ [0,1]\nnp.cumsum(segment lengths)" fillcolor="#A9DFBF" color="#27AE60"]
+        c1 [label="Hilbert Path\n(N³ discrete integer points)" shape=cylinder fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        c2 [label="pv.Spline(path, N_SAMPLES)\n→ smooth continuous centerline" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        c3 [label="Arclength t ∈ [0,1]\nnp.cumsum(segment lengths)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         c1 -> c2 [label="interpolate"]
         c2 -> c3 [label="normalize"]
     }
 
     subgraph cluster_rp {
         label="Radius Profile"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        r1 [label="Pinch Field P(t)\n∈ [0, 1] per point" fillcolor="#A9DFBF" color="#27AE60"]
-        r2 [label="radius_abs = R × (1 - SulcusScale × P)" fillcolor="#A9DFBF" color="#27AE60"]
-        r3 [label="Attach as point_data\n'radius_profile'" fillcolor="#A9DFBF" color="#27AE60"]
+        r1 [label="Pinch Field P(t)\n∈ [0, 1] per point" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        r2 [label="radius_abs = R × (1 - SulcusScale × P)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        r3 [label="Attach as point_data\n'radius_profile'" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         r1 -> r2 -> r3
     }
 
     subgraph cluster_tube {
         label="Tube Extrusion"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        t1 [label="centerline.tube(\n  scalars='radius_profile',\n  n_sides=32, capping=True\n)" fillcolor="#A9DFBF" color="#27AE60"]
-        t2 [label="tube.triangulate()\n(all-triangle faces)" fillcolor="#A9DFBF" color="#27AE60"]
-        t3 [label="PolyData surface mesh\n(watertight)" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        t1 [label="centerline.tube(\n  scalars='radius_profile',\n  n_sides=32, capping=True\n)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        t2 [label="tube.triangulate()\n(all-triangle faces)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        t3 [label="PolyData surface mesh\n(watertight)" shape=cylinder fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         t1 -> t2 -> t3
     }
 

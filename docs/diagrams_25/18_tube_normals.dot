@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,55 +11,55 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Tube Surface: Centerline to Geometry" rankdir="LR"]
 
     subgraph cluster_tan {
         label="Centerline Tangent"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        t1 [label="Centerline point P(t)" fillcolor="#A9DFBF" color="#27AE60"]
-        t2 [label="Finite difference\ndP/dt ≈ P(t+1) - P(t)" fillcolor="#A9DFBF" color="#27AE60"]
-        t3 [label="Normalize tangent T" fillcolor="#A9DFBF" color="#27AE60"]
+        t1 [label="Centerline point P(t)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        t2 [label="Finite difference\ndP/dt ≈ P(t+1) - P(t)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        t3 [label="Normalize tangent T" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         t1 -> t2 -> t3
     }
 
     subgraph cluster_frame {
         label="Frenet-Serret Frame"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        f1 [label="Arbitrary up-vector" shape=note fillcolor="#D5F5E3" color="#27AE60"]
-        f2 [label="N = up × T\n(surface normal)" fillcolor="#A9DFBF" color="#27AE60"]
-        f3 [label="B = T × N\n(binormal)" fillcolor="#A9DFBF" color="#27AE60"]
-        vtk [label="VTK computes Frenet\nframe automatically\nvia vtkTubeFilter" shape=note fillcolor="#D5F5E3" color="#27AE60"]
+        f1 [label="Arbitrary up-vector" shape=note fillcolor="#1a1a2e" color="#00ff88" fontcolor="#cccccc"]
+        f2 [label="N = up × T\n(surface normal)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        f3 [label="B = T × N\n(binormal)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        vtk [label="VTK computes Frenet\nframe automatically\nvia vtkTubeFilter" shape=note fillcolor="#1a1a2e" color="#00ff88" fontcolor="#cccccc"]
         f1 -> f2 -> f3
-        f3 -> vtk [style=dashed]
+        f3 -> vtk [style=dashed color="#335533"]
     }
 
     subgraph cluster_circle {
         label="Cross-Section Circle"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        cc1 [label="n_sides = 28–64\n(polygon facets)" shape=tab fillcolor="#A9DFBF" color="#27AE60"]
-        cc2 [label="cos(θ)×N + sin(θ)×B\n(unit circle in local frame)" fillcolor="#A9DFBF" color="#27AE60"]
-        cc3 [label="Scale by radius_profile[i]" fillcolor="#A9DFBF" color="#27AE60"]
-        cc4 [label="Circle vertices\n(n_sides points)" fillcolor="#A9DFBF" color="#27AE60"]
+        cc1 [label="n_sides = 28–64\n(polygon facets)" shape=tab fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        cc2 [label="cos(θ)×N + sin(θ)×B\n(unit circle in local frame)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        cc3 [label="Scale by radius_profile[i]" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        cc4 [label="Circle vertices\n(n_sides points)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         cc1 -> cc2 -> cc3 -> cc4
     }
 
     subgraph cluster_faces {
         label="Face Generation"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        fc1 [label="Connect consecutive\ncircles → quad strips" fillcolor="#A9DFBF" color="#27AE60"]
-        fc2 [label="Triangulate quads\n→ 2 triangles each" fillcolor="#A9DFBF" color="#27AE60"]
-        fc3 [label="Cap end disks\n(capping=True)" fillcolor="#A9DFBF" color="#27AE60"]
-        fc4 [label="PolyData surface\n(watertight tube)" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        fc1 [label="Connect consecutive\ncircles → quad strips" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        fc2 [label="Triangulate quads\n→ 2 triangles each" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        fc3 [label="Cap end disks\n(capping=True)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        fc4 [label="PolyData surface\n(watertight tube)" shape=cylinder fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         fc1 -> fc2 -> fc3 -> fc4
     }
 

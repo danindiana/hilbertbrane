@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,53 +11,53 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="User Deployment Workflow" rankdir="TB"]
 
     subgraph cluster_install {
         label="Installation"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        i1 [label="git clone\nhttps://github.com/.../hilbertbrane" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        i2 [label="python3 -m venv venv\nsource venv/bin/activate" fillcolor="#A2D9CE" color="#17A589"]
-        i3 [label="pip install -r requirements.txt\n(pyvista, vtk, numpy, noise, matplotlib)" fillcolor="#A2D9CE" color="#17A589"]
+        i1 [label="git clone\nhttps://github.com/.../hilbertbrane" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        i2 [label="python3 -m venv venv\nsource venv/bin/activate" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        i3 [label="pip install -r requirements.txt\n(pyvista, vtk, numpy, noise, matplotlib)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         i1 -> i2 -> i3
     }
 
     subgraph cluster_gen {
         label="Generation"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        g1 [label="./run.sh\n(batch runner)" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        g2 [label="HilbertGyri3.py\n→ HilbertBrain.stl" fillcolor="#A2D9CE" color="#17A589"]
-        g3 [label="brain_box.py\n→ mne_rsa_dark_neon.png" fillcolor="#A2D9CE" color="#17A589"]
+        g1 [label="./run.sh\n(batch runner)" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g2 [label="HilbertGyri3.py\n→ HilbertBrain.stl" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        g3 [label="brain_box.py\n→ mne_rsa_dark_neon.png" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         g1 -> g2 -> g3
     }
 
     subgraph cluster_tune {
         label="Interactive Refinement"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        t1 [label="python interactive_tuner.py" fillcolor="#A2D9CE" color="#17A589"]
-        t2 [label="Adjust sliders\n(size / radius / sulcus)" shape=diamond fillcolor="#A2D9CE" color="#17A589"]
-        t3 [label="Mesh OK?" shape=diamond fillcolor="#A2D9CE" color="#17A589"]
+        t1 [label="python interactive_tuner.py" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        t2 [label="Adjust sliders\n(size / radius / sulcus)" shape=diamond fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        t3 [label="Mesh OK?" shape=diamond fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         t1 -> t2 -> t3
-        t3 -> t2 [label="NO – adjust" style=dashed color="#999999"]
+        t3 -> t2 [label="NO – adjust" style=dashed color="#335555" fontcolor="#557777"]
     }
 
     subgraph cluster_export {
         label="Export and Delivery"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        e1 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        e2 [label="3D Printer Slicer\n(Cura / PrusaSlicer)" fillcolor="#A2D9CE" color="#17A589"]
-        e3 [label="WebGL Viewer\n(Three.js / Babylon.js)" fillcolor="#A2D9CE" color="#17A589"]
-        e4 [label="Physics Sim\n(Blender / FEA)" fillcolor="#A2D9CE" color="#17A589"]
+        e1 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        e2 [label="3D Printer Slicer\n(Cura / PrusaSlicer)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        e3 [label="WebGL Viewer\n(Three.js / Babylon.js)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        e4 [label="Physics Sim\n(Blender / FEA)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         e1 -> e2
         e1 -> e3
         e1 -> e4

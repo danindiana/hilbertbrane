@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,44 +11,44 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Headless / Offline Screenshot Pipeline" rankdir="TB"]
 
     subgraph cluster_env {
         label="Environment Setup"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        e1 [label="Xvfb (virtual framebuffer)\nOR off_screen=True" fillcolor="#A2D9CE" color="#17A589"]
-        e2 [label="pv.Plotter(\n  off_screen=True,\n  window_size=(800,800)\n)" fillcolor="#A2D9CE" color="#17A589"]
+        e1 [label="Xvfb (virtual framebuffer)\nOR off_screen=True" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        e2 [label="pv.Plotter(\n  off_screen=True,\n  window_size=(800,800)\n)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         e1 -> e2
     }
 
     subgraph cluster_scene {
         label="Scene Assembly"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        s1 [label="pv.read('*.stl')" shape=parallelogram fillcolor="#A2D9CE" color="#17A589"]
-        s2 [label="p.add_mesh(mesh,\n  color='lightblue',\n  smooth_shading=True)" fillcolor="#A2D9CE" color="#17A589"]
-        s3 [label="p.camera_position='iso'" fillcolor="#A2D9CE" color="#17A589"]
+        s1 [label="pv.read('*.stl')" shape=parallelogram fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        s2 [label="p.add_mesh(mesh,\n  color='lightblue',\n  smooth_shading=True)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        s3 [label="p.camera_position='iso'" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         s1 -> s2 -> s3
     }
 
     subgraph cluster_cap {
         label="Capture and Export"
-        style="filled,rounded" fillcolor="#E8F8F5" color="#17A589" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d0d" color="#00ffe7" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ffe7"
 
-        c1 [label="p.screenshot(\n  'output.png'\n)" fillcolor="#A2D9CE" color="#17A589"]
-        c2 [label="PNG file\n(800 × 800 px)" shape=cylinder fillcolor="#A2D9CE" color="#17A589"]
+        c1 [label="p.screenshot(\n  'output.png'\n)" fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
+        c2 [label="PNG file\n(800 × 800 px)" shape=cylinder fillcolor="#001a1a" color="#00ffe7" fontcolor="#00ffe7"]
         c1 -> c2
     }
 
-    usage [label="Used in screenshot.py\nfor automated CI/preview" shape=note fillcolor="#FDFEFE" color="#17A589"]
+    usage [label="Used in screenshot.py\nfor automated CI/preview" shape=note fillcolor="#1a1a2e" color="#00ffe7" fontcolor="#cccccc"]
 
     e2 -> s1
     s3 -> c1
-    c2 -> usage [style=dashed]
+    c2 -> usage [style=dashed color="#335555"]
 }

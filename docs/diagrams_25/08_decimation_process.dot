@@ -1,7 +1,8 @@
 digraph G {
     graph [
         fontname="Helvetica,Arial,sans-serif"
-        bgcolor="#ffffff"
+        bgcolor="#0d1117"
+        fontcolor="white"
         splines=spline
         nodesep=0.6
         ranksep=0.8
@@ -10,53 +11,53 @@ digraph G {
         labeljust="c"
         fontsize=14
     ]
-    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.5]
-    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#555555" penwidth=1.2]
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=11 style="filled,rounded" penwidth=1.8 fontcolor="white"]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=9 color="#444466" penwidth=1.2 fontcolor="#aaaacc"]
     graph [label="Mesh Decimation and Smoothing Pipeline" rankdir="TB"]
 
     subgraph cluster_raw {
         label="Raw Tube Input"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        r1 [label="tube.triangulate()\n(ensure all-triangle faces)" fillcolor="#A9DFBF" color="#27AE60"]
-        r2 [label="~300k–600k cells\n(pre-decimation)" shape=note fillcolor="#D5F5E3" color="#27AE60"]
+        r1 [label="tube.triangulate()\n(ensure all-triangle faces)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        r2 [label="~300k–600k cells\n(pre-decimation)" shape=note fillcolor="#1a1a2e" color="#00ff88" fontcolor="#cccccc"]
     }
 
     subgraph cluster_dec {
         label="Decimation"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        d1 [label="mesh.decimate(0.30–0.45)\n→ reduce cell count" fillcolor="#A9DFBF" color="#27AE60"]
-        d2 [label="Decimated mesh\n~100k–200k cells" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
+        d1 [label="mesh.decimate(0.30–0.45)\n→ reduce cell count" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        d2 [label="Decimated mesh\n~100k–200k cells" shape=cylinder fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         d1 -> d2
     }
 
     subgraph cluster_nrm {
         label="Normal Computation"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        n1 [label="compute_normals(\n  cell_normals=False,\n  auto_orient=True\n)" fillcolor="#A9DFBF" color="#27AE60"]
+        n1 [label="compute_normals(\n  cell_normals=False,\n  auto_orient=True\n)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
     }
 
     subgraph cluster_smooth {
         label="Smoothing"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        s1 [label="mesh.smooth(\n  n_iter=30–90,\n  relaxation_factor=0.5\n)" fillcolor="#A9DFBF" color="#27AE60"]
-        s2 [label="OR Taubin smooth\n(HilbertGyri3 path)" style=dashed fillcolor="#D5F5E3" color="#27AE60"]
+        s1 [label="mesh.smooth(\n  n_iter=30–90,\n  relaxation_factor=0.5\n)" fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        s2 [label="OR Taubin smooth\n(HilbertGyri3 path)" style=dashed fillcolor="#0d1a10" color="#335533" fontcolor="#557755"]
     }
 
     subgraph cluster_out {
         label="Output"
-        style="filled,rounded" fillcolor="#EAFAF1" color="#27AE60" fontsize=12
-        fontname="Helvetica,Arial,sans-serif"
+        style="filled,rounded" fillcolor="#000d07" color="#00ff88" fontsize=12
+        fontname="Helvetica,Arial,sans-serif" fontcolor="#00ff88"
 
-        o1 [label="Final mesh\n(watertight, smooth)" shape=cylinder fillcolor="#A9DFBF" color="#27AE60"]
-        o2 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#A9DFBF" color="#27AE60"]
+        o1 [label="Final mesh\n(watertight, smooth)" shape=cylinder fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
+        o2 [label="mesh.save('*.stl')" shape=parallelogram fillcolor="#001a0d" color="#00ff88" fontcolor="#00ff88"]
         o1 -> o2
     }
 
@@ -64,5 +65,5 @@ digraph G {
     d2 -> n1 [label="recompute"]
     n1 -> s1
     s1 -> o1
-    s2 -> o1 [style=dashed]
+    s2 -> o1 [style=dashed color="#335533"]
 }
