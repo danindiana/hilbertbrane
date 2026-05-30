@@ -6,3 +6,4 @@ __pycache__/
 output/
 viewer_log.txt
 session_*
+hilbertbrane.egg-info/
