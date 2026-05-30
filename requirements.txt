@@ -13,6 +13,11 @@ matplotlib==3.10.9
 mdurl==0.1.2
 noise==1.2.2
 pytest>=7.0
+# Optional — install for the corresponding features:
+# tetgen       -- tetrahedralisation (pip install tetgen)
+# pymeshfix    -- watertight repair  (pip install pymeshfix)
+# meshio       -- .msh/.inp/.vtu FEM I/O (pip install meshio)
+# trimesh      -- glTF/GLB export (pip install trimesh)
 numpy==2.2.6
 packaging==26.2
 pillow==12.2.0

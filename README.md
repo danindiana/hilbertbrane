@@ -275,9 +275,41 @@ Source files live in [`docs/infographics/`](docs/infographics/).
 
 ---
 
+## 🔬 FEM / Morphoelastic Scaffolding (`morphoelastic.py`)
+
+The vertex-displacement growth in `hilbert_gen.py` *simulates* cortical folding geometrically. The real phenomenon — growth-induced mechanical buckling of a thin fast-growing cortex over a slower core (Tallinen, Chung, Biggins & Mahadevan, 2014) — requires a nonlinear FEM solver. `morphoelastic.py` does the honest, solver-agnostic part:
+
+```
+surface mesh  →  (repair to watertight)  →  tetrahedral volume mesh
+              →  cortical growth field g(x)  →  FEM input file
+```
+
+Activate via the `--fem` flag in `hilbert_gen.py`:
+
+```bash
+python hilbert_gen.py --preset gyri --repair --fem vtu -o brain.vtu
+python hilbert_gen.py --preset gyri --repair --fem feb -o brain.feb \
+    --cortical-thickness 0.3 --fem-growth-rate 1.4
+```
+
+| FEM format | Dependency | Notes |
+|-----------|-----------|-------|
+| `.vtu` | meshio | VTK unstructured grid; growth field round-trips |
+| `.msh` | meshio | Gmsh format; growth field round-trips |
+| `.inp` | meshio | Abaqus; geometry only (meshio drops point data) |
+| `.feb` | stdlib | FEBio XML; geometry + growth field + clearly-marked stub material/BC/solver blocks |
+
+The growth field ramps from 1.0 in the core to `--fem-growth-rate` at the surface — the thin-fast-cortex-over-slow-core differential that drives the Tallinen–Mahadevan instability. It is an **isotropic scalar proxy**; a faithful model needs an anisotropic tangential growth tensor in the solver. The `.feb` output loads in FEBio Studio for inspection but contains `<!-- SCAFFOLD: ... -->` comments and TODO stubs that must be completed before a run means anything.
+
+`tetrahedralize()` requires the surface to be watertight — it repairs with `pymeshfix` and refuses to proceed if the repair fails, so `--fem` forces the quality gate that `--repair` otherwise makes optional.
+
+**Optional dependencies:** `pip install tetgen pymeshfix meshio`
+
+---
+
 ## 🧪 Testing
 
-41 tests across three files. Run from the repo root after activating the venv:
+55 tests across four files. Run from the repo root after activating the venv:
 
 ```bash
 python -m pytest          # all tests
@@ -290,6 +322,7 @@ python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
 | `tests/test_core.py` | 12 | numpy only | Hilbert curve locality (the old Gray-code bug), field invariants |
 | `tests/test_exporters.py` | 21 | PyVista + optional trimesh | Round-trip per format, 3MF OPC structure, glTF sidecar-free |
 | `tests/test_pipeline.py` | 8 | PyVista + optional trimesh | Full `generate()` → export integration at order 2 |
+| `tests/test_morphoelastic.py` | 14 | PyVista + optional tetgen/meshio | Tet meshing, growth field ramp, FEM format round-trips, scaffold honesty |
 
 The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
 

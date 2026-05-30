@@ -29,6 +29,7 @@ import numpy as np
 
 import exporters
 import hilbert_core as hc
+import morphoelastic
 
 
 # ---------------------------------------------------------------------------
@@ -50,6 +51,7 @@ BASE = {
     "radius_clip_lo": 0.0, "radius_clip_hi": 2.0,
     "output": "hilbert_brain.stl",
     "fmt": "auto",
+    "fem": None, "cortical_thickness": 0.3, "fem_growth_rate": 1.4,
     "preview": False, "repair": False,
 }
 
@@ -160,6 +162,16 @@ def build_parser() -> argparse.ArgumentParser:
                    help="output format; 'auto' infers from the filename extension "
                         "(stl|ply|3mf|gltf|glb|swc)")
     g.add_argument("--preview", action="store_true", help="open an interactive window")
+
+    g = p.add_argument_group("FEM / morphoelastic (tetrahedral volume + growth field)")
+    g.add_argument("--fem", choices=["auto"] + morphoelastic.SUPPORTED, default=None,
+                   help="instead of a surface, emit a tet volume mesh with a "
+                        "cortical growth field (msh|inp|vtu|feb). Forces watertight "
+                        "repair of the surface first.")
+    g.add_argument("--cortical-thickness", type=float, dest="cortical_thickness",
+                   help="depth of the fast-growing cortical shell (model units)")
+    g.add_argument("--fem-growth-rate", type=float, dest="fem_growth_rate",
+                   help="growth multiplier at the surface (1.0 = no growth)")
     g.add_argument("--repair", action="store_true",
                    help="attempt watertight repair via pymeshfix before saving")
     return p
@@ -343,8 +355,13 @@ def main(argv=None) -> int:
         cfg = prompt_config(cfg)
 
     out_path, fmt = exporters.resolve(cfg["output"], cfg["fmt"])
+    if cfg["fem"]:
+        target, _ = morphoelastic.resolve(cfg["output"], cfg["fem"])
+        target_desc = f"{target} [fem]"
+    else:
+        target_desc = f"{out_path} [{fmt}]"
     print(f"Generating order={cfg['order']} spline={cfg['spline']} "
-          f"radius={cfg['radius']} sulcus={cfg['sulcus']} -> {out_path} [{fmt}]")
+          f"radius={cfg['radius']} sulcus={cfg['sulcus']} -> {target_desc}")
     t0 = time.time()
     try:
         mesh, cl_points, radius = generate(cfg)
@@ -367,6 +384,23 @@ def main(argv=None) -> int:
         "radius": cfg["radius"], "sulcus": cfg["sulcus"],
         "seed": cfg["seed"], "growth_mode": cfg["growth_mode"],
     }
+
+    # FEM branch: tetrahedral volume + cortical growth field instead of a surface
+    if cfg["fem"]:
+        try:
+            fem_path, fem_fmt = morphoelastic.resolve(cfg["output"], cfg["fem"])
+            fem_path, volume = morphoelastic.surface_to_fem(
+                mesh, fem_path, fem_fmt,
+                cortical_thickness=cfg["cortical_thickness"],
+                growth_rate=cfg["fem_growth_rate"], meta=meta)
+        except (ImportError, ValueError, RuntimeError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        g = np.asarray(volume.cell_data["growth"])
+        print(f"Saved {fem_path} in {time.time() - t0:.1f}s "
+              f"({volume.n_points} nodes, {volume.n_cells} tets) "
+              f"-- growth field {g.min():.3f}..{g.max():.3f}")
+        return 0
 
     try:
         out_path = exporters.write(mesh, cl_points, radius, out_path, fmt, meta)
