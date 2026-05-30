@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hilbertbrane"
+description = "Hilbert-curve cortical-surface generator with FEM/neuro interop and reproducible provenance."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["hilbert-curve", "mesh", "brain", "gyrification", "3d-printing",
+            "neuroimaging", "morphoelastic", "stl", "gltf", "gifti"]
+authors = [{ name = "danindiana" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Intended Audience :: Science/Research",
+]
+
+# Version is the single source of truth in provenance.VERSION.
+dynamic = ["version"]
+
+# Minimal runtime: enough to generate and export STL / PLY / 3MF / SWC.
+dependencies = [
+    "numpy>=1.24",
+    "pyvista>=0.44",
+]
+
+[project.optional-dependencies]
+gltf  = ["trimesh>=4"]                              # glTF / GLB export
+noise = ["noise>=1.2"]                              # Perlin folding (gyri3)
+fem   = ["tetgen>=0.6", "meshio>=5", "pymeshfix>=0.16"]  # tet volume + repair
+neuro = ["nibabel>=5", "networkx>=3", "scipy>=1.10"]     # GIFTI / NIfTI / graph
+tuner = ["trame>=3", "trame-vuetify>=3", "trame-vtk>=2"] # browser tuner
+# Convenience bundles (self-referential extras, resolved by modern pip)
+all   = ["hilbertbrane[gltf,noise,fem,neuro,tuner]"]
+test  = ["pytest>=7", "hilbertbrane[all]"]
+
+[project.scripts]
+hilbertbrane = "hilbert_gen:main"
+hilbertbrane-tuner = "tuner_trame:main"
+
+[project.urls]
+Homepage = "https://github.com/danindiana/hilbertbrane"
+Repository = "https://github.com/danindiana/hilbertbrane"
+
+[tool.setuptools]
+# Flat single-file modules (no package directory) -> matches the
+# `hilbert_gen:main` entry point and needs no import changes.
+py-modules = [
+    "hilbert_core",
+    "hilbert_gen",
+    "exporters",
+    "morphoelastic",
+    "neuro",
+    "provenance",
+    "tuner_trame",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "provenance.VERSION" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

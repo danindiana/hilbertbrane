@@ -359,7 +359,7 @@ def _apply_growth(mesh, cfg):
 
 
 # ---------------------------------------------------------------------------
-def main(argv=None) -> int:
+def _run(argv=None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.list_presets:
@@ -467,6 +467,19 @@ def main(argv=None) -> int:
         print("  tip: re-run with --repair (needs `pip install pymeshfix`) "
               "for a print-ready watertight mesh.")
     return 0
+
+
+def main(argv=None) -> int:
+    """Console entry point. Exits cleanly when stdout is closed early
+    (e.g. `hilbertbrane --list-presets | head`) instead of dumping a traceback."""
+    try:
+        return _run(argv)
+    except BrokenPipeError:
+        try:
+            sys.stdout.close()
+        except Exception:
+            pass
+        return 0
 
 
 if __name__ == "__main__":

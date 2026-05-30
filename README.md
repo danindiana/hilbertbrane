@@ -348,6 +348,39 @@ The growth field ramps from 1.0 in the core to `--fem-growth-rate` at the surfac
 
 ---
 
+## 📦 Installation
+
+```bash
+# From PyPI (once published) or directly from the repo:
+pip install .                     # core (STL/PLY/3MF/SWC)
+pip install ".[all]"              # every optional feature
+pip install -e ".[test]"          # editable dev install + all deps
+
+# Via pipx (isolated, globally available):
+pipx install .
+uvx --from . hilbertbrane --preset gyri3 -o brain.stl
+
+# Console commands installed on PATH:
+hilbertbrane --preset gyri3 --neuro gii -o brain
+hilbertbrane-tuner --no-browser     # browser tuner over SSH
+```
+
+The wheel ships exactly the 7 core modules (`hilbert_core`, `hilbert_gen`, `exporters`, `morphoelastic`, `neuro`, `provenance`, `tuner_trame`). Legacy scripts (`HilbertGyri*.py`, `interactive_tuner.py`, `brain_box.py`) are excluded by the explicit `py-modules` list. Version is sourced dynamically from `provenance.VERSION` — one place to bump.
+
+**Optional extras:**
+
+| Extra | Installs | Enables |
+|-------|---------|---------|
+| `gltf` | trimesh | glTF / GLB export |
+| `noise` | noise | Perlin folding (gyri3) |
+| `fem` | tetgen, meshio, pymeshfix | tet volume + repair |
+| `neuro` | nibabel, networkx, scipy | GIFTI / NIfTI / graph |
+| `tuner` | trame stack | browser tuner |
+| `all` | everything above | — |
+| `test` | pytest + all | run `pytest` |
+
+---
+
 ## 🔖 Provenance & Reproducibility (`provenance.py`)
 
 Every output is fully determined by its resolved config + seed, so every file can carry exactly what's needed to recreate it.
@@ -383,7 +416,7 @@ The `--from-provenance` path was verified end-to-end: regenerating a Perlin-nois
 
 ## 🧪 Testing
 
-97 tests across seven files. Run from the repo root after activating the venv:
+104 tests across eight files. Run from the repo root after activating the venv:
 
 ```bash
 python -m pytest          # all tests
@@ -400,6 +433,7 @@ python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
 | `tests/test_neuro.py` | 26 | PyVista + optional nibabel/networkx/scipy | GIFTI round-trip, overlay source preference, NIfTI bijective gradient, graph chain + kNN edges, graphml/gexf round-trips |
 | `tests/test_tuner.py` | 8 | PyVista + optional trame | Config sanity, geometry correctness, radius clip, path caching, correct-curve guard, app builds, actor-leak fix, export writes file |
 | `tests/test_provenance.py` | 8 | numpy + optional PyVista | Record completeness, flatten/JSON round-trip, sidecar load-by-path, PLY embedding preserves mesh, `--provenance none` opt-out, bit-identical regeneration |
+| `tests/test_packaging.py` | 7 | tomllib (Python 3.11+) | pyproject parses, entry-point targets callable, scripts map correctly, all declared modules exist on disk, legacy scripts excluded, version sourced from provenance.VERSION |
 
 The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
 
