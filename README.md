@@ -275,6 +275,36 @@ Source files live in [`docs/infographics/`](docs/infographics/).
 
 ---
 
+## 🧠 Neuroimaging Interoperability (`neuro.py`)
+
+The SWC neuron-morphology writer lives in `exporters.py`. `neuro.py` adds the surface- and volume-level neuro formats so the generated geometry speaks directly to neuroimaging toolchains.
+
+```bash
+python hilbert_gen.py --preset gyri3 --neuro gii     -o brain   # brain.surf.gii + brain.shape.gii
+python hilbert_gen.py --preset gyri3 --neuro nii     -o brain   # brain.nii.gz (traversal index volume)
+python hilbert_gen.py --preset gyri3 --neuro graphml -o brain   # brain.graphml
+python hilbert_gen.py --preset gyri3 --neuro gexf --neuro-knn 6 -o brain  # + spatial kNN edges
+```
+
+| Format | Flag | Dependency | Output | Opens in |
+|--------|------|-----------|--------|----------|
+| GIFTI surface | `--neuro gii` | nibabel | `.surf.gii` + `.shape.gii` overlay | FreeView, Connectome Workbench, MNE, nilearn, pycortex |
+| NIfTI volume | `--neuro nii` | nibabel | `.nii.gz` — traversal-index gradient | 3D Slicer, FSL, nilearn |
+| GraphML | `--neuro graphml` | networkx | `.graphml` | NetworkX, igraph, BCT |
+| GEXF | `--neuro gexf` | networkx | `.gexf` | Gephi, NetworkX |
+
+**GIFTI overlay:** the pinch field is resampled onto every final-mesh vertex by nearest centerline point (scipy KD-tree), so it stays correct after decimation. Falls back to mesh mean curvature when scipy is absent.
+
+**NIfTI voxel content:** the curve is space-filling so occupancy is uniformly 1 and useless; the volume stores each cell's *normalised traversal index* instead — a dense scalar gradient that snakes through the cube and is informative in a volume viewer.
+
+**Graph:** `--neuro-knn k` adds spatial edges to each node's *k* nearest neighbours in addition to the path chain, turning the trivial sequence into a graph where geodesic and path distance diverge — the interesting regime for BCT/igraph analysis.
+
+**Honesty:** these formats imply interoperability, not anatomical fidelity. This is generative geometry that speaks neuro formats for visualisation, teaching, and pipeline testing.
+
+**Optional dependencies:** `pip install nibabel networkx scipy`
+
+---
+
 ## 🔬 FEM / Morphoelastic Scaffolding (`morphoelastic.py`)
 
 The vertex-displacement growth in `hilbert_gen.py` *simulates* cortical folding geometrically. The real phenomenon — growth-induced mechanical buckling of a thin fast-growing cortex over a slower core (Tallinen, Chung, Biggins & Mahadevan, 2014) — requires a nonlinear FEM solver. `morphoelastic.py` does the honest, solver-agnostic part:
@@ -309,7 +339,7 @@ The growth field ramps from 1.0 in the core to `--fem-growth-rate` at the surfac
 
 ## 🧪 Testing
 
-55 tests across four files. Run from the repo root after activating the venv:
+81 tests across five files. Run from the repo root after activating the venv:
 
 ```bash
 python -m pytest          # all tests
@@ -323,6 +353,7 @@ python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
 | `tests/test_exporters.py` | 21 | PyVista + optional trimesh | Round-trip per format, 3MF OPC structure, glTF sidecar-free |
 | `tests/test_pipeline.py` | 8 | PyVista + optional trimesh | Full `generate()` → export integration at order 2 |
 | `tests/test_morphoelastic.py` | 14 | PyVista + optional tetgen/meshio | Tet meshing, growth field ramp, FEM format round-trips, scaffold honesty |
+| `tests/test_neuro.py` | 26 | PyVista + optional nibabel/networkx/scipy | GIFTI round-trip, overlay source preference, NIfTI bijective gradient, graph chain + kNN edges, graphml/gexf round-trips |
 
 The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
 

@@ -18,6 +18,9 @@ pytest>=7.0
 # pymeshfix    -- watertight repair  (pip install pymeshfix)
 # meshio       -- .msh/.inp/.vtu FEM I/O (pip install meshio)
 # trimesh      -- glTF/GLB export (pip install trimesh)
+# nibabel      -- GIFTI + NIfTI neuro export (pip install nibabel)
+# networkx     -- graph export .graphml/.gexf (pip install networkx)
+# scipy        -- fast overlay resampling + kNN graph edges (pip install scipy)
 numpy==2.2.6
 packaging==26.2
 pillow==12.2.0

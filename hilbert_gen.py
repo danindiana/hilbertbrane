@@ -30,6 +30,7 @@ import numpy as np
 import exporters
 import hilbert_core as hc
 import morphoelastic
+import neuro
 
 
 # ---------------------------------------------------------------------------
@@ -52,6 +53,7 @@ BASE = {
     "output": "hilbert_brain.stl",
     "fmt": "auto",
     "fem": None, "cortical_thickness": 0.3, "fem_growth_rate": 1.4,
+    "neuro": None, "neuro_knn": 0,
     "preview": False, "repair": False,
 }
 
@@ -172,6 +174,14 @@ def build_parser() -> argparse.ArgumentParser:
                    help="depth of the fast-growing cortical shell (model units)")
     g.add_argument("--fem-growth-rate", type=float, dest="fem_growth_rate",
                    help="growth multiplier at the surface (1.0 = no growth)")
+
+    g = p.add_argument_group("neuro interop (GIFTI / NIfTI / graph)")
+    g.add_argument("--neuro", choices=["auto"] + neuro.SUPPORTED, default=None,
+                   help="emit a neuro-format output instead of a plain surface: "
+                        "gii (surface + pinch overlay), nii (Hilbert volume), "
+                        "graphml or gexf (path graph)")
+    g.add_argument("--neuro-knn", type=int, dest="neuro_knn",
+                   help="for graph export, also add k nearest-neighbour spatial edges")
     g.add_argument("--repair", action="store_true",
                    help="attempt watertight repair via pymeshfix before saving")
     return p
@@ -358,6 +368,9 @@ def main(argv=None) -> int:
     if cfg["fem"]:
         target, _ = morphoelastic.resolve(cfg["output"], cfg["fem"])
         target_desc = f"{target} [fem]"
+    elif cfg["neuro"]:
+        _, nfmt = neuro.resolve(cfg["output"], cfg["neuro"])
+        target_desc = f"{neuro._stem(cfg['output'])} [neuro:{nfmt}]"
     else:
         target_desc = f"{out_path} [{fmt}]"
     print(f"Generating order={cfg['order']} spline={cfg['spline']} "
@@ -400,6 +413,23 @@ def main(argv=None) -> int:
         print(f"Saved {fem_path} in {time.time() - t0:.1f}s "
               f"({volume.n_points} nodes, {volume.n_cells} tets) "
               f"-- growth field {g.min():.3f}..{g.max():.3f}")
+        return 0
+
+    # Neuro branch: GIFTI surface+overlay, NIfTI volume, or path graph
+    if cfg["neuro"]:
+        t = hc.arclength_t(cl_points)
+        P = hc.pinch_field(t, cfg["k1"], cfg["k2"], cfg["w1"], cfg["w2"],
+                           cfg["wobble"], cfg["seed"])
+        if cfg["ventricle"]:
+            P = P * hc.ventricle_mask(cl_points)
+        try:
+            written = neuro.write_neuro(
+                cfg["output"], cfg["neuro"], mesh=mesh, centerline=cl_points,
+                pinch=P, order=cfg["order"], knn=cfg["neuro_knn"], meta=meta)
+        except (ImportError, ValueError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        print(f"Saved {', '.join(written)} in {time.time() - t0:.1f}s")
         return 0
 
     try:
