@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hilbertbrane — Architecture Diagram Gallery</title>
+  <title>Hilbertbrane — Gallery</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,33 +14,31 @@
       line-height: 1.6;
     }
 
+    /* ── header ── */
     header {
       background: #161b22;
       border-bottom: 1px solid #21262d;
       padding: 2rem 1.5rem 1.5rem;
       text-align: center;
     }
-
     header img.logo {
-      width: 120px;
-      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 1.2rem;
       border-radius: 8px;
     }
-
     header h1 {
       font-size: 2rem;
       color: #00bfff;
       letter-spacing: 0.03em;
       margin-bottom: 0.4rem;
     }
-
     header p.subtitle {
       color: #8b949e;
       font-size: 1rem;
       max-width: 640px;
       margin: 0 auto 1rem;
     }
-
     .badges {
       display: flex;
       flex-wrap: wrap;
@@ -48,9 +46,7 @@
       justify-content: center;
       margin-bottom: 1rem;
     }
-
     .badges a img { height: 20px; }
-
     header a.gh-link {
       display: inline-block;
       margin-top: 0.5rem;
@@ -65,35 +61,129 @@
     }
     header a.gh-link:hover { background: #30363d; }
 
-    .demo-gif {
+    /* ── hero animation ── */
+    .hero-anim {
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 2.5rem 1rem 0.5rem;
     }
-    .demo-gif img {
-      max-width: 900px;
+    .hero-anim img {
+      max-width: 620px;
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #21262d;
+      box-shadow: 0 0 40px #00bfff18, 0 0 80px #ff2d7810;
+    }
+    .hero-anim p {
+      margin-top: 0.6rem;
+      font-size: 0.82rem;
+      color: #4a5568;
+      font-family: monospace;
     }
 
+    /* ── section titles ── */
     .section-title {
       text-align: center;
-      padding: 2rem 1rem 0.5rem;
+      padding: 2.5rem 1rem 0.6rem;
       font-size: 1.3rem;
       color: #00ffe7;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
+    .section-sub {
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.88rem;
+      padding: 0 1rem 0.5rem;
+    }
 
+    /* ── animation grid ── */
+    .anim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 1.4rem;
+      padding: 1.2rem 1.5rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .anim-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-top: 3px solid #00bfff;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s,
+                  box-shadow 0.2s;
+    }
+    .anim-card:hover {
+      border-color: #00bfff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 30px #00bfff22;
+    }
+    .anim-card img {
+      width: 100%;
+      display: block;
+      background: #0d1117;
+    }
+    .anim-footer {
+      padding: 0.7rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .anim-meta { flex: 1; }
+    .anim-meta strong {
+      display: block;
+      color: #c9d1d9;
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+    .anim-meta span {
+      font-size: 0.78rem;
+      color: #8b949e;
+      font-family: monospace;
+    }
+    .anim-badge {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      background: #21262d;
+      color: #00bfff;
+      border: 1px solid #30363d;
+      white-space: nowrap;
+      align-self: flex-start;
+      flex-shrink: 0;
+    }
+    .anim-card a.dl-link {
+      display: block;
+      text-align: center;
+      padding: 0.35rem;
+      background: #0d1117;
+      color: #4a5568;
+      font-size: 0.76rem;
+      text-decoration: none;
+      font-family: monospace;
+      border-top: 1px solid #21262d;
+      transition: color 0.15s, background 0.15s;
+    }
+    .anim-card a.dl-link:hover { color: #00bfff; background: #161b22; }
+
+    /* ── divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #21262d;
+      margin: 1rem 1.5rem;
+    }
+
+    /* ── diagram gallery ── */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.2rem;
-      padding: 1.5rem 1.5rem 3rem;
+      padding: 1.2rem 1.5rem 3rem;
       max-width: 1400px;
       margin: 0 auto;
     }
-
     .card {
       background: #161b22;
       border: 1px solid #21262d;
@@ -105,13 +195,11 @@
       border-color: #00bfff;
       transform: translateY(-2px);
     }
-
     .card img {
       width: 100%;
       display: block;
       background: #0d1117;
     }
-
     .card-footer {
       padding: 0.6rem 0.9rem;
       display: flex;
@@ -119,16 +207,9 @@
       justify-content: space-between;
       gap: 0.5rem;
     }
-
-    .caption {
-      font-size: 0.82rem;
-      color: #8b949e;
-      flex: 1;
-    }
+    .caption { font-size: 0.82rem; color: #8b949e; flex: 1; }
     .caption strong { color: #c9d1d9; }
-
     .card-links { display: flex; gap: 0.4rem; flex-shrink: 0; }
-
     .card-links a {
       font-size: 0.75rem;
       padding: 0.2rem 0.5rem;
@@ -140,7 +221,7 @@
     }
     .card-links a:hover { color: #00bfff; border-color: #00bfff; }
 
-    /* Neon accent per category */
+    /* neon accent per diagram category */
     .cat-math    .card-footer { border-top: 2px solid #00bfff; }
     .cat-mesh    .card-footer { border-top: 2px solid #00ff88; }
     .cat-neuro   .card-footer { border-top: 2px solid #ff2d78; }
@@ -162,6 +243,7 @@
 </head>
 <body>
 
+<!-- ── Header ─────────────────────────────────────────────────────── -->
 <header>
   <img class="logo" src="logo.png" alt="Hilbertbrane logo">
   <h1>Hilbertbrane</h1>
@@ -174,11 +256,109 @@
   <a class="gh-link" href="https://github.com/danindiana/hilbertbrane">View on GitHub →</a>
 </header>
 
-<div class="demo-gif">
-  <img src="demo.gif" alt="Hilbertbrane diagram preview">
+<!-- ── Hero animation ─────────────────────────────────────────────── -->
+<div class="hero-anim">
+  <img src="animations/spin_zoomout_sm.gif" alt="3D Hilbert curve spin-out reveal">
+  <p>Order-3 Hilbert curve · 512 points · neon glow · 360° rotation with zoom-out reveal</p>
 </div>
 
+<!-- ── Animations section ─────────────────────────────────────────── -->
+<p class="section-title">Animations</p>
+<p class="section-sub">All rendered from the actual 3D Hilbert curve path via <code>generate_animations.py</code> · click any GIF to open full-size</p>
+
+<div class="anim-grid">
+
+  <div class="anim-card">
+    <a href="animations/spin_zoomout_sm.gif">
+      <img src="animations/spin_zoomout_sm.gif" alt="Spin zoom-out (web)" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin Zoom-Out · Web</strong>
+        <span>500×500 · 90 frames · 4cs · 3.6s loop · 96 colors</span>
+      </div>
+      <span class="anim-badge">7 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_zoomout_sm.gif">↓ download GIF</a>
+  </div>
+
+  <div class="anim-card">
+    <a href="animations/spin_zoomout.gif">
+      <img src="animations/spin_zoomout.gif" alt="Spin zoom-out HD" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin Zoom-Out · Full Quality</strong>
+        <span>700×700 · 108 frames · 4cs · 4.3s loop · 160 colors</span>
+      </div>
+      <span class="anim-badge">20 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_zoomout.gif">↓ download GIF</a>
+  </div>
+
+  <div class="anim-card">
+    <a href="animations/spin_hd.gif">
+      <img src="animations/spin_hd.gif" alt="Spin HD" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin · High Resolution</strong>
+        <span>800×800 · 72 frames · 4cs · 2.9s loop · 160 colors</span>
+      </div>
+      <span class="anim-badge">15 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_hd.gif">↓ download GIF</a>
+  </div>
+
+  <div class="anim-card">
+    <a href="animations/spin_slow.gif">
+      <img src="animations/spin_slow.gif" alt="Spin slow" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin · Slow Rotation</strong>
+        <span>600×600 · 120 frames · 5cs · 6.0s loop · 128 colors</span>
+      </div>
+      <span class="anim-badge">12 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_slow.gif">↓ download GIF</a>
+  </div>
+
+  <div class="anim-card">
+    <a href="animations/spin_glacial.gif">
+      <img src="animations/spin_glacial.gif" alt="Spin glacial" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin · Glacial Pace</strong>
+        <span>600×600 · 90 frames · 9cs · 8.1s loop · 128 colors</span>
+      </div>
+      <span class="anim-badge">9 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_glacial.gif">↓ download GIF</a>
+  </div>
+
+  <div class="anim-card">
+    <a href="animations/spin_opt.gif">
+      <img src="animations/spin_opt.gif" alt="Spin optimized" loading="lazy">
+    </a>
+    <div class="anim-footer">
+      <div class="anim-meta">
+        <strong>Spin · Compact</strong>
+        <span>600×600 · optimized frames · fast loop · 128 colors</span>
+      </div>
+      <span class="anim-badge">4 MB</span>
+    </div>
+    <a class="dl-link" href="animations/spin_opt.gif">↓ download GIF</a>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ── Diagram gallery ────────────────────────────────────────────── -->
 <p class="section-title">25 Architecture Diagrams</p>
+<p class="section-sub">Dark / neon theme · PNG + SVG + DOT source for each · regenerate with <code>generate_25_diagrams.py</code></p>
 
 <main class="gallery">
 
