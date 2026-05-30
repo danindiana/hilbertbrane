@@ -85,14 +85,29 @@ The outer surface (Z > mean Z) is identified and displaced along its vertex norm
 
 ## 🚀 Core Features & Generators
 
-### Generator Scripts (`HilbertGyri*.py`)
+### Unified Generator (`hilbert_gen.py` + `hilbert_core.py`)
 
-| Script | Order | Spline pts | Key feature |
-|--------|-------|-----------|-------------|
-| `HilbertGyri.py` | 3 | 2 000 | Base generator — fast, minimal |
-| `HilbertGyri2.py` | 4 | 3 500 | Dense, highly-folded, no Perlin noise |
-| `HilbertGyri3.py` | 4 | 8 000 | Ellipsoid bounding box `[A-P: 2.0, L-R: 1.3, S-I: 1.0]` + ventricle mask + Perlin noise |
-| `Hilbertbrane.py` | configurable | configurable | Interactive CLI — prompts for all parameters |
+All mesh generation is now handled by a single configurable script backed by a shared core library. Four presets reproduce the original scripts exactly, and every parameter is overridable:
+
+| Command | Equivalent to | Output |
+|---------|--------------|--------|
+| `python hilbert_gen.py --preset gyri` | `HilbertGyri.py` | `hilbert_gyri_o3.stl` |
+| `python hilbert_gen.py --preset gyri2` | `HilbertGyri2.py` | `hilbert_gyri_o4.stl` |
+| `python hilbert_gen.py --preset gyri3` | `HilbertGyri3.py` | `hilbert_brain.stl` |
+| `python hilbert_gen.py --interactive` | `Hilbertbrane.py` | prompted filename |
+| `python hilbert_gen.py --list-presets` | — | print preset table |
+
+Override any knob on top of a preset:
+
+```bash
+python hilbert_gen.py --preset gyri3 --sulcus 0.6 --noise-amp 0.6 --order 5
+python hilbert_gen.py --preset gyri --repair    # watertight repair via pymeshfix
+python hilbert_gen.py --preset gyri2 --preview  # open interactive window after saving
+```
+
+After every save, the generator prints the open-edge count and suggests `--repair` when needed — the validation behind the print-ready claim.
+
+`hilbert_core.py` houses all shared math (Skilling 2004 Hilbert curve, pinch field, tube builder, watertightness utils) and is importable without a GL stack, making the pure-math half unit-testable independently.
 
 ### Live Parameter Tuning (`interactive_tuner.py`)
 
@@ -124,15 +139,19 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# 3. Run the full pipeline
+# 3. Run all presets
 chmod +x run.sh
-./run.sh
+./run.sh                  # generates hilbert_gyri_o3.stl, hilbert_gyri_o4.stl, hilbert_brain.stl
+./run.sh gyri3            # single preset only
+./run.sh --repair         # attempt watertight repair on all outputs
 ```
 
-Or run a single generator interactively:
+Or run the generator directly:
 
 ```bash
-python Hilbertbrane.py
+python hilbert_gen.py --preset gyri3 -o my_brain.stl
+python hilbert_gen.py --list-presets
+python hilbert_gen.py --interactive   # prompted parameter entry
 ```
 
 ---
