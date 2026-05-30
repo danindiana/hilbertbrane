@@ -348,9 +348,42 @@ The growth field ramps from 1.0 in the core to `--fem-growth-rate` at the surfac
 
 ---
 
+## 🔖 Provenance & Reproducibility (`provenance.py`)
+
+Every output is fully determined by its resolved config + seed, so every file can carry exactly what's needed to recreate it.
+
+```bash
+# generate with full provenance sidecar (default)
+python hilbert_gen.py --preset gyri3 --noise-amp 0.4 --seed 123 -o brain.ply
+# → writes brain.ply  +  brain.ply.provenance.json
+
+# regenerate bit-identically from the sidecar
+python hilbert_gen.py --from-provenance brain.ply.provenance.json -o rebuilt.ply
+```
+
+The `--from-provenance` path was verified end-to-end: regenerating a Perlin-noise mesh from its sidecar produced 80,064 bit-identical vertices (`np.array_equal`).
+
+**What the record contains:** tool name + version, git SHA (`-dirty` suffixed on uncommitted trees), ISO timestamp, the exact CLI command, and the **complete** resolved config (all 36 fields, tuples made JSON-safe).
+
+**Embedding by format:**
+
+| Format | Where it goes |
+|--------|--------------|
+| 3MF | `<metadata>` entries (full record in `provenance_json` field) |
+| glTF / GLB | `asset.extras` (fixed: trimesh's `tm.metadata` doesn't reach the file; now injected via `tree_postprocessor`) |
+| PLY | `comment` lines spliced into the header — binary data untouched, mesh still loads |
+| SWC / FEBio | header comments |
+| GIFTI | `GiftiMetaData` |
+| GraphML / GEXF | graph attributes |
+| STL, NIfTI, .msh/.inp/.vtu | no metadata slot → sidecar only |
+
+**`--provenance {none,embed,sidecar,both}`** (default `both`) — opt out of sidecar with `none`.
+
+---
+
 ## 🧪 Testing
 
-89 tests across six files. Run from the repo root after activating the venv:
+97 tests across seven files. Run from the repo root after activating the venv:
 
 ```bash
 python -m pytest          # all tests
@@ -366,6 +399,7 @@ python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
 | `tests/test_morphoelastic.py` | 14 | PyVista + optional tetgen/meshio | Tet meshing, growth field ramp, FEM format round-trips, scaffold honesty |
 | `tests/test_neuro.py` | 26 | PyVista + optional nibabel/networkx/scipy | GIFTI round-trip, overlay source preference, NIfTI bijective gradient, graph chain + kNN edges, graphml/gexf round-trips |
 | `tests/test_tuner.py` | 8 | PyVista + optional trame | Config sanity, geometry correctness, radius clip, path caching, correct-curve guard, app builds, actor-leak fix, export writes file |
+| `tests/test_provenance.py` | 8 | numpy + optional PyVista | Record completeness, flatten/JSON round-trip, sidecar load-by-path, PLY embedding preserves mesh, `--provenance none` opt-out, bit-identical regeneration |
 
 The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
 

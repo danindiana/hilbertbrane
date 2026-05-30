@@ -22,6 +22,7 @@ pytest>=7.0
 # networkx     -- graph export .graphml/.gexf (pip install networkx)
 # scipy        -- fast overlay resampling + kNN graph edges (pip install scipy)
 # trame        -- browser-served tuner (pip install trame trame-vuetify trame-vtk)
+# noise        -- Perlin folding (pip install noise) [already in requirements above]
 numpy==2.2.6
 packaging==26.2
 pillow==12.2.0

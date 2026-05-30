@@ -31,6 +31,7 @@ import exporters
 import hilbert_core as hc
 import morphoelastic
 import neuro
+import provenance
 
 
 # ---------------------------------------------------------------------------
@@ -182,6 +183,16 @@ def build_parser() -> argparse.ArgumentParser:
                         "graphml or gexf (path graph)")
     g.add_argument("--neuro-knn", type=int, dest="neuro_knn",
                    help="for graph export, also add k nearest-neighbour spatial edges")
+
+    g = p.add_argument_group("provenance")
+    g.add_argument("--provenance", choices=["none", "embed", "sidecar", "both"],
+                   default="both",
+                   help="how to record the full config+seed+git for exact "
+                        "regeneration: embed in the file, write a sidecar JSON, "
+                        "both, or none")
+    g.add_argument("--from-provenance", dest="from_provenance", metavar="JSON",
+                   help="regenerate exactly from a provenance JSON (or an output "
+                        "file whose sidecar exists); other generation flags ignored")
     g.add_argument("--repair", action="store_true",
                    help="attempt watertight repair via pymeshfix before saving")
     return p
@@ -356,13 +367,21 @@ def main(argv=None) -> int:
             print(f"{name:6s} -> {over}")
         return 0
 
-    cfg = resolve_config(args)
+    if args.from_provenance:
+        record_in = provenance.load(args.from_provenance)
+        cfg = {**BASE, **provenance.config_from_record(record_in)}
+        if args.output:
+            cfg["output"] = args.output
+        print(f"Regenerating from {args.from_provenance} "
+              f"(git {record_in.get('git', '?')}, created {record_in.get('created', '?')})")
+    else:
+        cfg = resolve_config(args)
 
-    use_prompts = sys.stdin.isatty() and (
-        args.interactive or args.preset == "brane"
-        or (args.preset is None and len(sys.argv) == 1))
-    if use_prompts:
-        cfg = prompt_config(cfg)
+        use_prompts = sys.stdin.isatty() and (
+            args.interactive or args.preset == "brane"
+            or (args.preset is None and len(sys.argv) == 1))
+        if use_prompts:
+            cfg = prompt_config(cfg)
 
     out_path, fmt = exporters.resolve(cfg["output"], cfg["fmt"])
     if cfg["fem"]:
@@ -389,82 +408,65 @@ def main(argv=None) -> int:
         pl.add_axes()
         pl.show()
 
-    # Provenance: enough to regenerate this exact output later
-    meta = {
-        "git": _git_sha(),
-        "preset": args.preset or "none",
-        "order": cfg["order"], "spline": cfg["spline"],
-        "radius": cfg["radius"], "sulcus": cfg["sulcus"],
-        "seed": cfg["seed"], "growth_mode": cfg["growth_mode"],
-    }
+    # Full provenance: the resolved config + seed + git SHA fully determine the
+    # output, so this is enough to regenerate it exactly.
+    command = "python " + " ".join([os.path.basename(sys.argv[0])] + sys.argv[1:])
+    record = provenance.build_record(cfg, command=command)
+    mode = args.provenance
+    meta_flat = provenance.flatten(record) if mode in ("embed", "both") else None
 
-    # FEM branch: tetrahedral volume + cortical growth field instead of a surface
-    if cfg["fem"]:
-        try:
+    written: list[str] = []
+    try:
+        if cfg["fem"]:
             fem_path, fem_fmt = morphoelastic.resolve(cfg["output"], cfg["fem"])
             fem_path, volume = morphoelastic.surface_to_fem(
                 mesh, fem_path, fem_fmt,
                 cortical_thickness=cfg["cortical_thickness"],
-                growth_rate=cfg["fem_growth_rate"], meta=meta)
-        except (ImportError, ValueError, RuntimeError) as exc:
-            print(f"error: {exc}", file=sys.stderr)
-            return 1
-        g = np.asarray(volume.cell_data["growth"])
-        print(f"Saved {fem_path} in {time.time() - t0:.1f}s "
-              f"({volume.n_points} nodes, {volume.n_cells} tets) "
-              f"-- growth field {g.min():.3f}..{g.max():.3f}")
-        return 0
+                growth_rate=cfg["fem_growth_rate"], meta=meta_flat)
+            written = [fem_path]
+            g = np.asarray(volume.cell_data["growth"])
+            summary = (f"{volume.n_points} nodes, {volume.n_cells} tets "
+                       f"-- growth field {g.min():.3f}..{g.max():.3f}")
 
-    # Neuro branch: GIFTI surface+overlay, NIfTI volume, or path graph
-    if cfg["neuro"]:
-        t = hc.arclength_t(cl_points)
-        P = hc.pinch_field(t, cfg["k1"], cfg["k2"], cfg["w1"], cfg["w2"],
-                           cfg["wobble"], cfg["seed"])
-        if cfg["ventricle"]:
-            P = P * hc.ventricle_mask(cl_points)
-        try:
+        elif cfg["neuro"]:
+            t = hc.arclength_t(cl_points)
+            P = hc.pinch_field(t, cfg["k1"], cfg["k2"], cfg["w1"], cfg["w2"],
+                               cfg["wobble"], cfg["seed"])
+            if cfg["ventricle"]:
+                P = P * hc.ventricle_mask(cl_points)
             written = neuro.write_neuro(
                 cfg["output"], cfg["neuro"], mesh=mesh, centerline=cl_points,
-                pinch=P, order=cfg["order"], knn=cfg["neuro_knn"], meta=meta)
-        except (ImportError, ValueError) as exc:
-            print(f"error: {exc}", file=sys.stderr)
-            return 1
-        print(f"Saved {', '.join(written)} in {time.time() - t0:.1f}s")
-        return 0
+                pinch=P, order=cfg["order"], knn=cfg["neuro_knn"], meta=meta_flat)
+            summary = ""
 
-    try:
-        out_path = exporters.write(mesh, cl_points, radius, out_path, fmt, meta)
-    except (ImportError, ValueError) as exc:
+        else:
+            out_path = exporters.write(mesh, cl_points, radius, out_path, fmt, meta_flat)
+            written = [out_path]
+            if fmt == "ply" and mode in ("embed", "both"):
+                provenance.embed_ply_comments(out_path, record)
+            if fmt == "swc":
+                summary = f"{len(cl_points)} samples, single unbranched path"
+            else:
+                open_edges = hc.open_edge_count(mesh)
+                summary = ("watertight" if open_edges == 0
+                           else f"{open_edges} open/non-manifold edges")
+    except (ImportError, ValueError, RuntimeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
-    dt = time.time() - t0
-    if fmt == "swc":
-        print(f"Saved {out_path} in {dt:.1f}s ({len(cl_points)} samples, "
-              f"single unbranched path)")
-        return 0
+    sidecars = []
+    if mode in ("sidecar", "both"):
+        sidecars = [provenance.write_sidecar(w, record) for w in written]
 
-    open_edges = hc.open_edge_count(mesh)
-    status = "watertight" if open_edges == 0 else f"{open_edges} open/non-manifold edges"
-    print(f"Saved {out_path} in {dt:.1f}s "
-          f"({mesh.n_points} pts, {mesh.n_cells} cells) -- {status}")
-    if open_edges and not cfg["repair"]:
+    dt = time.time() - t0
+    print(f"Saved {', '.join(written)} in {dt:.1f}s" + (f" -- {summary}" if summary else ""))
+    if sidecars:
+        print(f"  provenance: {', '.join(sidecars)}")
+    if (not cfg["fem"] and not cfg["neuro"] and fmt not in ("swc",)
+            and "open" in (summary or "") and not cfg["repair"]):
         print("  tip: re-run with --repair (needs `pip install pymeshfix`) "
               "for a print-ready watertight mesh.")
     return 0
-
-
-def _git_sha() -> str:
-    """Short git SHA of the working tree, or 'unknown' outside a repo."""
-    import subprocess
-    try:
-        sha = subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
-            cwd=os.path.dirname(os.path.abspath(__file__)),
-            stderr=subprocess.DEVNULL).decode().strip()
-        return sha or "unknown"
-    except Exception:
-        return "unknown"
 
 
 if __name__ == "__main__":

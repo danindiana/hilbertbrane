@@ -125,17 +125,24 @@ def _write_gltf(mesh, path: str, meta: dict) -> None:
     tm = trimesh.Trimesh(vertices=np.asarray(mesh.points),
                          faces=_triangles(mesh),
                          process=False)
-    if meta:
-        tm.metadata.update({str(k): str(v) for k, v in meta.items()})
 
+    extras = {str(k): str(v) for k, v in (meta or {}).items()}
+
+    def _add_extras(tree):
+        if extras:
+            tree.setdefault("asset", {}).setdefault("extras", {}).update(extras)
+
+    from trimesh.exchange.gltf import export_glb, export_gltf
+    scene = tm.scene()
     if path.lower().endswith(".glb"):
-        tm.export(path)  # single self-contained binary
+        data = export_glb(scene, tree_postprocessor=_add_extras)
+        with open(path, "wb") as fh:
+            fh.write(data)
         return
 
     # .gltf: embed buffers as data URIs so the result is one portable file
     # instead of the default .gltf + sidecar .bin split.
-    from trimesh.exchange.gltf import export_gltf
-    files = export_gltf(tm.scene(), embed_buffers=True)
+    files = export_gltf(scene, embed_buffers=True, tree_postprocessor=_add_extras)
     data = next(v for k, v in files.items() if k.lower().endswith(".gltf"))
     mode = "wb" if isinstance(data, (bytes, bytearray)) else "w"
     with open(path, mode) as fh:
