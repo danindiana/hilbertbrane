@@ -109,6 +109,29 @@ After every save, the generator prints the open-edge count and suggests `--repai
 
 `hilbert_core.py` houses all shared math (Skilling 2004 Hilbert curve, pinch field, tube builder, watertightness utils) and is importable without a GL stack, making the pure-math half unit-testable independently.
 
+### Output Formats (`exporters.py`)
+
+Six formats via a single `-f` / `--format` flag. Extension is inferred automatically; an explicit `--format` corrects the extension when they conflict.
+
+| Extension / flag | Format | Extra dependency | Notes |
+|-----------------|--------|-----------------|-------|
+| `.stl` | STL | PyVista (always) | triangle soup, no units |
+| `.ply` | PLY | PyVista (always) | preserves per-vertex scalars |
+| `.3mf` | 3MF | stdlib only | units=mm, provenance metadata in XML |
+| `.glb` | glTF binary | `pip install trimesh` | single self-contained file, web-ready |
+| `.gltf` | glTF text | `pip install trimesh` | buffers as data URIs, one portable file |
+| `.swc` | SWC skeleton | stdlib only | centreline + varying radius, neuron-morphology format |
+
+```bash
+python hilbert_gen.py --preset gyri3 -o brain.glb          # WebGL viewer
+python hilbert_gen.py --preset gyri3 -o brain.3mf          # print-ready container
+python hilbert_gen.py --preset gyri3 -o brain.swc          # morphology skeleton
+python hilbert_gen.py --preset gyri3 -o brain.stl -f ply   # flag overrides ext
+./run.sh --format glb                                       # all presets → .glb
+```
+
+Every format that supports metadata receives a provenance dict (git SHA, preset, order, spline, radius, sulcus, seed, growth mode) so any output is traceable back to the parameters that produced it.
+
 ### Live Parameter Tuning (`interactive_tuner.py`)
 
 Because volumetric self-intersection is non-trivial to predict analytically, the interactive tuner opens a **PyVista OpenGL GUI** with three real-time sliders:

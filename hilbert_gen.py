@@ -21,11 +21,13 @@ matching the old Hilbertbrane.py experience.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 
 import numpy as np
 
+import exporters
 import hilbert_core as hc
 
 
@@ -47,6 +49,7 @@ BASE = {
     "ventricle": False,
     "radius_clip_lo": 0.0, "radius_clip_hi": 2.0,
     "output": "hilbert_brain.stl",
+    "fmt": "auto",
     "preview": False, "repair": False,
 }
 
@@ -151,7 +154,11 @@ def build_parser() -> argparse.ArgumentParser:
                    help="grow vertices with relative-Z above this threshold")
 
     g = p.add_argument_group("output")
-    g.add_argument("-o", "--output", help="output STL filename")
+    g.add_argument("-o", "--output", help="output filename")
+    g.add_argument("-f", "--format", dest="fmt",
+                   choices=["auto"] + exporters.SUPPORTED, default=None,
+                   help="output format; 'auto' infers from the filename extension "
+                        "(stl|ply|3mf|gltf|glb|swc)")
     g.add_argument("--preview", action="store_true", help="open an interactive window")
     g.add_argument("--repair", action="store_true",
                    help="attempt watertight repair via pymeshfix before saving")
@@ -169,8 +176,6 @@ def resolve_config(args: argparse.Namespace) -> dict:
             cfg[key] = val
     if isinstance(cfg["ellipsoid"], str):
         cfg["ellipsoid"] = tuple(float(x) for x in cfg["ellipsoid"].split(","))
-    if cfg["output"] and not str(cfg["output"]).lower().endswith(".stl"):
-        cfg["output"] += ".stl"
     return cfg
 
 
@@ -289,7 +294,8 @@ def generate(cfg: dict):
 
     if cfg["repair"]:
         mesh = hc.repair_mesh(mesh)
-    return mesh
+    # cl_points + radius_abs are the SWC morphology skeleton (pre-tube)
+    return mesh, np.asarray(centerline.points), radius_abs
 
 
 def _apply_growth(mesh, cfg):
@@ -336,11 +342,12 @@ def main(argv=None) -> int:
     if use_prompts:
         cfg = prompt_config(cfg)
 
+    out_path, fmt = exporters.resolve(cfg["output"], cfg["fmt"])
     print(f"Generating order={cfg['order']} spline={cfg['spline']} "
-          f"radius={cfg['radius']} sulcus={cfg['sulcus']} -> {cfg['output']}")
+          f"radius={cfg['radius']} sulcus={cfg['sulcus']} -> {out_path} [{fmt}]")
     t0 = time.time()
     try:
-        mesh = generate(cfg)
+        mesh, cl_points, radius = generate(cfg)
     except ImportError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
@@ -352,15 +359,48 @@ def main(argv=None) -> int:
         pl.add_axes()
         pl.show()
 
-    mesh.save(cfg["output"])
+    # Provenance: enough to regenerate this exact output later
+    meta = {
+        "git": _git_sha(),
+        "preset": args.preset or "none",
+        "order": cfg["order"], "spline": cfg["spline"],
+        "radius": cfg["radius"], "sulcus": cfg["sulcus"],
+        "seed": cfg["seed"], "growth_mode": cfg["growth_mode"],
+    }
+
+    try:
+        out_path = exporters.write(mesh, cl_points, radius, out_path, fmt, meta)
+    except (ImportError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+
+    dt = time.time() - t0
+    if fmt == "swc":
+        print(f"Saved {out_path} in {dt:.1f}s ({len(cl_points)} samples, "
+              f"single unbranched path)")
+        return 0
+
     open_edges = hc.open_edge_count(mesh)
     status = "watertight" if open_edges == 0 else f"{open_edges} open/non-manifold edges"
-    print(f"Saved {cfg['output']} in {time.time() - t0:.1f}s "
+    print(f"Saved {out_path} in {dt:.1f}s "
           f"({mesh.n_points} pts, {mesh.n_cells} cells) -- {status}")
     if open_edges and not cfg["repair"]:
         print("  tip: re-run with --repair (needs `pip install pymeshfix`) "
               "for a print-ready watertight mesh.")
     return 0
+
+
+def _git_sha() -> str:
+    """Short git SHA of the working tree, or 'unknown' outside a repo."""
+    import subprocess
+    try:
+        sha = subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+            stderr=subprocess.DEVNULL).decode().strip()
+        return sha or "unknown"
+    except Exception:
+        return "unknown"
 
 
 if __name__ == "__main__":
