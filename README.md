@@ -132,13 +132,24 @@ python hilbert_gen.py --preset gyri3 -o brain.stl -f ply   # flag overrides ext
 
 Every format that supports metadata receives a provenance dict (git SHA, preset, order, spline, radius, sulcus, seed, growth mode) so any output is traceable back to the parameters that produced it.
 
-### Live Parameter Tuning (`interactive_tuner.py`)
+### Browser Tuner (`tuner_trame.py`)
 
-Because volumetric self-intersection is non-trivial to predict analytically, the interactive tuner opens a **PyVista OpenGL GUI** with three real-time sliders:
+The old `interactive_tuner.py` required a local OpenGL display. The trame-based replacement renders off-screen on the server and streams to a browser tab — works headless, over SSH, or shared with a colleague.
 
-- **Brain Scale** `[20 – 200]` — overall bounding volume
-- **Gyri Radius** `[0.5 – 15]` — tube extrusion thickness
-- **Sulcus Depth** `[0 – 0.95]` — harmonic pinch amplitude
+```bash
+python tuner_trame.py                       # http://localhost:8080
+python tuner_trame.py --port 9000 --no-browser
+# over SSH: ssh -L 8080:localhost:8080 user@host  then open localhost:8080
+```
+
+**UI:** a side drawer with 10 sliders (order, spline, size, radius, sulcus, k1, k2, wobble, facets, seed), an export filename field, and Export / Reset buttons. The live view shows the bare tube (no decimate/smooth/growth) for responsiveness. Export routes through `exporters.write` — same files as `hilbert_gen`, any format by extension, with a watertight-edge count in the status line.
+
+**Fixes over the old tuner:**
+- Uses `hilbert_core.build_hilbert_path` — the correct locality-preserving curve (a test asserts this)
+- Reuses `hilbert_core` for the pinch field and tube builder — no duplicated code
+- Actor leak fixed: `rebuild()` removes the old actor before adding the new one; `test_rebuild_swaps_in_a_single_actor` locks this down
+
+**Optional dependency:** `pip install trame trame-vuetify trame-vtk`
 
 <p align="center">
   <img src="docs/diagrams_25/06_user_interaction.png" alt="Interactive Tuner Flow" width="500">
@@ -339,7 +350,7 @@ The growth field ramps from 1.0 in the core to `--fem-growth-rate` at the surfac
 
 ## 🧪 Testing
 
-81 tests across five files. Run from the repo root after activating the venv:
+89 tests across six files. Run from the repo root after activating the venv:
 
 ```bash
 python -m pytest          # all tests
@@ -354,6 +365,7 @@ python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
 | `tests/test_pipeline.py` | 8 | PyVista + optional trimesh | Full `generate()` → export integration at order 2 |
 | `tests/test_morphoelastic.py` | 14 | PyVista + optional tetgen/meshio | Tet meshing, growth field ramp, FEM format round-trips, scaffold honesty |
 | `tests/test_neuro.py` | 26 | PyVista + optional nibabel/networkx/scipy | GIFTI round-trip, overlay source preference, NIfTI bijective gradient, graph chain + kNN edges, graphml/gexf round-trips |
+| `tests/test_tuner.py` | 8 | PyVista + optional trame | Config sanity, geometry correctness, radius clip, path caching, correct-curve guard, app builds, actor-leak fix, export writes file |
 
 The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
 
