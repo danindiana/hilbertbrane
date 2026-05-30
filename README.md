@@ -275,6 +275,28 @@ Source files live in [`docs/infographics/`](docs/infographics/).
 
 ---
 
+## 🧪 Testing
+
+41 tests across three files. Run from the repo root after activating the venv:
+
+```bash
+python -m pytest          # all tests
+python -m pytest -q       # quiet summary
+python -m pytest tests/test_core.py   # pure-math only (no PyVista needed)
+```
+
+| File | Tests | Dependencies | What it guards |
+|------|-------|-------------|----------------|
+| `tests/test_core.py` | 12 | numpy only | Hilbert curve locality (the old Gray-code bug), field invariants |
+| `tests/test_exporters.py` | 21 | PyVista + optional trimesh | Round-trip per format, 3MF OPC structure, glTF sidecar-free |
+| `tests/test_pipeline.py` | 8 | PyVista + optional trimesh | Full `generate()` → export integration at order 2 |
+
+The key regression guard is `test_hilbert_curve_is_locality_preserving`, parametrized over orders 2/3/4. It asserts every consecutive step is Manhattan-distance 1 and the curve is a bijection onto the grid — both clauses fail immediately if the compact Gray-code interleave is reintroduced.
+
+Optional dependencies (trimesh) are handled with `importorskip` — the 4 glTF/GLB tests skip cleanly in a minimal environment rather than erroring, so a bare `pip install numpy pytest` box still guards the 12 core curve tests.
+
+---
+
 ## 📄 License
 
 MIT — see [LICENSE](LICENSE) for details.
