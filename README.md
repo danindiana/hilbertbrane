@@ -14,6 +14,10 @@
 Hilbertbrane maps the continuous, space-filling properties of the **3D Hilbert Curve** through a volumetric pipeline to synthesize cortical folding patterns that parallel biological neurogenesis — producing watertight STL meshes ready for 3D printing, physics simulation, or WebGL visualization.
 
 <p align="center">
+  <img src="docs/spin.gif" alt="3D Hilbert curve 360° rotation" width="500">
+</p>
+
+<p align="center">
   <img src="docs/demo.gif" alt="Hilbertbrane diagram preview" width="800">
 </p>
 
